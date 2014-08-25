@@ -1,0 +1,9 @@
+E:\DuAn\Source\BEC-Vuongquocvuive\BLL\bin\Debug\BLL.dll
+E:\DuAn\Source\BEC-Vuongquocvuive\BLL\bin\Debug\BLL.pdb
+E:\DuAn\Source\BEC-Vuongquocvuive\BLL\bin\Debug\DAL.dll
+E:\DuAn\Source\BEC-Vuongquocvuive\BLL\bin\Debug\DTO.dll
+E:\DuAn\Source\BEC-Vuongquocvuive\BLL\bin\Debug\DAL.pdb
+E:\DuAn\Source\BEC-Vuongquocvuive\BLL\bin\Debug\DTO.pdb
+E:\DuAn\Source\BEC-Vuongquocvuive\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+E:\DuAn\Source\BEC-Vuongquocvuive\BLL\obj\Debug\BLL.dll
+E:\DuAn\Source\BEC-Vuongquocvuive\BLL\obj\Debug\BLL.pdb

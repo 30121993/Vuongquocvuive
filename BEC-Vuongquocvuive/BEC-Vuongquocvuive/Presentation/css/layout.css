@@ -1,0 +1,88 @@
+*{margin:0px;
+padding:0px;
+font-family: 'Roboto', sans-serif
+	}
+ul, li, a{
+	list-style:none;
+	text-decoration:none	
+	}
+a:hover{
+	cursor:pointer	
+	}
+body{
+	min-width:1200px;
+	width:100%
+	}
+.wrapper{
+	width:1170px;
+	margin:0 auto	
+	}
+#blog-page {
+	background:#A5DCED
+	}
+#blog-page{
+	background:url(../images/bg-blog-df.png) no-repeat top left #A5DCED
+	}
+.wrapper-content{
+	width:980px;
+	margin:0 auto;
+	position:relative	
+	}
+#header{
+	width:100%;
+	display:block;
+	min-height:108px	
+	}
+#center{
+	width:100%;
+	display:block
+	}
+#footer{
+	width:100%;
+	display:block;
+	min-height:60px
+	}
+#blog-page #header{
+	float:left	
+	}
+#blog-page #left-col{
+	width:325px;
+	float:left;
+	display:inline-block	
+	}
+#right-col{
+	width:600px;
+	margin-left:55px;
+	float:left;
+	display:inline-block
+	}
+#blog-page #right-col{
+	height:1145px
+	}
+#register-page{
+	background:url(../images/bg-register.png) no-repeat top center	
+	}
+/*Game*/
+#page-game{
+	background:url(../images/bg-game.png) no-repeat;
+	background-position:left top
+	}
+#page-game .wrapper {
+  background: url("../images/bg-top-game.png") no-repeat scroll rgba(0, 0, 0, 0);
+  background-position: 0px 60px;
+}
+#page-game #header{
+	height:460px;
+	position:relative	
+	}
+#page-game #footer{
+	height:186px	
+	}
+/*Home*/
+#home{
+	background:url(../images/home/bg-home.png) no-repeat top center	
+	}
+#home .wrapper{
+	min-height:720px;
+	position:relative	
+	}

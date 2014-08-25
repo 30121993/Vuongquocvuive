@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BEC-Vuongquocvuive", "BEC-Vuongquocvuive\BEC-Vuongquocvuive.csproj", "{D92B27C4-F5CA-45AC-AE6F-D5354C45F944}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTO", "DTO\DTO.csproj", "{EF070B22-15D5-416A-9B7C-E28BDA833094}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{5B96EFF7-7AA3-4EF4-914A-50EFFD51838A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{62F9126B-1112-463C-80D4-753027CC8C11}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D92B27C4-F5CA-45AC-AE6F-D5354C45F944}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D92B27C4-F5CA-45AC-AE6F-D5354C45F944}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D92B27C4-F5CA-45AC-AE6F-D5354C45F944}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D92B27C4-F5CA-45AC-AE6F-D5354C45F944}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF070B22-15D5-416A-9B7C-E28BDA833094}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF070B22-15D5-416A-9B7C-E28BDA833094}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF070B22-15D5-416A-9B7C-E28BDA833094}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF070B22-15D5-416A-9B7C-E28BDA833094}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B96EFF7-7AA3-4EF4-914A-50EFFD51838A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B96EFF7-7AA3-4EF4-914A-50EFFD51838A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B96EFF7-7AA3-4EF4-914A-50EFFD51838A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B96EFF7-7AA3-4EF4-914A-50EFFD51838A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62F9126B-1112-463C-80D4-753027CC8C11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62F9126B-1112-463C-80D4-753027CC8C11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62F9126B-1112-463C-80D4-753027CC8C11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62F9126B-1112-463C-80D4-753027CC8C11}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,11 @@
+E:\DuAn\Source\BEC-Vuongquocvuive\BEC-Vuongquocvuive\bin\BEC-Vuongquocvuive.dll
+E:\DuAn\Source\BEC-Vuongquocvuive\BEC-Vuongquocvuive\bin\BEC-Vuongquocvuive.pdb
+E:\DuAn\Source\BEC-Vuongquocvuive\BEC-Vuongquocvuive\obj\Debug\BEC-Vuongquocvuive.dll
+E:\DuAn\Source\BEC-Vuongquocvuive\BEC-Vuongquocvuive\obj\Debug\BEC-Vuongquocvuive.pdb
+E:\DuAn\Source\BEC-Vuongquocvuive\BEC-Vuongquocvuive\bin\BLL.dll
+E:\DuAn\Source\BEC-Vuongquocvuive\BEC-Vuongquocvuive\bin\DAL.dll
+E:\DuAn\Source\BEC-Vuongquocvuive\BEC-Vuongquocvuive\bin\DTO.dll
+E:\DuAn\Source\BEC-Vuongquocvuive\BEC-Vuongquocvuive\bin\BLL.pdb
+E:\DuAn\Source\BEC-Vuongquocvuive\BEC-Vuongquocvuive\bin\DAL.pdb
+E:\DuAn\Source\BEC-Vuongquocvuive\BEC-Vuongquocvuive\bin\DTO.pdb
+E:\DuAn\Source\BEC-Vuongquocvuive\BEC-Vuongquocvuive\obj\Debug\BEC-Vuongquocvuive.csprojResolveAssemblyReference.cache
