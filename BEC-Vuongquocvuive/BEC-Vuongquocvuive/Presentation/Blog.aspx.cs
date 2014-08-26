@@ -13,7 +13,6 @@ namespace BEC_Vuongquocvuive
     {
         UserBLL user = new UserBLL();
         public int User_ID;
-
         protected void Page_Load(object sender, EventArgs e)
         {
             Control MH;
