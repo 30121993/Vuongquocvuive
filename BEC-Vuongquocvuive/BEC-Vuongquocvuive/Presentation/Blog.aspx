@@ -410,15 +410,25 @@
             <p class="prev-slider"></p>
             <p class="next-slider"></p>
             <ul class="list-story">
-              <li class="story-item">
-                <div class="wrapper-item">
-                  <div class="col-book"></div>
-                  <div class="story-info">
-                    <h3> Tiêu đề truyện </h3>
-                    <p class="total-view">Lượt xem:<em>1122</em></p>
-                  </div>
-                </div>
-              </li>
+
+            <!-- ----------------------------------------------->
+            <asp:Repeater ID="rptReadStory" runat="server">
+                <ItemTemplate>
+                  <li class="story-item">
+                    <div class="wrapper-item">
+                      <img alt="" src="data/images/<%# Eval("Story_Catalog")%>" title="Anh bia" />
+                      <div class="col-book"></div>
+                         <a href="StoryUC.aspx?mod=StoryDetail&id=<%# Eval("Story_ID")%>">
+                              <div class="story-info">
+                                <h3> <%# Eval("story_Status") %></h3>
+                                <p class="total-view">Lượt xem:<em><%# Eval("Story_TotalView")%></em></p>
+                              </div>
+                        </a>
+                    </div>
+                  </li>
+              </ItemTemplate>
+              </asp:Repeater>
+             <!-- ----------------------------------------------->
               <!--End story item-->
               <li class="story-item">
                 <div class="wrapper-item">

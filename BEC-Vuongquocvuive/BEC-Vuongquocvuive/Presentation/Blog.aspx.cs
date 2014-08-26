@@ -12,6 +12,7 @@ namespace BEC_Vuongquocvuive
     public partial class Blog : System.Web.UI.Page
     {
         UserBLL user = new UserBLL();
+        StoryBLL story = new StoryBLL();
         public int User_ID;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -20,6 +21,10 @@ namespace BEC_Vuongquocvuive
                 if (Session["User_ID"] != null)
                 {
                     User_ID = int.Parse(Session["User_ID"].ToString());
+
+                    rptReadStory.DataSource = story.GetStoryUserView(User_ID);
+                    rptReadStory.DataBind();
+
                     DataTable user_info = user.getUserbyID(User_ID);
                     txtEmail.Text = user_info.Rows[0]["User_Email"].ToString();
                     txtNgaySinh.Text = user_info.Rows[0]["User_Birthday"].ToString();
