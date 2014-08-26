@@ -12,7 +12,7 @@ namespace BEC_Vuongquocvuive
     public partial class Blog : System.Web.UI.Page
     {
         UserBLL user = new UserBLL();
-        public int User_ID;
+       
 
         protected void Page_Load(object sender, EventArgs e)
         {
