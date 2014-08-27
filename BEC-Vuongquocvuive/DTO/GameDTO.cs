@@ -43,6 +43,14 @@ namespace DTO
             get { return _Game_Status; }
             set { _Game_Status = value; }
         }
+        private string _Game_Guide;
+
+        public string Game_Guide
+        {
+            get { return _Game_Guide; }
+            set { _Game_Guide = value; }
+        }
+
         private DateTime _Game_TimeUp;
 
         public DateTime Game_TimeUp
@@ -70,6 +78,13 @@ namespace DTO
         {
             get { return _Game_TotalView; }
             set { _Game_TotalView = value; }
+        }
+        private int _Game_TotalLike;
+
+        public int Game_TotalLike
+        {
+            get { return _Game_TotalLike; }
+            set { _Game_TotalLike = value; }
         }
         private Boolean _Game_State;
 
@@ -100,7 +115,7 @@ namespace DTO
              set { _Game_ID = value; }
          }
 
-         public GameDTO(int _Game_ID, int _Catalog_ID, string _Game_Name, string _Game_Catalog, string _Game_Path, string _Game_Status, DateTime _Game_TimeUp, int _Game_UserCreater, int _Game_Price, int _Game_TotalView, Boolean _Game_State, Boolean _Game_StatePrice, DateTime _Game_LastEdit)
+         public GameDTO(int _Game_ID, int _Catalog_ID, string _Game_Name, string _Game_Catalog, string _Game_Path, string _Game_Status,string _Game_Guide, DateTime _Game_TimeUp, int _Game_UserCreater, int _Game_Price, int _Game_TotalView, int _Game_TotalLike,Boolean _Game_State, Boolean _Game_StatePrice, DateTime _Game_LastEdit)
          {
             this._Game_ID = _Game_ID;
             this._Catalog_ID = _Catalog_ID;
@@ -108,25 +123,29 @@ namespace DTO
             this._Game_Catalog = _Game_Catalog;
             this._Game_Path = _Game_Path;
             this._Game_Status = _Game_Status;
+            this.Game_Guide = Game_Guide;
             this._Game_TimeUp = _Game_TimeUp;
             this._Game_UserCreater = _Game_UserCreater;
             this._Game_Price = _Game_Price;
             this._Game_TotalView = _Game_TotalView;
+            this._Game_TotalLike = _Game_TotalLike;
             this._Game_State = _Game_State;
             this._Game_StatePrice = _Game_StatePrice;
             this._Game_LastEdit = _Game_LastEdit;
           }
-         public GameDTO(int _Catalog_ID, string _Game_Name, string _Game_Catalog, string _Game_Path, string _Game_Status, DateTime _Game_TimeUp, int _Game_UserCreater, int _Game_Price, int _Game_TotalView, Boolean _Game_State, Boolean _Game_StatePrice, DateTime _Game_LastEdit)
+         public GameDTO(int _Catalog_ID, string _Game_Name, string _Game_Catalog, string _Game_Path, string _Game_Status,string _Game_Guide, DateTime _Game_TimeUp, int _Game_UserCreater, int _Game_Price, int _Game_TotalView,int _Game_TotalLike, Boolean _Game_State, Boolean _Game_StatePrice, DateTime _Game_LastEdit)
          {
              this._Catalog_ID = _Catalog_ID;
              this._Game_Name = _Game_Name;
              this._Game_Catalog = _Game_Catalog;
              this._Game_Path = _Game_Path;
              this._Game_Status = _Game_Status;
+             this.Game_Guide = Game_Guide;
              this._Game_TimeUp = _Game_TimeUp;
              this._Game_UserCreater = _Game_UserCreater;
              this._Game_Price = _Game_Price;
              this._Game_TotalView = _Game_TotalView;
+             this._Game_TotalLike = _Game_TotalLike;
              this._Game_State = _Game_State;
              this._Game_StatePrice = _Game_StatePrice;
              this._Game_LastEdit = _Game_LastEdit;

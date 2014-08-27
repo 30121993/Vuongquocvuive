@@ -18,5 +18,13 @@ namespace BLL
         {
             return _game.LoadGameHot();
         }
+        public DataTable GetGameByID(int id)
+        {
+            return _game.GetGameByID(id);
+        }
+        public Boolean viewup(int id)
+        {
+            return _game.viewup(id);
+        }
     }
 }

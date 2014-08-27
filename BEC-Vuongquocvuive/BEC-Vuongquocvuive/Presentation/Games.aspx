@@ -80,7 +80,7 @@
         </div></header>
     <section id="center">
 		<div class="cat-game">
-        	<ul><li class="cat-game-item active"><a href="?mod=ListGames">Game Hot</a></li><li class="cat-game-item"><a href="?mod=ListGames&id=...">Game Mới</a></li></ul>
+        	<ul><li class="cat-game-item active"><a href="?mod=ListGames">Game Hot</a></li><li class="cat-game-item"><a href="?mod=ListGames&str=New">Game Mới</a></li></ul>
         </div>
         <asp:PlaceHolder ID="plhListGame" runat="server">
             
