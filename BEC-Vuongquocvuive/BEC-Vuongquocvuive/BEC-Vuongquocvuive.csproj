@@ -647,6 +647,23 @@
     <Content Include="Presentation\data\audio\vit xam 7.mp3" />
     <Content Include="Presentation\data\audio\vit xam 8.mp3" />
     <Content Include="Presentation\data\audio\vit xam 9.mp3" />
+    <Content Include="Presentation\data\games\path\Boom offline - Boom online - Chơi game Boom - Gamedangianviet.com.swf" />
+    <Content Include="Presentation\data\games\path\boom.swf" />
+    <Content Include="Presentation\data\games\path\Caro.swf" />
+    <Content Include="Presentation\data\games\path\Chơi game Cuộc hành trình của Penny – Game y8 miễn phí.swf" />
+    <Content Include="Presentation\data\games\path\Chơi game Cờ Vua - Gamedangianviet.com.swf" />
+    <Content Include="Presentation\data\games\path\Chơi game dẫn nước tưới hoa - Gamedangianviet.com.swf" />
+    <Content Include="Presentation\data\games\path\Chơi game Pikachu phiêu lưu - Gamedangianviet.com.swf" />
+    <Content Include="Presentation\data\games\path\Chơi game Sudoku - Gamedangianviet.com.swf" />
+    <Content Include="Presentation\data\games\path\Chơi game Trở lên to lớn – Game y8 miễn phí.swf" />
+    <Content Include="Presentation\data\games\path\Cờ caro - Game Flash - Chơi Game Flash online - Trò chơi trực tuyến với game flash.swf" />
+    <Content Include="Presentation\data\games\path\Game Angry Birds - Tro choi Angry Birds online - TrochoiViet.com.swf" />
+    <Content Include="Presentation\data\games\path\Game Bom It 3 - Chơi Game Boom it 3, trò chơi được nhiều người thích!.swf" />
+    <Content Include="Presentation\data\games\path\Game Chém Hoa Quả - Chơi game Chém Hoa Quả miễn phí.swf" />
+    <Content Include="Presentation\data\games\path\Game Cuộc chiến xuyên thế kỷ cực kỳ gay cấn, kích thích. Nhào zô và trải nghiệm !!!!.swf" />
+    <Content Include="Presentation\data\games\path\Game Cô bé đưa thư - Tro choi Cô bé đưa thư online - TrochoiViet.com.swf" />
+    <Content Include="Presentation\data\games\path\Game Đào vàng - Tro choi Đào vàng online - TrochoiViet.com.swf" />
+    <Content Include="Presentation\data\games\path\Game Đập chuột chũi - Tro choi Đập chuột chũi online - TrochoiViet.com.swf" />
     <Content Include="Presentation\data\images\bia edison.jpg" />
     <Content Include="Presentation\data\images\bia lua doi lot su tu.jpg" />
     <Content Include="Presentation\data\images\bia vit xam.jpg" />
@@ -891,7 +908,6 @@
     <Content Include="Presentation\data\audio\trang6.mp3" />
     <Content Include="Presentation\data\audio\trang7.mp3" />
     <Content Include="Presentation\data\audio\trang8.mp3" />
-    <Content Include="Presentation\data\games\Caro.swf" />
     <Content Include="Presentation\StoryUC.aspx" />
     <Content Include="Presentation\UCModules\Changer_info_User.ascx" />
     <Content Include="Presentation\UCModules\GameDetail.ascx" />
@@ -1036,6 +1052,7 @@
     <Folder Include="ADMIN\assets\bootstrap-toggle-buttons\examples\" />
     <Folder Include="ADMIN\assets\fullcalendar\demos\" />
     <Folder Include="Presentation\construction-page\js\" />
+    <Folder Include="Presentation\data\games\Catalog\" />
     <Folder Include="Presentation\test\" />
   </ItemGroup>
   <ItemGroup>

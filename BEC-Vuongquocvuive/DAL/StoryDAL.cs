@@ -37,5 +37,11 @@ namespace DAL
             listparam.Add(new SqlParameter("Story_ID", id));
             return cls.capnhatdulieu("UpdateView", listparam);
         }
+        public DataTable GetStoryUserView(int ID)
+        {
+            listparam.Clear();
+            listparam.Add(new SqlParameter("User_ID", ID));
+            return cls.truyvansqlcothamso("User_ReadStory", listparam);
+        }
     }
 }

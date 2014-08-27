@@ -30,5 +30,9 @@ namespace BLL
         {
             return _story.viewup(id);
         }
+        public DataTable GetStoryUserView(int ID)
+        {
+            return _story.GetStoryUserView(ID);
+        }
     }
 }
