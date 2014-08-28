@@ -598,6 +598,7 @@
     <Content Include="Presentation\Blog.aspx" />
     <Content Include="Presentation\Change_Info_User.aspx" />
     <Content Include="Presentation\construction-page\construction.html" />
+    <Content Include="Presentation\construction-page\Contruction.aspx" />
     <Content Include="Presentation\construction-page\css\style.css" />
     <Content Include="Presentation\construction-page\images\comeback.png" />
     <Content Include="Presentation\construction-page\images\credits.txt" />
@@ -940,6 +941,13 @@
     </Compile>
     <Compile Include="Presentation\Change_Info_User.aspx.designer.cs">
       <DependentUpon>Change_Info_User.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\construction-page\Contruction.aspx.cs">
+      <DependentUpon>Contruction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\construction-page\Contruction.aspx.designer.cs">
+      <DependentUpon>Contruction.aspx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\DangKi.aspx.cs">
       <DependentUpon>DangKi.aspx</DependentUpon>

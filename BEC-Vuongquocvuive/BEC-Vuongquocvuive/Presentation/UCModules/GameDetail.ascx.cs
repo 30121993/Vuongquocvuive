@@ -23,7 +23,9 @@ namespace BEC_Vuongquocvuive.Presentation.UCModules
                 rptPath.DataBind();
                 rptGameInfo2.DataBind();
             }
-            else { }
+            else {
+                //Response.Redirect("~/construction-page/Contruction.aspx");
+            }
         }
     }
 }
