@@ -18,5 +18,9 @@ namespace BLL
         {
             return _Catalog.GetAllCatalogChild(Catalog_ID);
         }
+        public DataTable GetCatalogDetail(int Catalog_ID)
+        {
+            return _Catalog.GetCatalogDetail(Catalog_ID);
+        }
     }
 }

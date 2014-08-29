@@ -10,33 +10,24 @@
 namespace BEC_Vuongquocvuive.Presentation.UCModules {
     
     
-    public partial class ListStory {
+    public partial class Breadcrumb {
         
         /// <summary>
-        /// Breadcrumb1 control.
+        /// rptParent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::BEC_Vuongquocvuive.Presentation.UCModules.Breadcrumb Breadcrumb1;
+        protected global::System.Web.UI.WebControls.Repeater rptParent;
         
         /// <summary>
-        /// Catalog_Name control.
+        /// rptChild control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater Catalog_Name;
-        
-        /// <summary>
-        /// rptListStory control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptListStory;
+        protected global::System.Web.UI.WebControls.Repeater rptChild;
     }
 }

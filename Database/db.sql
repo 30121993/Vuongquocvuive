@@ -1008,3 +1008,18 @@ AS
 BEGIN
 	select * from Catalog where Catalog_ID= @Catalog_ID
 END
+/*-------------Tony 29/08---------------------*/
+USE [BEC]
+GO
+/****** Object:  StoredProcedure [dbo].[Catalog_GetDetail]    Script Date: 08/29/2014 23:55:50 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER PROCEDURE [dbo].[Catalog_GetDetail]
+@Catalog_ID int
+AS
+BEGIN
+	select * from Catalog where Catalog_ID= @Catalog_ID
+END

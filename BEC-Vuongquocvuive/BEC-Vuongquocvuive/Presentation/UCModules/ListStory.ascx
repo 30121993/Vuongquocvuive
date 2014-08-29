@@ -1,7 +1,13 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ListStory.ascx.cs" Inherits="BEC_Vuongquocvuive.Presentation.UCModules.ListStory" %>
-<div class="breadcrumb">
-    <a title="Trang chủ" href="#"><i class="fa fa-home"></i></a>» <a href="#">Truyện</a>»<a href="#">Danh muc truyen cap 1</a>» <span>Danh muc truyen cap 1</span> </div>
-			<h3 class="title-page">Truyện Cổ tích</h3>	
+<%@ Register src="~/Presentation/UCModules/Breadcrumb.ascx" tagname="Breadcrumb" tagprefix="uc1" %>
+<uc1:Breadcrumb ID="Breadcrumb1" runat="server" />
+
+	
+            <asp:Repeater ID="Catalog_Name" runat="server">
+                <ItemTemplate>
+                        <h3 class="title-page"><%# Eval("Catalog_Name")%></h3>
+                </ItemTemplate>
+            </asp:Repeater>
             <ul class="list-story">
                 <asp:Repeater ID="rptListStory" runat="server">
                     <ItemTemplate>

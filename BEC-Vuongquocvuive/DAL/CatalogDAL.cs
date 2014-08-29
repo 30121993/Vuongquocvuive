@@ -21,5 +21,11 @@ namespace DAL
             listparam.Add(new SqlParameter("Catalog_ID",Catalog_ID));
             return cls.truyvansqlcothamso("Catalog_SelectAll_Child", listparam);
         }
+        public DataTable GetCatalogDetail(int Catalog_ID)
+        {
+            listparam.Clear();
+            listparam.Add(new SqlParameter("Catalog_ID", Catalog_ID));
+            return cls.truyvansqlcothamso("Catalog_GetDetail", listparam);
+        }
     }
 }

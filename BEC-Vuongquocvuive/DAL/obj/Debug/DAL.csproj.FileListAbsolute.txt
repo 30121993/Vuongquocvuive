@@ -5,3 +5,10 @@ E:\DuAn\Source\BEC-Vuongquocvuive\DAL\bin\Debug\DTO.pdb
 E:\DuAn\Source\BEC-Vuongquocvuive\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 E:\DuAn\Source\BEC-Vuongquocvuive\DAL\obj\Debug\DAL.dll
 E:\DuAn\Source\BEC-Vuongquocvuive\DAL\obj\Debug\DAL.pdb
+D:\J\Vuongquocvuive\BEC-Vuongquocvuive\DAL\bin\Debug\DAL.dll
+D:\J\Vuongquocvuive\BEC-Vuongquocvuive\DAL\bin\Debug\DAL.pdb
+D:\J\Vuongquocvuive\BEC-Vuongquocvuive\DAL\bin\Debug\DTO.dll
+D:\J\Vuongquocvuive\BEC-Vuongquocvuive\DAL\bin\Debug\DTO.pdb
+D:\J\Vuongquocvuive\BEC-Vuongquocvuive\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+D:\J\Vuongquocvuive\BEC-Vuongquocvuive\DAL\obj\Debug\DAL.dll
+D:\J\Vuongquocvuive\BEC-Vuongquocvuive\DAL\obj\Debug\DAL.pdb

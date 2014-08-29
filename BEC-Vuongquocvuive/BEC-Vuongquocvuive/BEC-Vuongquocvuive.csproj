@@ -911,6 +911,7 @@
     <Content Include="Presentation\data\audio\trang7.mp3" />
     <Content Include="Presentation\data\audio\trang8.mp3" />
     <Content Include="Presentation\StoryUC.aspx" />
+    <Content Include="Presentation\UCModules\Breadcrumb.ascx" />
     <Content Include="Presentation\UCModules\Changer_info_User.ascx" />
     <Content Include="Presentation\UCModules\GameDetail.ascx" />
     <Content Include="Presentation\UCModules\ListGames.ascx" />
@@ -998,6 +999,13 @@
     </Compile>
     <Compile Include="Presentation\StoryUC.aspx.designer.cs">
       <DependentUpon>StoryUC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\UCModules\Breadcrumb.ascx.cs">
+      <DependentUpon>Breadcrumb.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\UCModules\Breadcrumb.ascx.designer.cs">
+      <DependentUpon>Breadcrumb.ascx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\UCModules\Changer_info_User.ascx.cs">
       <DependentUpon>Changer_info_User.ascx</DependentUpon>

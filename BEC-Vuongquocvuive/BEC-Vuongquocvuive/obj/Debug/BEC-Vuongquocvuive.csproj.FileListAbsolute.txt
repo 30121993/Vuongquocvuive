@@ -9,3 +9,14 @@ E:\DuAn\Source\BEC-Vuongquocvuive\BEC-Vuongquocvuive\bin\BLL.pdb
 E:\DuAn\Source\BEC-Vuongquocvuive\BEC-Vuongquocvuive\bin\DAL.pdb
 E:\DuAn\Source\BEC-Vuongquocvuive\BEC-Vuongquocvuive\bin\DTO.pdb
 E:\DuAn\Source\BEC-Vuongquocvuive\BEC-Vuongquocvuive\obj\Debug\BEC-Vuongquocvuive.csprojResolveAssemblyReference.cache
+D:\J\Vuongquocvuive\BEC-Vuongquocvuive\BEC-Vuongquocvuive\bin\BEC-Vuongquocvuive.dll
+D:\J\Vuongquocvuive\BEC-Vuongquocvuive\BEC-Vuongquocvuive\bin\BEC-Vuongquocvuive.pdb
+D:\J\Vuongquocvuive\BEC-Vuongquocvuive\BEC-Vuongquocvuive\bin\BLL.dll
+D:\J\Vuongquocvuive\BEC-Vuongquocvuive\BEC-Vuongquocvuive\bin\DAL.dll
+D:\J\Vuongquocvuive\BEC-Vuongquocvuive\BEC-Vuongquocvuive\bin\DTO.dll
+D:\J\Vuongquocvuive\BEC-Vuongquocvuive\BEC-Vuongquocvuive\bin\BLL.pdb
+D:\J\Vuongquocvuive\BEC-Vuongquocvuive\BEC-Vuongquocvuive\bin\DAL.pdb
+D:\J\Vuongquocvuive\BEC-Vuongquocvuive\BEC-Vuongquocvuive\bin\DTO.pdb
+D:\J\Vuongquocvuive\BEC-Vuongquocvuive\BEC-Vuongquocvuive\obj\Debug\BEC-Vuongquocvuive.csprojResolveAssemblyReference.cache
+D:\J\Vuongquocvuive\BEC-Vuongquocvuive\BEC-Vuongquocvuive\obj\Debug\BEC-Vuongquocvuive.dll
+D:\J\Vuongquocvuive\BEC-Vuongquocvuive\BEC-Vuongquocvuive\obj\Debug\BEC-Vuongquocvuive.pdb
