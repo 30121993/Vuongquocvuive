@@ -14,18 +14,28 @@ namespace BEC_Vuongquocvuive.Presentation.UCModules
         protected void Page_Load(object sender, EventArgs e)
         {
             int id;
-            id = int.Parse(Request.QueryString["id"].ToString());
-            if (id != null)
+            try
             {
-                _game.viewup(id);
-                rptGameInfo2.DataSource = rptPath.DataSource = rptGameInfo.DataSource = _game.GetGameByID(id);
-                rptGameInfo.DataBind();
-                rptPath.DataBind();
-                rptGameInfo2.DataBind();
+                id = int.Parse(Request.QueryString["id"].ToString());
+                if (id != null)
+                {
+                    _game.viewup(id);
+                    rptGameInfo2.DataSource = rptPath.DataSource = rptGameInfo.DataSource = _game.GetGameByID(id);
+                    rptGameInfo.DataBind();
+                    rptPath.DataBind();
+                    rptGameInfo2.DataBind();
+                }
+                else
+                {
+                    //Response.Redirect("~/construction-page/Contruction.aspx");
+                }
             }
-            else {
-                //Response.Redirect("~/construction-page/Contruction.aspx");
+            catch (Exception)
+            {
+
+                Response.Redirect("404/Error.aspx");
             }
+            
         }
     }
 }

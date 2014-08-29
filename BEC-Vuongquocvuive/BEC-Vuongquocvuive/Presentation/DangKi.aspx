@@ -135,7 +135,7 @@
                 </li>
 				<li>
                     <label>Giới tính: </label>
-                     <asp:DropDownList id="gender" runat="server" class="gender">
+                     <asp:DropDownList id="gender" runat="server" class="gender" style=" height: 30px;    width: 260px;>
                         <asp:ListItem>Nam</asp:ListItem>
                         <asp:ListItem>Nữ</asp:ListItem>
                      </asp:DropDownList>

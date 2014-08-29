@@ -593,6 +593,7 @@
     <Content Include="ADMIN\js\scripts.js" />
     <Content Include="Presentation\404\404.html" />
     <Content Include="Presentation\404\css\style.css" />
+    <Content Include="Presentation\404\Error.aspx" />
     <Content Include="Presentation\404\images\logo-pd-404.png" />
     <Content Include="Presentation\404\images\logo-pd.png" />
     <Content Include="Presentation\Blog.aspx" />
@@ -928,6 +929,13 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Presentation\404\Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\404\Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Blog.aspx.cs">
       <DependentUpon>Blog.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

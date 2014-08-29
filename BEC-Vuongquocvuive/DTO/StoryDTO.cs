@@ -22,7 +22,13 @@ namespace DTO
         private string _Story_Creater;
         private int _Story_Price;
         private int _Story_TotalView;
-        private string _Story_State;
+        private bool _Story_State;
+
+        public bool Story_State
+        {
+            get { return _Story_State; }
+            set { _Story_State = value; }
+        }
 
 
         public int Story_ID
@@ -70,17 +76,13 @@ namespace DTO
             get { return _Story_TotalView; }
             set { _Story_TotalView = value; }
         }
-        public string Story_State
-        {
-            get { return _Story_State; }
-            set { _Story_State = value; }
-        }
+        
         public string Story_SoundTrack
         {
             get { return _Story_SoundTrack; }
             set { _Story_SoundTrack = value; }
         }
-        public StoryDTO(int _Story_ID, int _Catalog_ID, string _Story_Name, string _Story_Catalog, string _Story_SoundTrack, string _Story_Status, DateTime _Story_TimeUp, string _Story_Creater, int _Story_Price, int _Story_TotalView, string _Story_State)
+        public StoryDTO(int _Story_ID, int _Catalog_ID, string _Story_Name, string _Story_Catalog, string _Story_SoundTrack, string _Story_Status, DateTime _Story_TimeUp, string _Story_Creater, int _Story_Price, int _Story_TotalView, bool  _Story_State)
         {
             this._Story_ID = _Story_ID;
             this._Catalog_ID = _Catalog_ID;
@@ -94,7 +96,7 @@ namespace DTO
             this._Story_TotalView = _Story_TotalView;
             this._Story_State = _Story_State;
         }
-        public StoryDTO( int _Catalog_ID, string _Story_Name, string _Story_Catalog,string _Story_SoundTrack, string _Story_Status, DateTime _Story_TimeUp, string _Story_Creater, int _Story_Price, int _Story_TotalView, string _Story_State)
+        public StoryDTO(int _Catalog_ID, string _Story_Name, string _Story_Catalog, string _Story_SoundTrack, string _Story_Status, DateTime _Story_TimeUp, string _Story_Creater, int _Story_Price, int _Story_TotalView, bool _Story_State)
         {
             this._Catalog_ID = _Catalog_ID;
             this._Story_Name = _Story_Name;
