@@ -59,7 +59,7 @@ namespace DTO
         private string _User_Email;
         private string _User_Phone;
         private string _User_Image;
-        private DateTime _User_RegisterTime;
+        private string _User_RegisterTime;
         private int _User_Gold;
         private int _User_Money;
         private string _User_Gift;
@@ -139,7 +139,7 @@ namespace DTO
             get { return _User_Image; }
             set { _User_Image = value; }
         }
-        public DateTime User_RegisterTime
+        public string User_RegisterTime
         {
             get { return _User_RegisterTime; }
             set { _User_RegisterTime = value; }
@@ -160,16 +160,16 @@ namespace DTO
             set { _User_Gift = value; }
         }
 
-        private DateTime _User_LastEdit;
+        private string _User_LastEdit;
 
-        public DateTime User_LastEdit
+        public string User_LastEdit
         {
             get { return _User_LastEdit; }
             set { _User_LastEdit = value; }
         }
-        private int _User_Status;
+        private bool _User_Status;
 
-        public int User_Status
+        public bool User_Status
         {
             get { return _User_Status; }
             set { _User_Status = value; }
@@ -183,7 +183,7 @@ namespace DTO
         }
 
 
-        public UserDTO(int _User_ID, int _User_TypeID, int _User_RankID, string _User_Name,string _User_Birthday, int _User_Gender, string _User_UserName, string _User_PassWord, string _User_Address,string _User_Xa,string _User_Phuong,string _User_ThanhPho,string _User_Truong,string _User_Lop, string _User_Email, string _User_Phone, string _User_Image, DateTime _User_RegisterTime, int _User_Gold, int _User_Money, string _User_Gift)
+        public UserDTO(int _User_ID, int _User_TypeID, int _User_RankID, string _User_Name, string _User_Birthday, int _User_Gender, string _User_UserName, string _User_PassWord, string _User_Address, string _User_Xa, string _User_Phuong, string _User_ThanhPho, string _User_Truong, string _User_Lop, string _User_Email, string _User_Phone, string _User_Image, string _User_RegisterTime, int _User_Gold, int _User_Money, string _User_Gift, string _User_Active, Boolean _User_Status, string _User_LastEdit)
         {
             this._User_ID = _User_ID;
             this._User_TypeID = _User_TypeID;
@@ -206,9 +206,12 @@ namespace DTO
             this._User_Gold = _User_Gold;
             this._User_Money = _User_Money;
             this._User_Gift = _User_Gift;
+            this._User_Active = _User_Active;
+            this._User_Status = _User_Status;
+            this._User_LastEdit = _User_LastEdit;
         }
-        public UserDTO(int _User_TypeID, int _User_RankID, string _User_Name, string _User_Birthday, int _User_Gender, string _User_UserName, string _User_PassWord, string _User_Address, string _User_Xa, string _User_Phuong, string _User_ThanhPho, string _User_Truong, string _User_Lop, string _User_Email, string _User_Phone, string _User_Image, DateTime _User_RegisterTime, int _User_Gold, int _User_Money, string _User_Gift)
-        {
+        public UserDTO(int _User_TypeID, int _User_RankID, string _User_Name, string _User_Birthday, int _User_Gender, string _User_UserName, string _User_PassWord, string _User_Address, string _User_Xa, string _User_Phuong, string _User_ThanhPho, string _User_Truong, string _User_Lop, string _User_Email, string _User_Phone, string _User_Image, string _User_RegisterTime, int _User_Gold, int _User_Money, string _User_Gift, string _User_Active, Boolean _User_Status, string _User_LastEdit)
+       {
             this._User_TypeID = _User_TypeID;
             this._User_RankID = _User_RankID;
             this._User_FullName = _User_Name;
@@ -229,6 +232,9 @@ namespace DTO
             this._User_Gold = _User_Gold;
             this._User_Money = _User_Money;
             this._User_Gift = _User_Gift;
+            this._User_Active = _User_Active;
+            this._User_Status = _User_Status;
+            this._User_LastEdit = _User_LastEdit;
         }
     }
 }

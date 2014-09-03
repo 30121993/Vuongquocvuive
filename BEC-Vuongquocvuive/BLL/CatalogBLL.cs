@@ -22,5 +22,13 @@ namespace BLL
         {
             return _Catalog.GetCatalogDetail(Catalog_ID);
         }
+        public Boolean DeleteCatalogbyID(int Catalog_ID)
+        {
+            return _Catalog.DeleteCatalogbyID(Catalog_ID);
+        }
+        public DataTable GetAllCatalogAndChild()
+        {
+            return _Catalog.GetAllCatalogAndChild();
+        }
     }
 }

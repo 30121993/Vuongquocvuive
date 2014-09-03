@@ -45,16 +45,16 @@ namespace BEC_Vuongquocvuive.ADMIN.UCModules
                 {
                     text += "<td class=\"hidden-phone\"><span class=\"label label-danger\">Khóa</span></td>";
                 }
-                text += "<td class=\"hidden-phone\"><a href=\"#\" class=\"btn mini purple\"><i class=\"icon-edit\"></i> Edit</a> <a href=\"#\" class=\"btn mini black\"><i class=\"icon-trash\"></i> Delete</a></td>";
+                text += "<td class=\"hidden-phone\"><a href=\"#\" class=\"btn mini purple\"><i class=\"icon-edit\"></i> Edit</a> <a href=\"StoryControl.aspx?mod=deletestory&id=" + dt.Rows[i]["Story_ID"] + "\" class=\"btn mini black\"><i class=\"icon-trash\"></i> Delete</a>";
                 if (Boolean.Parse(dt.Rows[i]["Story_State"].ToString()) == true)
                 {
-                    text += " <a href=\"#\" class=\"btn mini black\"><i class=\"icon-lock\"></i> Khóa</a></td>";
+                    text += " <a href=\"StoryControl.aspx?mod=lockstory&id="+dt.Rows[i]["Story_ID"]+"\" class=\"btn mini black\"><i class=\"icon-lock\"></i> Khóa</a></td>";
                 }
                 else
                 {
-                    text += " <a href=\"#\" class=\"btn mini black\"><i class=\"icon-unlock\"></i>Bỏ Khóa</a></td>";
+                    text += " <a href=\"StoryControl.aspx?mod=openstory&id=" + dt.Rows[i]["Story_ID"] + "\" class=\"btn mini black\"><i class=\"icon-unlock\"></i>Bỏ Khóa</a></td>";
                 }
-                text += "</tr>";
+                text += "</td></tr>";
             }
             tbodyStory.Text = text;
 

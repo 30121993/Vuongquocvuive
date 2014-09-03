@@ -43,6 +43,10 @@ namespace BEC_Vuongquocvuive.ADMIN
                 {
                     ct = Page.LoadControl("UCModules/UCStory.ascx");
                 }
+                else if (ac == "addnewstory")
+                {
+                    ct = Page.LoadControl("UCModules/UCAddNewStory.ascx");
+                }
             }
             else
             {

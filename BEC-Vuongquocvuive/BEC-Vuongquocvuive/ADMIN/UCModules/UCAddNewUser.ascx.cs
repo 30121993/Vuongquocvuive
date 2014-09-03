@@ -51,11 +51,11 @@ namespace BEC_Vuongquocvuive.ADMIN.UCModules
                 userdto.User_UserName = "hainv";//Request.Form["username"].ToString().Trim();
                 userdto.User_PassWord = "hainv";//Request.Form["password"].ToString().Trim();
                 userdto.User_Phone = "12312";//Request.Form["phone"].ToString().Trim();
-                userdto.User_RegisterTime = DateTime.Now.ToShortDateString();
+               // userdto.User_RegisterTime = DateTime.Now.ToShortDateString();
                 userdto.User_Gold = 1000;
                 userdto.User_Money = 0;
                 userdto.User_Status = true;//Boolean.Parse(Request.Form["status"].ToString());
-                userdto.User_LastEdit = DateTime.Now.ToShortDateString();
+               // userdto.User_LastEdit = DateTime.Now.ToShortDateString();
                 userbll.DangKi(userdto);
             //}
         }

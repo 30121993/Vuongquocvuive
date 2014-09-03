@@ -46,6 +46,7 @@
     <Compile Include="StoryBLL.cs" />
     <Compile Include="Story_PageBLL.cs" />
     <Compile Include="UserBLL.cs" />
+    <Compile Include="User_TypeBLL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">

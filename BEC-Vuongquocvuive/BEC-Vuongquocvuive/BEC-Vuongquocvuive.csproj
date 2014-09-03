@@ -48,8 +48,12 @@
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="UrlRewritingNet.UrlRewriter">
+      <HintPath>.\UrlRewritingNet.UrlRewriter.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ADMIN\Admin.aspx" />
     <Content Include="ADMIN\assets\bootstrap-colorpicker\css\colorpicker.css" />
     <Content Include="ADMIN\assets\bootstrap-colorpicker\img\alpha.png" />
     <Content Include="ADMIN\assets\bootstrap-colorpicker\img\hue.png" />
@@ -542,6 +546,8 @@
     <Content Include="ADMIN\assets\uniform\images\sprite.png" />
     <Content Include="ADMIN\assets\uniform\jquery.uniform.js" />
     <Content Include="ADMIN\assets\uniform\jquery.uniform.min.js" />
+    <Content Include="ADMIN\CategoryControl.aspx" />
+    <Content Include="ADMIN\Checklogin.aspx" />
     <Content Include="ADMIN\css\style.css" />
     <Content Include="ADMIN\css\style.min.css" />
     <Content Include="ADMIN\css\style_default.css" />
@@ -549,6 +555,7 @@
     <Content Include="ADMIN\css\style_navy-blue.css" />
     <Content Include="ADMIN\css\style_purple.css" />
     <Content Include="ADMIN\css\style_responsive.css" />
+    <Content Include="ADMIN\Default.aspx" />
     <Content Include="ADMIN\img\404.png" />
     <Content Include="ADMIN\img\500.png" />
     <Content Include="ADMIN\img\avatar-mini.png" />
@@ -591,6 +598,18 @@
     <Content Include="ADMIN\js\jquery.validate.min.js" />
     <Content Include="ADMIN\js\respond.js" />
     <Content Include="ADMIN\js\scripts.js" />
+    <Content Include="ADMIN\Login.aspx" />
+    <Content Include="ADMIN\StoryControl.aspx" />
+    <Content Include="ADMIN\UCModules\UCAddNewStory.ascx" />
+    <Content Include="ADMIN\UCModules\UCAddNewUser.ascx" />
+    <Content Include="ADMIN\UCModules\UCCategory.ascx" />
+    <Content Include="ADMIN\UCModules\UCDefault.ascx" />
+    <Content Include="ADMIN\UCModules\UCLeftMenu.ascx" />
+    <Content Include="ADMIN\UCModules\UCStory.ascx" />
+    <Content Include="ADMIN\UCModules\UCUsers.ascx" />
+    <Content Include="ADMIN\UserControl.aspx" />
+    <Content Include="count_visit.txt" />
+    <Content Include="Global.asax" />
     <Content Include="Presentation\404\404.html" />
     <Content Include="Presentation\404\css\style.css" />
     <Content Include="Presentation\404\Error.aspx" />
@@ -930,6 +949,107 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ADMIN\Admin.aspx.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\Admin.aspx.designer.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\CategoryControl.aspx.cs">
+      <DependentUpon>CategoryControl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\CategoryControl.aspx.designer.cs">
+      <DependentUpon>CategoryControl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\Checklogin.aspx.cs">
+      <DependentUpon>Checklogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\Checklogin.aspx.designer.cs">
+      <DependentUpon>Checklogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\StoryControl.aspx.cs">
+      <DependentUpon>StoryControl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\StoryControl.aspx.designer.cs">
+      <DependentUpon>StoryControl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\UCModules\UCAddNewStory.ascx.cs">
+      <DependentUpon>UCAddNewStory.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\UCModules\UCAddNewStory.ascx.designer.cs">
+      <DependentUpon>UCAddNewStory.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\UCModules\UCAddNewUser.ascx.cs">
+      <DependentUpon>UCAddNewUser.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\UCModules\UCAddNewUser.ascx.designer.cs">
+      <DependentUpon>UCAddNewUser.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\UCModules\UCCategory.ascx.cs">
+      <DependentUpon>UCCategory.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\UCModules\UCCategory.ascx.designer.cs">
+      <DependentUpon>UCCategory.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\UCModules\UCDefault.ascx.cs">
+      <DependentUpon>UCDefault.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\UCModules\UCDefault.ascx.designer.cs">
+      <DependentUpon>UCDefault.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\UCModules\UCLeftMenu.ascx.cs">
+      <DependentUpon>UCLeftMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\UCModules\UCLeftMenu.ascx.designer.cs">
+      <DependentUpon>UCLeftMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\UCModules\UCStory.ascx.cs">
+      <DependentUpon>UCStory.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\UCModules\UCStory.ascx.designer.cs">
+      <DependentUpon>UCStory.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\UCModules\UCUsers.ascx.cs">
+      <DependentUpon>UCUsers.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\UCModules\UCUsers.ascx.designer.cs">
+      <DependentUpon>UCUsers.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\UserControl.aspx.cs">
+      <DependentUpon>UserControl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\UserControl.aspx.designer.cs">
+      <DependentUpon>UserControl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\404\Error.aspx.cs">
       <DependentUpon>Error.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1077,7 +1197,6 @@
     <Folder Include="ADMIN\assets\fullcalendar\demos\" />
     <Folder Include="Presentation\construction-page\js\" />
     <Folder Include="Presentation\data\games\Catalog\" />
-    <Folder Include="Presentation\test\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ADMIN\assets\bootstrap-colorpicker\less\colorpicker.less" />

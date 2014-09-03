@@ -135,9 +135,9 @@
                 </li>
 				<li>
                     <label>Giới tính: </label>
-                     <asp:DropDownList id="gender" runat="server" class="gender" style=" height: 30px;    width: 260px;>
-                        <asp:ListItem>Nam</asp:ListItem>
-                        <asp:ListItem>Nữ</asp:ListItem>
+                     <asp:DropDownList id="ddlgender" runat="server" class="gender" style=" height: 30px;width: 260px;">
+                        <asp:ListItem Value="1" Text="Nam"></asp:ListItem>
+                        <asp:ListItem Value="2" Text="Nữ"></asp:ListItem>
                      </asp:DropDownList>
                 </li>
                 <li>
@@ -154,6 +154,9 @@
                         Text="Đăng Kí" onclick="btndangki_Click"/>
                     <asp:Button class="btn btn-reset" ID="btnreset" runat="server" Text="Reset" 
                         OnClientClick="this.form.reset();return false;" />
+                </li>
+                <li>
+                    <asp:Label ID="ThongBao" runat="server"></asp:Label>
                 </li>
               </ul>
              </div>

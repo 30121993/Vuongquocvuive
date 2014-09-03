@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using DAL;
 using System.Data;
-
+using DTO;
 namespace BLL
 {
     public class StoryBLL
@@ -33,6 +33,18 @@ namespace BLL
         public DataTable GetStoryUserView(int ID)
         {
             return _story.GetStoryUserView(ID);
+        }
+        public DataTable StoryGetAll()
+        {
+            return _story.StoryGetAll();
+        }
+        public Boolean DeleteStory(int ID)
+        {
+            return _story.DeleteStory(ID);
+        }
+        public int InsertStory(StoryDTO obj)
+        {
+            return _story.InsertStory(obj);
         }
     }
 }

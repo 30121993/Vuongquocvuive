@@ -1,10 +1,9 @@
-E:\DuAn\Source\BEC-Vuongquocvuive\DTO\bin\Debug\DTO.dll
-E:\DuAn\Source\BEC-Vuongquocvuive\DTO\bin\Debug\DTO.pdb
-E:\DuAn\Source\BEC-Vuongquocvuive\DTO\obj\Debug\DTO.dll
-E:\DuAn\Source\BEC-Vuongquocvuive\DTO\obj\Debug\DTO.pdb
-E:\DuAn\Source\BEC-Vuongquocvuive\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
 D:\J\Vuongquocvuive\BEC-Vuongquocvuive\DTO\bin\Debug\DTO.dll
 D:\J\Vuongquocvuive\BEC-Vuongquocvuive\DTO\bin\Debug\DTO.pdb
 D:\J\Vuongquocvuive\BEC-Vuongquocvuive\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
 D:\J\Vuongquocvuive\BEC-Vuongquocvuive\DTO\obj\Debug\DTO.dll
 D:\J\Vuongquocvuive\BEC-Vuongquocvuive\DTO\obj\Debug\DTO.pdb
+E:\DuAn\Source\BEC-Vuongquocvuive\DTO\bin\Debug\DTO.dll
+E:\DuAn\Source\BEC-Vuongquocvuive\DTO\bin\Debug\DTO.pdb
+E:\DuAn\Source\BEC-Vuongquocvuive\DTO\obj\Debug\DTO.dll
+E:\DuAn\Source\BEC-Vuongquocvuive\DTO\obj\Debug\DTO.pdb

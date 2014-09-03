@@ -19,7 +19,7 @@ namespace DTO
         
         private string _Story_Status;
         private DateTime _Story_TimeUp;
-        private string _Story_Creater;
+        private int _Story_Creater;
         private int _Story_Price;
         private int _Story_TotalView;
         private bool _Story_State;
@@ -30,7 +30,20 @@ namespace DTO
             set { _Story_State = value; }
         }
 
+        private int _Story_StatePrice;
 
+        public int Story_StatePrice
+        {
+            get { return _Story_StatePrice; }
+            set { _Story_StatePrice = value; }
+        }
+        private string _Story_LastEdit;
+
+        public string Story_LastEdit
+        {
+            get { return _Story_LastEdit; }
+            set { _Story_LastEdit = value; }
+        }
         public int Story_ID
         {
             get { return _Story_ID; }
@@ -61,7 +74,7 @@ namespace DTO
             get { return _Story_TimeUp; }
             set { _Story_TimeUp = value; }
         }
-        public string Story_Creater
+        public int Story_Creater
         {
             get { return _Story_Creater; }
             set { _Story_Creater = value; }
@@ -82,7 +95,7 @@ namespace DTO
             get { return _Story_SoundTrack; }
             set { _Story_SoundTrack = value; }
         }
-        public StoryDTO(int _Story_ID, int _Catalog_ID, string _Story_Name, string _Story_Catalog, string _Story_SoundTrack, string _Story_Status, DateTime _Story_TimeUp, string _Story_Creater, int _Story_Price, int _Story_TotalView, bool  _Story_State)
+        public StoryDTO(int _Story_ID, int _Catalog_ID, string _Story_Name, string _Story_Catalog, string _Story_SoundTrack, string _Story_Status, DateTime _Story_TimeUp, int _Story_Creater, int _Story_Price, int _Story_TotalView, bool  _Story_State)
         {
             this._Story_ID = _Story_ID;
             this._Catalog_ID = _Catalog_ID;
@@ -96,7 +109,7 @@ namespace DTO
             this._Story_TotalView = _Story_TotalView;
             this._Story_State = _Story_State;
         }
-        public StoryDTO(int _Catalog_ID, string _Story_Name, string _Story_Catalog, string _Story_SoundTrack, string _Story_Status, DateTime _Story_TimeUp, string _Story_Creater, int _Story_Price, int _Story_TotalView, bool _Story_State)
+        public StoryDTO(int _Catalog_ID, string _Story_Name, string _Story_Catalog, string _Story_SoundTrack, string _Story_Status, DateTime _Story_TimeUp, int _Story_Creater, int _Story_Price, int _Story_TotalView, bool _Story_State)
         {
             this._Catalog_ID = _Catalog_ID;
             this._Story_Name = _Story_Name;

@@ -54,7 +54,7 @@
               <div class="control-group">
                 <label class="control-label">Đường Dẫn</label>
                 <div class="controls">
-                  <input class="span6 " type="text" placeholder="Disabled input here..." disabled/="" />
+                  <input class="span6 " type="text" placeholder="Disabled input here..." disabled="" />
                   <span class="help-inline">Some hint here</span></div>
               </div>
               <div class="control-group">

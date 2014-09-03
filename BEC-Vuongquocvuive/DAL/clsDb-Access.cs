@@ -5,6 +5,7 @@ using System.Text;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Web;
 namespace DAL
 {
     public class clsDbaccess
@@ -14,7 +15,7 @@ namespace DAL
         public SqlCommand cmd = new SqlCommand();
         public DataSet ds = new DataSet();
         SqlDataAdapter da = new SqlDataAdapter();
-        
+        Boolean kt;
 
         //---------------------------------------------------------------
         public void connect()
@@ -69,6 +70,25 @@ namespace DAL
             disconnect();
             return dt;
         }
+        //---------------------------------------------------------------
+        public Boolean capnhatdulieuSqltext(string cmdtext)
+        {
+            connect();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = cmdtext;
+            try
+            {
+                cmd.ExecuteNonQuery();
+                kt = true;
+            }
+            catch
+            {
+                kt = false;
+            }
+            disconnect();
+            return kt;
+        }
+        //---------------------------------------------------------------
         public Boolean capnhatdulieu(string cmdText, List<SqlParameter> listparam)
         {
             Boolean kt;
@@ -89,6 +109,30 @@ namespace DAL
             disconnect();
             return kt;
         }
+        //---------------------------------------------------------------
+        public int CapnhatdulieureturnID(string cmdText, List<SqlParameter> listparam)
+        {
+            connect();
+            int id = 0;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = cmdText;
+            for (int i = 0; i < listparam.Count; i++)
+                cmd.Parameters.Add(listparam[i]);
+            try
+            {
+                SqlParameter pID = new SqlParameter("ID",DbType.Int32);
+                pID.Direction = ParameterDirection.Output;
+                cmd.ExecuteScalar();
+                id = Convert.ToInt32(cmd.Parameters["ID"].Value.ToString());
+            }
+            catch
+            {
+                
+            }
+            disconnect();
+            return id;
+        }
+        //---------------------------------------------------------------
         public void testcapnhatdulieu(string cmdText, List<SqlParameter> listparam)
         {
             Boolean kt;
@@ -101,5 +145,7 @@ namespace DAL
             cmd.ExecuteNonQuery();
 
         }
+        //----------------------------------------------------------------------------
+       
     }
 }

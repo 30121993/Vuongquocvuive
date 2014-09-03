@@ -14,6 +14,7 @@
         <link href="./assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
         <link href="./assets/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
         <link href="./assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+        <link href="./assets/bootstrap/css/bootstrap-fileupload.css" rel="stylesheet" />
         <link href="./css/style.min.css" rel="stylesheet" />
         <link href="./css/style_responsive.css" rel="stylesheet" />
         <link href="./css/style_default.css" rel="stylesheet" id="style_color" />
@@ -93,11 +94,22 @@
         <div class="span pull-right"><span class="go-top"><i class="icon-arrow-up"></i></span></div>
     </div>
     <script src="./js/jquery-1.8.3.min.js"></script>
+    <script>
+        $(document).ready(function (e) {
+            $('.add-more-file').click(function (e) {
+                var target = $(this).parent('.controls');
+                target.children('.fileupload:first-child').clone().appendTo(target);
+                target.children('.fileupload:last-child').removeClass('fileupload-exists').addClass('fileupload-new');
+                target.children('.fileupload:last-child').find('.uneditable-input').text(" ");
+            });
+        });
+    </script>
     <script src="./assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="./js/jquery.blockui.js"></script>
     <!--[if lt IE 9]><script src="./js/excanvas.js"></script><script src="./js/respond.js"></script><![endif]-->
     <script type="text/javascript" src="./assets/uniform/jquery.uniform.min.js"></script>
     <script type="text/javascript" src="./assets/data-tables/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="./assets/bootstrap/js/bootstrap-fileupload.js"></script>
     <script type="text/javascript" src="./assets/data-tables/DT_bootstrap.js"></script>
     <script src="./js/scripts.js"></script>
     <script>        jQuery(document).ready(function () { App.init() });</script>

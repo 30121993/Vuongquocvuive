@@ -48,6 +48,7 @@
     <Compile Include="StoryDAL.cs" />
     <Compile Include="Story_PageDAL.cs" />
     <Compile Include="UserDAL.cs" />
+    <Compile Include="User_TypeDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DTO\DTO.csproj">

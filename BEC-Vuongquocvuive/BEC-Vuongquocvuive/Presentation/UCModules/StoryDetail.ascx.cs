@@ -14,18 +14,27 @@ namespace BEC_Vuongquocvuive.Presentation.UCModules
         Story_PageBLL _story_page = new Story_PageBLL();
         protected void Page_Load(object sender, EventArgs e)
         {
-            int Story_ID;
-            Story_ID = int.Parse(Request.QueryString["id"].ToString());
-            if (Story_ID != null)
+            try
             {
-                _story.viewup(Story_ID);
-                rpReadStory.DataSource = _story_page.ReadStory(Story_ID);
-                rpReadStory.DataBind();
-                rptSoundTrack.DataSource = rptBia.DataSource = _story.GetStoryByID(Story_ID);
-                rptBia.DataBind();
-                rptSoundTrack.DataBind();
+                int Story_ID;
+                Story_ID = int.Parse(Request.QueryString["id"].ToString());
+                if (Story_ID != null)
+                {
+                    _story.viewup(Story_ID);
+                    rpReadStory.DataSource = _story_page.ReadStory(Story_ID);
+                    rpReadStory.DataBind();
+                    rptSoundTrack.DataSource = rptBia.DataSource = _story.GetStoryByID(Story_ID);
+                    rptBia.DataBind();
+                    rptSoundTrack.DataBind();
+                }
+                else { }
             }
-            else { }
+            catch (Exception)
+            {
+
+                Response.Redirect("404/Error.aspx");
+            }
+            
 
            // SoundTrack.DataBind();
         }
