@@ -26,9 +26,9 @@ namespace BEC_Vuongquocvuive.Presentation
                 gender=1;
             else gender=2;
             UserDTO obj = new UserDTO(3,1,txtHoten.Text,ngaysinh.ToString(),gender,txtUserName.Text,txtPassword.Text,txtAddress.Text,txtHuyen.Text,txtPhuong.Text,txtThanhPho.Text,txtTruong.Text,txtLop.Text,txtEmail.Text,txtphone.Text,"",curdate,1000,0,"","",true,curdate);
-            //User.DangKi(obj);
+            User.DangKi(obj);
             //Response.Write(txtHoten.Text);
-            ThongBao.Text = "Đăng Kí Thành Công!!";
+            ThongBao.Text = "Đăng Kí Thành Công!!!";
         }
 
         

@@ -73,7 +73,7 @@
 				<li>
                     <label>Giới tính: </label>
                      <asp:DropDownList ID="ddlgender" runat="server" class="gender" >
-                        <asp:ListItem Value="1" Text="Nam" Selected></asp:ListItem>
+                        <asp:ListItem Value="1" Text="Nam"></asp:ListItem>
                         <asp:ListItem Value="2" Text="Nữ"></asp:ListItem>
                      </asp:DropDownList>
                 </li>
@@ -89,6 +89,7 @@
                 <li>
                     <asp:Button class="btn btn-register" ID="btnchange" runat="server" 
                         Text="Thay Đổi"/>
+                        
                     <asp:Button class="btn btn-reset" ID="btnreset" runat="server" Text="Reset" 
                         OnClientClick="this.form.reset();return false;" />
                 </li>

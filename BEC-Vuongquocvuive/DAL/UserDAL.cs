@@ -44,7 +44,7 @@ namespace DAL
             listparam.Add(new SqlParameter("User_RegisterTime", DateTime.Now.ToString()));
             listparam.Add(new SqlParameter("User_Gold", 1000));
             listparam.Add(new SqlParameter("User_Money", 0));
-            listparam.Add(new SqlParameter("User_Gift", 0));
+            listparam.Add(new SqlParameter("User_Gift", ""));
             listparam.Add(new SqlParameter("User_Status,", obj.User_Status));
             listparam.Add(new SqlParameter("User_Active", obj.User_Active));
             listparam.Add(new SqlParameter("User_LastEdit", DateTime.Now.ToString()));
