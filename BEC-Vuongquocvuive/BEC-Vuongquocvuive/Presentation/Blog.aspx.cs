@@ -12,18 +12,22 @@ namespace BEC_Vuongquocvuive
     public partial class Blog : System.Web.UI.Page
     {
         UserBLL user = new UserBLL();
-        StoryBLL story = new StoryBLL();
+        StoryBLL _story = new StoryBLL();
         public int User_ID;
+        GameBLL _gamer = new GameBLL();
         protected void Page_Load(object sender, EventArgs e)
         {
             Control MH;
-            
+            try
+            {
                 if (Session["User_ID"] != null)
                 {
                     User_ID = int.Parse(Session["User_ID"].ToString());
 
-                    rptReadStory.DataSource = story.GetStoryUserView(User_ID);
+                    rptReadStory.DataSource = _story.GetStoryUserView(User_ID);
                     rptReadStory.DataBind();
+                    rptplayGames.DataSource = _gamer.GetGameUserView(User_ID);
+                    rptplayGames.DataBind();
 
                     DataTable user_info = user.getUserbyID(User_ID);
                     txtEmail.Text = user_info.Rows[0]["User_Email"].ToString();
@@ -35,6 +39,7 @@ namespace BEC_Vuongquocvuive
                     txtSovang.Text = user_info.Rows[0]["User_Gold"].ToString();
                     txtSoxu.Text = user_info.Rows[0]["User_Money"].ToString();
                     txtRank.Text = user_info.Rows[0]["User_RankName"].ToString();
+                   
                 }
                 else
                 {
@@ -44,20 +49,27 @@ namespace BEC_Vuongquocvuive
                     txtSoxu.Text = "0";
                     txtRank.Text = "";
                 }
-            
 
-           string mod="";
-           if (Request.QueryString["mod"] != null)
-           {
-               mod = Request.QueryString["mod"].ToString();
-               MH = Page.LoadControl("UCModules/" + mod + ".ascx");
-               plhBlog.Controls.Add(MH);
-           }
-           else
-           {
-               MH = Page.LoadControl("UCModules/ListStatus.ascx");
-               plhBlog.Controls.Add(MH);
-           }
+
+                string mod = "";
+                if (Request.QueryString["mod"] != null)
+                {
+                    mod = Request.QueryString["mod"].ToString();
+                    MH = Page.LoadControl("UCModules/" + mod + ".ascx");
+                    plhBlog.Controls.Add(MH);
+                }
+                else
+                {
+                    MH = Page.LoadControl("UCModules/ListStatus.ascx");
+                    plhBlog.Controls.Add(MH);
+                }
+            }
+            catch (Exception)
+            {
+
+                Response.Redirect("../404/Error.aspx");
+            }
+                
 
         }
         

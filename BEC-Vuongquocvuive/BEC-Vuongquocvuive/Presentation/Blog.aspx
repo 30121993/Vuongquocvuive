@@ -533,15 +533,24 @@
             <p class="prev-slider"></p>
             <p class="next-slider"></p>
             <ul class="list-story">
-              <li class="story-item">
-                <div class="wrapper-item">
-                  <div class="col-book"></div>
-                  <div class="story-info">
-                    <h3> Tiêu đề Game </h3>
-                    <p class="total-view">Lượt chơi:<em>1122</em></p>
-                  </div>
-                </div>
-              </li>
+<%--            --------------------------------------------------------------%>
+             <asp:Repeater ID="rptplayGames" runat="server">
+                <ItemTemplate>
+                  <li class="story-item">
+                    <div class="wrapper-item">
+                      <img alt="" src="data/images/<%# Eval("Game_Catalog")%>" title="Anh bia" />
+                      <div class="col-book"></div>
+                         <a href="Games.aspx?mod=GameDetail&id=<%# Eval("Game_ID")%>">
+                              <div class="story-info">
+                                <h3> <%# Eval("Game_Status") %></h3>
+                                <p class="total-view">Lượt chơi:<em><%# Eval("Game_TotalView")%></em></p>
+                              </div>
+                        </a>
+                    </div>
+                  </li>
+              </ItemTemplate>
+              </asp:Repeater>
+<%--            --------------------------------------------------------------%>
               <!--End story item-->
               <li class="story-item">
                 <div class="wrapper-item">

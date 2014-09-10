@@ -44,9 +44,11 @@
     <Compile Include="CatalogDAL.cs" />
     <Compile Include="clsDb-Access.cs" />
     <Compile Include="GameDAL.cs" />
+    <Compile Include="Game_PlayerDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StoryDAL.cs" />
     <Compile Include="Story_PageDAL.cs" />
+    <Compile Include="Story_ViewDAL.cs" />
     <Compile Include="UserDAL.cs" />
     <Compile Include="User_TypeDAL.cs" />
   </ItemGroup>

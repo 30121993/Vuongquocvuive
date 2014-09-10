@@ -32,5 +32,11 @@ namespace DAL
             listparam.Add(new SqlParameter("ID", id));
             return cls.capnhatdulieu("UpdateViewGame", listparam);
         }
+        public DataTable GetGameUserView(int ID)
+        {
+            listparam.Clear();
+            listparam.Add(new SqlParameter("User_ID", ID));
+            return cls.truyvansqlcothamso("gamer_view", listparam);
+        }
     }
 }

@@ -76,7 +76,7 @@
                 </li>
                 <li>
                     <label>Tên Tài Khoản*: </label>
-                    <asp:TextBox ID="txtUserName" class="tb-register" runat="server" Width="250px"></asp:TextBox> 
+                    <asp:TextBox ID="txtUserName" class="tb-register" runat="server" Width="250px" ></asp:TextBox> 
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
                 ControlToValidate="txtUserName" ErrorMessage="Thông tin yêu cầu!" ForeColor="Red"></asp:RequiredFieldValidator>
                 </li>
@@ -112,21 +112,7 @@
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
                 ControlToValidate="txtAddress" ErrorMessage="Thông tin yêu cầu!" ForeColor="Red"></asp:RequiredFieldValidator>
                 </li>
-                <li>
-                    <label>Phường/Xã: </label>
-                    <asp:TextBox ID="txtPhuong" class="tb-register" runat="server" Width="250px"></asp:TextBox> 
-                    
-                </li>
-                <li>
-                    <label>Quận/Huyện: </label>
-                    <asp:TextBox ID="txtHuyen" class="tb-register" runat="server" Width="250px"></asp:TextBox> 
-                    
-                </li>
-                <li>
-                    <label>Tỉnh/Thành phố: </label>
-                    <asp:TextBox ID="txtThanhPho" class="tb-register" runat="server" Width="250px"></asp:TextBox> 
-                    
-                </li>
+                
                 <li>
                     <label>Ngày sinh*: </label>       
                     <asp:TextBox ID="txtNgaysinh" class="tb-register" runat="server" Width="250px"></asp:TextBox>
@@ -140,15 +126,7 @@
                         <asp:ListItem Value="2" Text="Nữ"></asp:ListItem>
                      </asp:DropDownList>
                 </li>
-                <li>
-                    <label>Trường: </label>
-                    <asp:TextBox ID="txtTruong" class="tb-register" runat="server" Width="250px"></asp:TextBox> 
-                </li>
-                 <li>
-                    <label>Lớp: </label>
-                    <asp:TextBox ID="txtLop" class="tb-register" runat="server" Width="250px"></asp:TextBox> 
-                   
-                 </li>
+                
                 <li>
                     <asp:Button class="btn btn-register" ID="btndangki" runat="server" 
                         Text="Đăng Kí" onclick="btndangki_Click"/>

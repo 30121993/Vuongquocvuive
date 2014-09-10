@@ -31,7 +31,7 @@
                     </ItemTemplate>
                 </asp:Repeater>
             <ul class="game-opt">
-            	<li><i class="fa fa-thumbs-o-up"></i> Thích</li>
+            	<li><i class="fa fa-thumbs-o-up"></i>Thích</li>
                 <li><i class="fa fa-share-alt-square"></i> Chia sẻ</li>
                 <li><i class="fa fa-cloud-download"></i>Tải về</li>
             </ul>

@@ -6,22 +6,22 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using BLL;
 using System.Data;
+using DTO;
 
 namespace BEC_Vuongquocvuive.Presentation.UCModules
 {
     public partial class Changer_info_User : System.Web.UI.UserControl
     {
-        UserBLL user = new UserBLL();
+        UserBLL _user = new UserBLL();
         public int User_ID;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
+           
                 int gender = 0;
                 if (Session["User_ID"] != null)
                 {
                     User_ID = int.Parse(Session["User_ID"].ToString());
-                    DataTable user_info = user.getUserbyID(User_ID);
+                    DataTable user_info = _user.getUserbyID(User_ID);
                     txtAddress.Text = user_info.Rows[0]["User_Address"].ToString();
                     txtEmail.Text = user_info.Rows[0]["User_Email"].ToString();
                     txtHoten.Text = user_info.Rows[0]["User_FullName"].ToString();
@@ -46,13 +46,47 @@ namespace BEC_Vuongquocvuive.Presentation.UCModules
                         ddlgender.Items.FindByValue("2").Selected = true;
 
                     }
+                    //if ()
+                    //{
+                    //    txtTruong.Text = txtThanhPho.Text = txtPhuong.Text = txtLop.Text = txtHuyen.Text = txtUserName.Text = txtAddress.Text = txtEmail.Text = txtHoten.Text = txtNgaysinh.Text = txtPassword.Text = txtphone.Text = txtRePassword.Text = "";
+                    //}
                 }
                 else
-                { }
+                {
+                    Response.Write("<script language='javascript'> alert('Bạn chưa đăng nhập,vui lòng đăng nhập để xem thông tin tài khoản!');location.href='Blog.aspx';</script>");
+                }
             }
-            
-        }
+        protected void btnchange_Click(object sender, EventArgs e)
+        {
+            int gt;
+            UserDTO obj = new UserDTO();
+            if (ddlgender.Items.FindByValue("1").Selected == true)
+            {
+                gt = 1;
+            }
+            else
+                gt = 2;
+            if (Session["User_ID"] != null)
+            {
+                User_ID = int.Parse(Session["User_ID"].ToString());
+                obj.User_ID = User_ID;
+                obj.User_FullName = txtHoten.Text.Trim();
+                obj.User_Birthday = txtNgaysinh.Text.Trim();
+                obj.User_Gender = gt;
+                obj.User_PassWord = txtPassword.Text.Trim();
+                obj.User_Address = txtAddress.Text.Trim();
+                obj.User_Xa = txtHuyen.Text.Trim();
+                obj.User_Phuong = txtPhuong.Text.Trim();
+                obj.User_ThanhPho = txtThanhPho.Text.Trim();
+                obj.User_Truong = txtTruong.Text.Trim();
+                obj.User_Lop = txtLop.Text.Trim();
+                obj.User_Email = txtEmail.Text.Trim();
+                obj.User_Phone = txtphone.Text.Trim();
+                _user.UpdateInfo(obj);
 
-        
+                txtThongBao.Text = "Thay Đổi Thông Tin Thành Công!!!";
+
+            }
+        }
     }
 }

@@ -44,6 +44,22 @@ namespace BLL
             }
             return sbHash.ToString();
         }
+        public bool UpdateGold(int ID)
+        {
+            return _User.UpdateGold(ID);
+        }
+        public DataTable kiemtraUser_name(string user_name)
+        {
+            return _User.kiemtraUser_name(user_name);
+        }
+        public bool UpdateLast_Login(int ID)
+        {
+            return _User.UpdateLast_Login(ID);
+        }
+        public bool UpdateInfo(UserDTO obj)
+        {
+            return _User.UpdateInfo(obj);
+        }
     }
 
 

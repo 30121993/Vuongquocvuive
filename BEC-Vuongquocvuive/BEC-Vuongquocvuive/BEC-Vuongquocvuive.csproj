@@ -616,7 +616,6 @@
     <Content Include="Presentation\404\images\logo-pd-404.png" />
     <Content Include="Presentation\404\images\logo-pd.png" />
     <Content Include="Presentation\Blog.aspx" />
-    <Content Include="Presentation\Change_Info_User.aspx" />
     <Content Include="Presentation\construction-page\construction.html" />
     <Content Include="Presentation\construction-page\Contruction.aspx" />
     <Content Include="Presentation\construction-page\css\style.css" />
@@ -1063,13 +1062,6 @@
     </Compile>
     <Compile Include="Presentation\Blog.aspx.designer.cs">
       <DependentUpon>Blog.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation\Change_Info_User.aspx.cs">
-      <DependentUpon>Change_Info_User.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Presentation\Change_Info_User.aspx.designer.cs">
-      <DependentUpon>Change_Info_User.aspx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\construction-page\Contruction.aspx.cs">
       <DependentUpon>Contruction.aspx</DependentUpon>

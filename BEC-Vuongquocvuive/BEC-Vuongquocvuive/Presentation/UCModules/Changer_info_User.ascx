@@ -13,7 +13,7 @@
                 </li>
                 <li>
                     <label>Tên Tài Khoản*: </label>
-                    <asp:TextBox ID="txtUserName" class="tb-register" runat="server" Width="250px"></asp:TextBox> 
+                    <asp:TextBox ID="txtUserName" class="tb-register" runat="server" Width="250px" Enabled="false"></asp:TextBox> 
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
                 ControlToValidate="txtUserName" ErrorMessage="Thông tin yêu cầu!" ForeColor="Red"></asp:RequiredFieldValidator>
                 </li>
@@ -88,10 +88,13 @@
                  </li>
                 <li>
                     <asp:Button class="btn btn-register" ID="btnchange" runat="server" 
-                        Text="Thay Đổi"/>
+                        Text="Thay Đổi" onclick="btnchange_Click"/>
                         
                     <asp:Button class="btn btn-reset" ID="btnreset" runat="server" Text="Reset" 
                         OnClientClick="this.form.reset();return false;" />
+                </li>
+                <li>
+                    <asp:label ID="txtThongBao" text="" runat="server" />
                 </li>
               </ul>
              </div>

@@ -19,43 +19,11 @@ namespace DTO
         private string _User_UserName;
         private string _User_PassWord;
         private string _User_Address;
-
-        private string _User_Xa;
-
-        public string User_Xa
-        {
-            get { return _User_Xa; }
-            set { _User_Xa = value; }
-        }
         private string _User_Phuong;
-
-        public string User_Phuong
-        {
-            get { return _User_Phuong; }
-            set { _User_Phuong = value; }
-        }
+        private string _User_Xa;
         private string _User_ThanhPho;
-
-        public string User_ThanhPho
-        {
-            get { return _User_ThanhPho; }
-            set { _User_ThanhPho = value; }
-        }
         private string _User_Truong;
-
-        public string User_Truong
-        {
-            get { return _User_Truong; }
-            set { _User_Truong = value; }
-        }
         private string _User_Lop;
-
-        public string User_Lop
-        {
-            get { return _User_Lop; }
-            set { _User_Lop = value; }
-        }
-
         private string _User_Email;
         private string _User_Phone;
         private string _User_Image;
@@ -65,6 +33,48 @@ namespace DTO
         private string _User_Gift;
         private string _User_RankName;
         private string _User_NameType;
+        private string _User_LastLogin;
+
+        public string User_LastLogin
+        {
+            get { return _User_LastLogin; }
+            set { _User_LastLogin = value; }
+        }
+
+        public string User_Xa
+        {
+            get { return _User_Xa; }
+            set { _User_Xa = value; }
+        }
+
+        public string User_Phuong
+        {
+            get { return _User_Phuong; }
+            set { _User_Phuong = value; }
+        }
+       
+
+        public string User_ThanhPho
+        {
+            get { return _User_ThanhPho; }
+            set { _User_ThanhPho = value; }
+        }
+       
+
+        public string User_Truong
+        {
+            get { return _User_Truong; }
+            set { _User_Truong = value; }
+        }
+       
+
+        public string User_Lop
+        {
+            get { return _User_Lop; }
+            set { _User_Lop = value; }
+        }
+
+        
 
         public string User_NameType
         {

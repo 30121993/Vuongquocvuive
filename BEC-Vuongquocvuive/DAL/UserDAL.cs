@@ -25,12 +25,23 @@ namespace DAL
         public Boolean DangKi(UserDTO obj)
         {
             listparam.Clear();
-            listparam.Add(new SqlParameter("User_TypeID",3));
-            listparam.Add(new SqlParameter("User_RankID", 1));
             listparam.Add(new SqlParameter("User_FullName", obj.User_FullName));
             listparam.Add(new SqlParameter("User_Birthday", obj.User_Birthday));
             listparam.Add(new SqlParameter("User_Gender", obj.User_Gender));
             listparam.Add(new SqlParameter("User_UserName", obj.User_UserName));
+            listparam.Add(new SqlParameter("User_PassWord", obj.User_PassWord));
+            listparam.Add(new SqlParameter("User_Address", obj.User_Address));        
+            listparam.Add(new SqlParameter("User_Email", obj.User_Email));
+            listparam.Add(new SqlParameter("User_Phone", obj.User_Phone));
+            return cls.capnhatdulieu("Users_Insert1", listparam);
+        }
+        public bool UpdateInfo(UserDTO obj)
+        {
+            listparam.Clear();
+            listparam.Add(new SqlParameter("User_ID", obj.User_ID));
+            listparam.Add(new SqlParameter("User_FullName", obj.User_FullName));
+            listparam.Add(new SqlParameter("User_Birthday", obj.User_Birthday));
+            listparam.Add(new SqlParameter("User_Gender", obj.User_Gender));
             listparam.Add(new SqlParameter("User_PassWord", obj.User_PassWord));
             listparam.Add(new SqlParameter("User_Address", obj.User_Address));
             listparam.Add(new SqlParameter("User_Xa", obj.User_Xa));
@@ -40,15 +51,7 @@ namespace DAL
             listparam.Add(new SqlParameter("User_Lop", obj.User_Lop));
             listparam.Add(new SqlParameter("User_Email", obj.User_Email));
             listparam.Add(new SqlParameter("User_Phone", obj.User_Phone));
-            listparam.Add(new SqlParameter("User_Image", obj.User_Image));
-            listparam.Add(new SqlParameter("User_RegisterTime", DateTime.Now.ToString()));
-            listparam.Add(new SqlParameter("User_Gold", 1000));
-            listparam.Add(new SqlParameter("User_Money", 0));
-            listparam.Add(new SqlParameter("User_Gift", ""));
-            listparam.Add(new SqlParameter("User_Status,", obj.User_Status));
-            listparam.Add(new SqlParameter("User_Active", obj.User_Active));
-            listparam.Add(new SqlParameter("User_LastEdit", DateTime.Now.ToString()));
-            return cls.capnhatdulieu("Users_Insert", listparam);
+            return cls.capnhatdulieu("Users_UpdateInfo", listparam);
         }
 
         public DataTable getUserbyID(int User_ID)
@@ -56,6 +59,24 @@ namespace DAL
             listparam.Clear();
             listparam.Add(new SqlParameter("User_ID", User_ID));
             return cls.truyvansqlcothamso("Users_SelectByID", listparam);
+        }
+        public bool UpdateGold(int ID)
+        {
+            listparam.Clear();
+            listparam.Add(new SqlParameter("User_ID", ID));
+            return cls.capnhatdulieu("Users_UpdateGold", listparam);
+        }
+        public DataTable kiemtraUser_name(string user_name)
+        {
+            listparam.Clear();
+            listparam.Add(new SqlParameter("User_UserName", user_name));
+            return cls.truyvansqlcothamso("Users_KiemtraUser_Name", listparam);
+        }
+        public bool UpdateLast_Login(int ID)
+        {
+            listparam.Clear();
+            listparam.Add(new SqlParameter("User_ID", ID));
+            return cls.capnhatdulieu("Users_UpdateLastLogin", listparam);
         }
         
     }

@@ -26,5 +26,9 @@ namespace BLL
         {
             return _game.viewup(id);
         }
+        public DataTable GetGameUserView(int ID)
+        {
+            return _game.GetGameUserView(ID);
+        }
     }
 }
