@@ -14,17 +14,27 @@ namespace BEC_Vuongquocvuive.Presentation
             Control MH;
             try
             {
-                string mod;
-                if (Request.QueryString["mod"] != null)
+                if (Session["User_ID"] != null)
                 {
+                    lblTennguoidung.Text = " " + Session["User_FullName"];
 
-                    mod = Request.QueryString["mod"].ToString();
-                    MH = Page.LoadControl("UCModules/" + mod + ".ascx");
-                    plhStoryUC.Controls.Add(MH);
+                    string mod;
+                    if (Request.QueryString["mod"] != null)
+                    {
+
+
+                        mod = Request.QueryString["mod"].ToString();
+                        MH = Page.LoadControl("UCModules/" + mod + ".ascx");
+                        plhStoryUC.Controls.Add(MH);
+                    }
+                    else
+                    {
+                        Response.Redirect("Story.aspx");
+                    }
                 }
                 else
                 {
-                    Response.Redirect("Story.aspx");
+                    Response.Write("<script language='javascript'> alert('Bạn chưa đăng nhập,vui lòng đăng nhập để xem thông tin truyện!');location.href='Story.aspx';</script>");
                 }
             }
             catch

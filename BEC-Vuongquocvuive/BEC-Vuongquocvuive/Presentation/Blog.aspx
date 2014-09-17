@@ -49,7 +49,7 @@
             });
             $('.btn-change-ava').click(function () {
                 $.ajax({ type: "GET",
-                    url: "change-ava.html",
+                    url: "change-ava.aspx",
                     dataType: 'html',
                     success: function (data) {
                         $('body').append(data);
@@ -65,6 +65,40 @@
                     }
                 });
             });
+
+
+            $('#A1').click(function () {
+                $.ajax({ type: "GET",
+                    url: "Logout.aspx",
+                    dataType: 'html',
+                    success: function (data) {
+                        $('body').append(data);
+                    }
+                });
+            });
+
+
+            $('#btn-logout').click(function () {
+                $.ajax({ type: "GET",
+                    url: "Login.aspx",
+                    dataType: 'html',
+                    success: function (data) {
+                        $('body').append(data);
+                    }
+                });
+            });
+
+
+
+            
+
+
+//-----------------------------------------------------------------------------------------------
+//$.ajax({ type: "GET",url: "Logout.aspx",dataType: 'html',success: function (data) {$('body').append(data);}});
+//------------------------------------------------------------------------------------------------- 
+
+
+
         });
 </script>
 </head>
@@ -83,12 +117,23 @@
             <input type="button" class="btn-search" value=" "/>
             </div>
         </div>
-        <div class="user-block-head">
+        <asp:PlaceHolder ID="plhChuadangnhap" runat="server">
+            <div class="user-block-head">
         	<ul>
         		<li><a href="Dangki.aspx"><i class="fa fa-pencil-square-o"></i> Đăng Kí</a></li>
             	<li><a id="btn-login" href="javascript:;"><i class="fa fa-unlock"></i> Đăng Nhập</a></li>
             </ul>
         </div>
+        </asp:PlaceHolder>
+        <asp:PlaceHolder ID="plhDadangnhap" runat="server">
+            <div class="user-block-head">
+        	<ul>
+        		<li><a href="#"><i class="fa fa-smile-o"></i><asp:Label ID="lblTennguoidung" runat="server" Text="Label"></asp:Label></a></li>
+            	<li><a id="A1" href="javascript:;"><i class="fa fa-unlock"></i> Đăng Xuất</a></li>
+            </ul>
+        </div>
+        </asp:PlaceHolder>
+        
         </div>
     </header>
     <section id="center">
@@ -179,7 +224,7 @@
                 <li class="coin">Số Xu: <asp:Label Text="" runat="server" ID="txtSoxu" style=" color:Red; font-weight:bold" ></asp:Label> </li>
                 <li>Khuyến mãi: <asp:Label Text="" runat="server" ID="txtKhuyenMai" style=" color:Red; font-weight:bold" ></asp:Label></li>
               </ul>
-              <a href="payment-history.html" class="btn btn-history-pay">Lịch sử giao dịch</a> <a href="javascript:;" id="ajax-refill" class="btn btn-refill">Nạp tiền</a> </div>
+              <a href="?mod=payment-history" class="btn btn-history-pay">Lịch sử giao dịch</a> <a href="javascript:;" id="ajax-refill" class="btn btn-refill">Nạp tiền</a> </div>
           </div>
           <div id="sun"><img alt="sun" src="images/sun.png"></div>
         </section>
@@ -660,3 +705,4 @@
     </form>
 </body>
 </html>
+

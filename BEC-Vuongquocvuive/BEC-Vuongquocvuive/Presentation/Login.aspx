@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Blog</title>
+    <title>Login</title>
  <script type="text/javascript">
         $(document).ready(function (e) {
             $w = ($(window).width()) / 2 - 200;
@@ -15,6 +15,8 @@
                 $('#block-login').remove();
             });
         });
+
+//       $('#btndangnhap').click(function () {$.ajax({ type: "GET",url: "Popup.aspx", dataType: 'html',success: function (data) { $('body').append(data);}});});
 </script>
 </head>
 <body>

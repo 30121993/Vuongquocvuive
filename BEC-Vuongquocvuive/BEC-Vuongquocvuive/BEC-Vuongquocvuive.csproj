@@ -32,6 +32,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CollectionPager, Version=0.0.0.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\CollectionPager.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -608,6 +612,7 @@
     <Content Include="ADMIN\UCModules\UCStory.ascx" />
     <Content Include="ADMIN\UCModules\UCUsers.ascx" />
     <Content Include="ADMIN\UserControl.aspx" />
+    <Content Include="CollectionPager.dll" />
     <Content Include="count_visit.txt" />
     <Content Include="Global.asax" />
     <Content Include="Presentation\404\404.html" />
@@ -616,6 +621,7 @@
     <Content Include="Presentation\404\images\logo-pd-404.png" />
     <Content Include="Presentation\404\images\logo-pd.png" />
     <Content Include="Presentation\Blog.aspx" />
+    <Content Include="Presentation\change-ava.aspx" />
     <Content Include="Presentation\construction-page\construction.html" />
     <Content Include="Presentation\construction-page\Contruction.aspx" />
     <Content Include="Presentation\construction-page\css\style.css" />
@@ -670,6 +676,7 @@
     <Content Include="Presentation\data\games\path\Boom offline - Boom online - Chơi game Boom - Gamedangianviet.com.swf" />
     <Content Include="Presentation\data\games\path\boom.swf" />
     <Content Include="Presentation\data\games\path\Caro.swf" />
+    <Content Include="Presentation\data\games\path\Chơi game AngryBirds - Thử tài thiện xạ.swf" />
     <Content Include="Presentation\data\games\path\Chơi game Cuộc hành trình của Penny – Game y8 miễn phí.swf" />
     <Content Include="Presentation\data\games\path\Chơi game Cờ Vua - Gamedangianviet.com.swf" />
     <Content Include="Presentation\data\games\path\Chơi game dẫn nước tưới hoa - Gamedangianviet.com.swf" />
@@ -918,6 +925,8 @@
     <Content Include="Presentation\js\wow_book\wow_book.css" />
     <Content Include="Presentation\js\wow_book\wow_book.min.js" />
     <Content Include="Presentation\Login.aspx" />
+    <Content Include="Presentation\Logout.aspx" />
+    <Content Include="Presentation\Popup.aspx" />
     <Content Include="Presentation\Story.aspx" />
     <Content Include="Presentation\data\audio\tieudetruyenedisonaptrungga.mp3" />
     <Content Include="Presentation\data\audio\trang1.mp3" />
@@ -937,9 +946,13 @@
     <Content Include="Presentation\UCModules\ListStory.ascx" />
     <Content Include="Presentation\UCModules\Menu.ascx" />
     <Content Include="Presentation\UCModules\Menu2.ascx" />
+    <Content Include="Presentation\UCModules\payment-history.ascx" />
     <Content Include="Presentation\UCModules\StoryDetail.ascx" />
     <Content Include="Presentation\UCModules\StoryLeftnav.ascx" />
-    <Content Include="Web.config" />
+    <Content Include="Presentation\Score.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -1063,6 +1076,13 @@
     <Compile Include="Presentation\Blog.aspx.designer.cs">
       <DependentUpon>Blog.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\change-ava.aspx.cs">
+      <DependentUpon>change-ava.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\change-ava.aspx.designer.cs">
+      <DependentUpon>change-ava.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\construction-page\Contruction.aspx.cs">
       <DependentUpon>Contruction.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1097,6 +1117,20 @@
     </Compile>
     <Compile Include="Presentation\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Popup.aspx.cs">
+      <DependentUpon>Popup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Popup.aspx.designer.cs">
+      <DependentUpon>Popup.aspx</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Story.aspx.cs">
       <DependentUpon>Story.aspx</DependentUpon>
@@ -1168,6 +1202,13 @@
     <Compile Include="Presentation\UCModules\Menu2.ascx.designer.cs">
       <DependentUpon>Menu2.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\UCModules\payment-history.ascx.cs">
+      <DependentUpon>payment-history.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\UCModules\payment-history.ascx.designer.cs">
+      <DependentUpon>payment-history.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\UCModules\StoryDetail.ascx.cs">
       <DependentUpon>StoryDetail.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1183,6 +1224,13 @@
       <DependentUpon>StoryLeftnav.ascx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Presentation\Score.aspx.cs">
+      <DependentUpon>Score.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Score.aspx.designer.cs">
+      <DependentUpon>Score.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ADMIN\assets\bootstrap-toggle-buttons\examples\" />

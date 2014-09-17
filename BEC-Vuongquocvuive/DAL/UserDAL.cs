@@ -66,6 +66,21 @@ namespace DAL
             listparam.Add(new SqlParameter("User_ID", ID));
             return cls.capnhatdulieu("Users_UpdateGold", listparam);
         }
+        public bool Subgold(int user_id, int Story_ID)
+        {
+            listparam.Clear();
+            listparam.Add(new SqlParameter("User_ID", user_id));
+            listparam.Add(new SqlParameter("Story_ID", Story_ID));
+            return cls.capnhatdulieu("Users_SubGold", listparam);
+        }
+        public bool Subgold1(int user_id, int Game_ID)
+        {
+            listparam.Clear();
+            listparam.Add(new SqlParameter("User_ID", user_id));
+            listparam.Add(new SqlParameter("Game_ID", Game_ID));
+            return cls.capnhatdulieu("Users_SubGoldGames", listparam);
+        }
+
         public DataTable kiemtraUser_name(string user_name)
         {
             listparam.Clear();

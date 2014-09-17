@@ -28,7 +28,29 @@
 <script type="text/javascript" src="js/audio.js"></script>
 <script type="text/javascript" src="js/audioplayer/mediaelement-and-player.min.js"></script>
 <script type="text/javascript" src="js/scripts.js"></script>
+<script type="text/javascript">
+    $(document).ready(function (e) {
+        $('#btn-login').click(function () {
+            $.ajax({ type: "GET",
+                url: "Login.aspx",
+                dataType: 'html',
+                success: function (data) {
+                    $('body').append(data);
+                }
+            });
+        });
 
+        $('#A1').click(function () {
+            $.ajax({ type: "GET",
+                url: "Logout.aspx",
+                dataType: 'html',
+                success: function (data) {
+                    $('body').append(data);
+                }
+            });
+        });
+        });
+</script>        
 </head>
 
 <body id="story-detail">
@@ -46,12 +68,22 @@
             <input type="button" class="btn-search" value=" "/>
             </div>
         </div>
-        <div class="user-block-head">
+
+
+        <%--<div class="user-block-head">
         	<ul>
         		<li><a href="Blog.aspx"><i class="fa fa-smile-o"></i><asp:Label ID="txtUserName">Tên ngươi đăng nhập</asp:Label></a></li>
-            	<li><a href="javascript:;"><i class="fa fa-lock"></i> Đăng Nhập</a></li>
+            	<li><a href="javascript:;" id="btn-login"><i class="fa fa-lock"></i> Đăng Nhập</a></li>
+            </ul>
+        </div>--%>
+        <div class="user-block-head">
+        	<ul>
+        		<li><a href="#"><i class="fa fa-smile-o"></i><asp:Label ID="lblTennguoidung" runat="server" Text="Label"></asp:Label></a></li>
+            	<li><a id="A1" href="javascript:;"><i class="fa fa-unlock"></i> Đăng Xuất</a></li>
             </ul>
         </div>
+
+
         </div></header>
         <!--End header-->
         <section id="center">

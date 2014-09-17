@@ -27,6 +27,29 @@
     <script type="text/javascript" src="js/audio.js"></script>
     <script type="text/javascript" src="js/audioplayer/mediaelement-and-player.min.js"></script>
     <script type="text/javascript" src="js/scripts.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function (e) {
+            $('#btn-login').click(function () {
+                $.ajax({ type: "GET",
+                    url: "Login.aspx",
+                    dataType: 'html',
+                    success: function (data) {
+                        $('body').append(data);
+                    }
+                });
+            });
+
+            $('#A1').click(function () {
+                $.ajax({ type: "GET",
+                    url: "Logout.aspx",
+                    dataType: 'html',
+                    success: function (data) {
+                        $('body').append(data);
+                    }
+                });
+            });
+        });
+</script>  
 </head>
 <body id="story">
     <form id="form1" runat="server">
@@ -45,12 +68,34 @@
             <input type="button" class="btn-search" value=" "/>
             </div>
         </div>
-        <div class="user-block-head">
+
+        <asp:PlaceHolder ID="plhChuadangnhap" runat="server">
+            <div class="user-block-head">
+        	<ul>
+        		<li><a href="Dangki.aspx"><i class="fa fa-pencil-square-o"></i> Đăng Kí</a></li>
+            	<li><a id="btn-login" href="javascript:;"><i class="fa fa-unlock"></i> Đăng Nhập</a></li>
+            </ul>
+        </div>
+        </asp:PlaceHolder>
+
+        <%--<div class="user-block-head">
         	<ul>
         		<li><a href="DangKi.aspx"><i class="fa fa-pencil-square-o"></i> Đăng Kí</a></li>
             	<li><a id="btn-login" href="javascript:;"><i class="fa fa-unlock"></i> Đăng Nhập</a></li>
             </ul>
         </div>
+--%>
+        
+        <asp:PlaceHolder ID="plhDadangnhap" runat="server">
+            <div class="user-block-head">
+        	<ul>
+        		<li><a href="#"><i class="fa fa-smile-o"></i><asp:Label ID="lblTennguoidung" runat="server" Text="Label"></asp:Label></a></li>
+            	<li><a id="A1" href="javascript:;"><i class="fa fa-unlock"></i> Đăng Xuất</a></li>
+            </ul>
+        </div>
+        </asp:PlaceHolder>
+
+
         </div>
       </header>
       <!--End header-->
@@ -144,6 +189,7 @@
                                 <div class="story-info">
                   	                <h3> <%# Eval("Story_Name")%></h3>
                                     <p class="total-view">Lượt xem:<em><%# Eval("Story_TotalView")%></em></p>
+                                     <p class="total-view">Giá:<em><%# Eval("Story_Price")%> vàng</em></p>
                                 </div>
                             </a>
                          
@@ -153,47 +199,6 @@
               </asp:Repeater>
 
 
-
-			<li class="story-item">
-                <div class="wrapper-item">
-				<img title="Tieu de truyen" alt="ten truyen" src="data/images/bia edison.jpg"/>
-                  <div class="col-book"></div>
-                  <div class="story-info">
-                  	<h3>
-                    Tiêu đề truyện
-                    </h3>
-                    <p class="total-view">Lượt xem:<em>1122</em></p>
-                  </div>
-                </div>
-            </li>
-
-
-
-						<li class="story-item">
-                <div class="wrapper-item">
-				<img title="Tieu de truyen" alt="ten truyen" src="data/images/bia lua doi lot su tu.jpg"/>
-                  <div class="col-book"></div>
-                  <div class="story-info">
-                  	<h3>
-                    Tiêu đề truyện
-                    </h3>
-                    <p class="total-view">Lượt xem:<em>1122</em></p>
-                  </div>
-                </div>
-            </li>
-
-            	<li class="story-item">
-                <div class="wrapper-item">
-				<img title="Tieu de truyen" alt="ten truyen" src="data/images/bia edison.jpg"/>
-                  <div class="col-book"></div>
-                  <div class="story-info">
-                  	<h3>
-                    Tiêu đề truyện
-                    </h3>
-                    <p class="total-view">Lượt xem:<em>1122</em></p>
-                  </div>
-                </div>
-            </li>
 
             </ul>
           </section>
@@ -221,91 +226,7 @@
                 </ItemTemplate>
               </asp:Repeater>
 
-            <li class="story-item">
-                <div class="wrapper-item">
-				<img title="Tieu de truyen" alt="ten truyen" src="data/images/bia edison.jpg"/>
-                  <div class="col-book"></div>
-                  <div class="story-info">
-                  	<h3>
-                    Tiêu đề truyện
-                    </h3>
-                    <p class="total-view">Lượt xem:<em>1122</em></p>
-                  </div>
-                </div>
-            </li>
-						<li class="story-item">
-                <div class="wrapper-item">
-				<img title="Tieu de truyen" alt="ten truyen" src="data/images/bia edison.jpg"/>
-                  <div class="col-book"></div>
-                  <div class="story-info">
-                  	<h3>
-                    Tiêu đề truyện
-                    </h3>
-                    <p class="total-view">Lượt xem:<em>1122</em></p>
-                  </div>
-                </div>
-            </li>
-						<li class="story-item">
-                <div class="wrapper-item">
-				<img title="Tieu de truyen" alt="ten truyen" src="data/images/bia edison.jpg"/>
-                  <div class="col-book"></div>
-                  <div class="story-info">
-                  	<h3>
-                    Tiêu đề truyện
-                    </h3>
-                    <p class="total-view">Lượt xem:<em>1122</em></p>
-                  </div>
-                </div>
-            </li>
-						<li class="story-item">
-                <div class="wrapper-item">
-				<img title="Tieu de truyen" alt="ten truyen" src="data/images/bia edison.jpg"/>
-                  <div class="col-book"></div>
-                  <div class="story-info">
-                  	<h3>
-                    Tiêu đề truyện
-                    </h3>
-                    <p class="total-view">Lượt xem:<em>1122</em></p>
-                  </div>
-                </div>
-            </li>
-						<li class="story-item">
-                <div class="wrapper-item">
-				<img title="Tieu de truyen" alt="ten truyen" src="data/images/bia edison.jpg"/>
-                  <div class="col-book"></div>
-                  <div class="story-info">
-                  	<h3>
-                    Tiêu đề truyện
-                    </h3>
-                    <p class="total-view">Lượt xem:<em>1122</em></p>
-                  </div>
-                </div>
-            </li>
-						<li class="story-item">
-                <div class="wrapper-item">
-				<img title="Tieu de truyen" alt="ten truyen" src="data/images/bia edison.jpg"/>
-                  <div class="col-book"></div>
-                  <div class="story-info">
-                  	<h3>
-                    Tiêu đề truyện
-                    </h3>
-                    <p class="total-view">Lượt xem:<em>1122</em></p>
-                  </div>
-                </div>
-            </li>
-						<li class="story-item">
-                <div class="wrapper-item">
-				<img title="Tieu de truyen" alt="ten truyen" src="data/images/bia edison.jpg"/>
-                  <div class="col-book"></div>
-                  <div class="story-info">
-                  	<h3>
-                    Tiêu đề truyện
-                    </h3>
-                    <p class="total-view">Lượt xem:<em>1122</em></p>
-                  </div>
-                </div>
-            </li>
-
+           
             </ul>
           </section>
         </div>

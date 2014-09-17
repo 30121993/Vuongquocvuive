@@ -95,20 +95,20 @@
                 </li>
 				<li>
                     <label>Email*: </label>
-                    <asp:TextBox ID="txtEmail" class="tb-register" runat="server" Width="250px"></asp:TextBox> 
+                    <asp:TextBox ID="txtEmail" class="tb-register" runat="server" Width="250px" placehoder="Nhập Email vì sự an toàn tài khoản!"></asp:TextBox> 
                     <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
                 ControlToValidate="txtEmail" ErrorMessage="Địa chỉ email không chính xác!" ForeColor="Red" 
                 ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
                 </li>
                 <li>
                     <label>Số điện thoại: </label>
-                     <asp:TextBox ID="txtphone" class="tb-register" runat="server" Width="250px"></asp:TextBox> 
+                     <asp:TextBox ID="txtphone" class="tb-register" runat="server" Width="250px" placehoder="Nhập số điện thoại vì sự an toàn tài khoản!"></asp:TextBox> 
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
                 ControlToValidate="txtphone" ErrorMessage="Thông tin yêu cầu!" ForeColor="Red"></asp:RequiredFieldValidator>
                 </li>
 				<li>
-                    <label>Địa chỉ: </label>
-                    <asp:TextBox ID="txtAddress" class="tb-register" runat="server" Width="250px"></asp:TextBox> 
+                    <label>Tỉnh/Thành phố: </label>
+                    <asp:TextBox ID="txtAddress" class="tb-register" runat="server" Width="250px" ></asp:TextBox> 
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
                 ControlToValidate="txtAddress" ErrorMessage="Thông tin yêu cầu!" ForeColor="Red"></asp:RequiredFieldValidator>
                 </li>

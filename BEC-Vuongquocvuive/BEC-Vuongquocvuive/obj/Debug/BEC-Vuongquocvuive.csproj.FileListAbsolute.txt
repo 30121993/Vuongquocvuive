@@ -21,3 +21,4 @@ E:\DuAn\Source\BEC-Vuongquocvuive\BEC-Vuongquocvuive\obj\Debug\BEC-Vuongquocvuiv
 E:\DuAn\Source\BEC-Vuongquocvuive\BEC-Vuongquocvuive\obj\Debug\BEC-Vuongquocvuive.dll
 E:\DuAn\Source\BEC-Vuongquocvuive\BEC-Vuongquocvuive\obj\Debug\BEC-Vuongquocvuive.pdb
 E:\DuAn\Source\BEC-Vuongquocvuive\BEC-Vuongquocvuive\bin\UrlRewritingNet.UrlRewriter.dll
+E:\DuAn\Source\BEC-Vuongquocvuive\BEC-Vuongquocvuive\bin\CollectionPager.dll

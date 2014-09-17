@@ -25,6 +25,18 @@ namespace BEC_Vuongquocvuive.Presentation
             rptStoryNew.DataBind();
             rptListStoryReadMore.DataSource = story1.LoadStoryDocNhieu();
             rptListStoryReadMore.DataBind();
+            if (Session["User_ID"] != null)
+            {
+                plhDadangnhap.Visible = true;
+                plhChuadangnhap.Visible = false;
+                lblTennguoidung.Text = " " + Session["User_FullName"];
+            }
+            else
+            {
+                plhDadangnhap.Visible = false;
+                plhChuadangnhap.Visible = true;
+            }
+
             
         }
 

@@ -15,45 +15,67 @@ namespace BEC_Vuongquocvuive.Presentation.UCModules
         CatalogBLL _catalog = new CatalogBLL();
         Story_PageBLL _story_page = new Story_PageBLL();
         Story_ViewBLL _story_view = new Story_ViewBLL();
+        UserBLL _user = new UserBLL();
         protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+                loadData();
+            }
+           // SoundTrack.DataBind();
+        }
+        private void loadData()
         {
             try
             {
-                int Story_ID, user_id;
-                Story_ID = int.Parse(Request.QueryString["id"].ToString());
-                if (Story_ID != null)
+                if (Session["User_ID"] != null)
                 {
-                    _story.viewup(Story_ID);
-                    rpReadStory.DataSource = _story_page.ReadStory(Story_ID);
-                    rpReadStory.DataBind();
-                    rptSoundTrack.DataSource = rptBia.DataSource = _story.GetStoryByID(Story_ID);
-                    rptBia.DataBind();
-                    rptSoundTrack.DataBind();
-                    if (Session["User_ID"] != null)
+                    int Story_ID, user_id;
+                    user_id = int.Parse(Session["User_ID"].ToString());
+                    Story_ID = int.Parse(Request.QueryString["id"].ToString());
+                    if (Story_ID != null)
                     {
-                        Story_ViewDTO obj = new Story_ViewDTO();
-                        obj.Story_ID = Story_ID;
-                        user_id = int.Parse(Session["User_ID"].ToString());
-                        obj.User_ID = user_id;
-                        DataTable dt = new DataTable();
-                        dt = _story_view.Kiemtratrung(obj);
-                        if (dt.Rows.Count == 0)
+                        DataTable dt1 = _story.GetStoryByID(Story_ID);
+                        DataTable dt2 = _user.getUserbyID(user_id);
+                        int gold = int.Parse(dt2.Rows[0][18].ToString());
+                        int price = int.Parse(dt1.Rows[0][8].ToString());
+                        if (gold >= price)
                         {
-                            _story_view.Insert(obj);
+                            _story.viewup(Story_ID);
+                            _user.Subgold(user_id, Story_ID);
+                            rpReadStory.DataSource = _story_page.ReadStory(Story_ID);
+                            rpReadStory.DataBind();
+                            rptSoundTrack.DataSource = rptBia.DataSource = _story.GetStoryByID(Story_ID);
+                            rptBia.DataBind();
+                            rptSoundTrack.DataBind();
+
+
+                            Story_ViewDTO obj = new Story_ViewDTO();
+                            obj.Story_ID = Story_ID;
+                            obj.User_ID = user_id;
+                            DataTable dt = new DataTable();
+                            dt = _story_view.Kiemtratrung(obj);
+                            if (dt.Rows.Count == 0)
+                            {
+                                _story_view.Insert(obj);
+                            }
                         }
-                        else { }
+                        else
+                        {
+                            Response.Write("<script language='javascript'> alert('Bạn không đủ vàng để đọc truyện này!');location.href='Story.aspx';</script>");
+                        }
+                    }
+                    else
+                    {
+                        Response.Write("<script language='javascript'> alert('Bạn chưa đăng nhập,vui lòng đăng nhập để xem thông tin truyện!');location.href='Story.aspx';</script>");
                     }
                 }
-                else { }
             }
             catch (Exception)
             {
 
                 Response.Redirect("404/Error.aspx");
-            }
-            
-
-           // SoundTrack.DataBind();
+            } 
         }
     }
 }

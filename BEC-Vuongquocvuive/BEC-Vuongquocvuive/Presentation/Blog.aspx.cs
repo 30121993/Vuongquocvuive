@@ -22,6 +22,7 @@ namespace BEC_Vuongquocvuive
             {
                 if (Session["User_ID"] != null)
                 {
+                    
                     User_ID = int.Parse(Session["User_ID"].ToString());
 
                     rptReadStory.DataSource = _story.GetStoryUserView(User_ID);
@@ -39,7 +40,11 @@ namespace BEC_Vuongquocvuive
                     txtSovang.Text = user_info.Rows[0]["User_Gold"].ToString();
                     txtSoxu.Text = user_info.Rows[0]["User_Money"].ToString();
                     txtRank.Text = user_info.Rows[0]["User_RankName"].ToString();
-                   
+                   //------------------------------------
+                    
+                    plhDadangnhap.Visible = true;
+                    plhChuadangnhap.Visible = false;
+                    lblTennguoidung.Text = " " + Session["User_FullName"];
                 }
                 else
                 {
@@ -48,6 +53,9 @@ namespace BEC_Vuongquocvuive
                     txtSovang.Text = "0";
                     txtSoxu.Text = "0";
                     txtRank.Text = "";
+
+                    plhDadangnhap.Visible = false;
+                    plhChuadangnhap.Visible = true;
                 }
 
 

@@ -14,35 +14,50 @@ namespace BEC_Vuongquocvuive.Presentation.UCModules
     {
         GameBLL _game = new GameBLL();
         Game_PlayerBLL _game_player = new Game_PlayerBLL();
+        UserBLL _user = new UserBLL();
         protected void Page_Load(object sender, EventArgs e)
         {
             int id,user_id=0;
             try
             {
-                id = int.Parse(Request.QueryString["id"].ToString());
-                if (id != null)
-                {
-                    
-                    _game.viewup(id);
-                    rptGameInfo2.DataSource = rptPath.DataSource = rptGameInfo.DataSource = _game.GetGameByID(id);
-                    rptGameInfo.DataBind();
-                    rptPath.DataBind();
-                    rptGameInfo2.DataBind();
 
-                    if (Session["User_ID"] != null)
+                if (Session["User_ID"] != null)
+                {
+                    user_id = int.Parse(Session["User_ID"].ToString());
+                    id = int.Parse(Request.QueryString["id"].ToString());
+                    if (id != null)
                     {
-                        Game_PlayerDTO obj = new Game_PlayerDTO();
-                        obj.Game_ID = id;
-                        user_id = int.Parse(Session["User_ID"].ToString());
-                        obj.User_ID = user_id;
-                        DataTable dt = new DataTable();
-                        dt = _game_player.Kiemtratrung(obj);
-                        if (dt.Rows.Count == 0)
+                        DataTable dt1 = _game.GetGameByID(id);
+                        DataTable dt2 = _user.getUserbyID(user_id);
+                        int gold = int.Parse(dt2.Rows[0][18].ToString());
+                        int price = int.Parse(dt1.Rows[0][9].ToString());
+                        if (gold >= price)
                         {
-                            _game_player.Insert(obj);
+                            _game.viewup(id);
+                            _user.Subgold1(user_id, id);
+                            rptGameInfo2.DataSource = rptPath.DataSource = rptGameInfo.DataSource = _game.GetGameByID(id);
+                            rptGameInfo.DataBind();
+                            rptPath.DataBind();
+                            rptGameInfo2.DataBind();
+
+                            Game_PlayerDTO obj = new Game_PlayerDTO();
+                            obj.Game_ID = id;
+                            obj.User_ID = user_id;
+                            DataTable dt = new DataTable();
+                            dt = _game_player.Kiemtratrung(obj);
+                            if (dt.Rows.Count == 0)
+                            {
+                                _game_player.Insert(obj);
+                            }
+                            else { }
                         }
-                        else { }
+                        else {
+                            Response.Write("<script language='javascript'> alert('Bạn không đủ vàng để chơi trò chơi này!');location.href='Games.aspx';</script>");
+                        }
                     }
+                }
+                else {
+                    Response.Write("<script language='javascript'> alert('Bạn chưa đăng nhập,vui lòng đăng nhập để chơi Games!');location.href='Games.aspx';</script>");
                 }
             }
             catch (Exception)

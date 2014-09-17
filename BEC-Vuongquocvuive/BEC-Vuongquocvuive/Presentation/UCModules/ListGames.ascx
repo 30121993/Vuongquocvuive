@@ -18,6 +18,7 @@
                                 <%# Eval("Game_Name")%>
                                 </h3>
                                 <p class="total-view">Lượt chơi:<em><%# Eval("Game_TotalView")%></em></p>
+                                <p class="total-view">Giá:<em><%# Eval("Game_Price")%> vàng</em></p>
                               </div>
                           </a>
                         </div>
@@ -25,148 +26,19 @@
                   </ItemTemplate>
                </asp:Repeater>
               <!--------------------------------------------- -->
-               
-                              <li class="story-item">
-                <div class="wrapper-item">
-                  <div class="col-book"></div>
-                  <div class="story-info">
-                  	<h3>
-                    Tiêu đề game
-                    </h3>
-                    <p class="total-view">Lượt chơi:<em>1122</em></p>
-                  </div>
-                </div>
-              </li>                <li class="story-item">
-                <div class="wrapper-item">
-                  <div class="col-book"></div>
-                  <div class="story-info">
-                  	<h3>
-                    Tiêu đề game
-                    </h3>
-                    <p class="total-view">Lượt chơi:<em>1122</em></p>
-                  </div>
-                </div>
-              </li>                <li class="story-item">
-                <div class="wrapper-item">
-                  <div class="col-book"></div>
-                  <div class="story-info">
-                  	<h3>
-                    Tiêu đề game
-                    </h3>
-                    <p class="total-view">Lượt chơi:<em>1122</em></p>
-                  </div>
-                </div>
-              </li>
-                              <li class="story-item">
-                <div class="wrapper-item">
-                  <div class="col-book"></div>
-                  <div class="story-info">
-                  	<h3>
-                    Tiêu đề game
-                    </h3>
-                    <p class="total-view">Lượt chơi:<em>1122</em></p>
-                  </div>
-                </div>
-              </li>
-                              <li class="story-item">
-                <div class="wrapper-item">
-                  <div class="col-book"></div>
-                  <div class="story-info">
-                  	<h3>
-                    Tiêu đề game
-                    </h3>
-                    <p class="total-view">Lượt chơi:<em>1122</em></p>
-                  </div>
-                </div>
-              </li>
-                              <li class="story-item">
-                <div class="wrapper-item">
-                  <div class="col-book"></div>
-                  <div class="story-info">
-                  	<h3>
-                    Tiêu đề game
-                    </h3>
-                    <p class="total-view">Lượt chơi:<em>1122</em></p>
-                  </div>
-                </div>
-              </li>
-                              <li class="story-item">
-                <div class="wrapper-item">
-                  <div class="col-book"></div>
-                  <div class="story-info">
-                  	<h3>
-                    Tiêu đề game
-                    </h3>
-                    <p class="total-view">Lượt chơi:<em>1122</em></p>
-                  </div>
-                </div>
-              </li>
-                              <li class="story-item">
-                <div class="wrapper-item">
-                  <div class="col-book"></div>
-                  <div class="story-info">
-                  	<h3>
-                    Tiêu đề game
-                    </h3>
-                    <p class="total-view">Lượt chơi:<em>1122</em></p>
-                  </div>
-                </div>
-              </li>
-                              <li class="story-item">
-                <div class="wrapper-item">
-                  <div class="col-book"></div>
-                  <div class="story-info">
-                  	<h3>
-                    Tiêu đề Game
-                    </h3>
-                    <p class="total-view">Lượt chơi:<em>1122</em></p>
-                  </div>
-                </div>
-              </li>
-                                            <li class="story-item">
-                <div class="wrapper-item">
-                  <div class="col-book"></div>
-                  <div class="story-info">
-                  	<h3>
-                    Tiêu đề game
-                    </h3>
-                    <p class="total-view">Lượt chơi:<em>1122</em></p>
-                  </div>
-                </div>
-              </li>
-                              <li class="story-item">
-                <div class="wrapper-item">
-                  <div class="col-book"></div>
-                  <div class="story-info">
-                  	<h3>
-                    Tiêu đề game
-                    </h3>
-                    <p class="total-view">Lượt chơi:<em>1122</em></p>
-                  </div>
-                </div>
-              </li>
-                              <li class="story-item">
-                <div class="wrapper-item">
-                  <div class="col-book"></div>
-                  <div class="story-info">
-                  	<h3>
-                    Tiêu đề game
-                    </h3>
-                    <p class="total-view">Lượt chơi:<em>1122</em></p>
-                  </div>
-                </div>
-              </li>
-                              <li class="story-item">
-                <div class="wrapper-item">
-                  <div class="col-book"></div>
-                  <div class="story-info">
-                  	<h3>
-                    Tiêu đề Game
-                    </h3>
-                    <p class="total-view">Lượt chơi:<em>1122</em></p>
-                  </div>
-                </div>
-              </li>
+            </ul>
+            <ul class="pager">
+                <%--<li class="active"><a href="#">1</a> </li>
+                        <li><a href="#">2</a> </li>
+                        <li><a href="#">3</a> </li>--%>
+
+                         <asp:Repeater ID="rptPages" runat="server" onitemcommand="rptPages_ItemCommand1">
+                    <ItemTemplate>
+                        <li>
+                            <asp:LinkButton ID="btnPage" CommandName="Page" CommandArgument="<%# Container.DataItem %>" runat="server"><%# Container.DataItem %></asp:LinkButton>
+                        </li>
+                    </ItemTemplate>
+                 </asp:Repeater>
             </ul>
             </div>
     </section>

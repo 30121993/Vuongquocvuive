@@ -48,6 +48,15 @@ namespace BLL
         {
             return _User.UpdateGold(ID);
         }
+
+        public bool Subgold(int user_id, int Story_ID)
+        {
+            return _User.Subgold(user_id,Story_ID);
+        }
+        public bool Subgold1(int user_id, int Game_ID)
+        {
+            return _User.Subgold1(user_id, Game_ID); 
+        }
         public DataTable kiemtraUser_name(string user_name)
         {
             return _User.kiemtraUser_name(user_name);

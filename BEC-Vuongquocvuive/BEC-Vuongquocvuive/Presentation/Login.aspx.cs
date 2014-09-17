@@ -22,7 +22,12 @@ namespace BEC_Vuongquocvuive
                     txttaikhoan.Text = Request.Cookies["User_Name"].Value;
                     txtmatkhau.Attributes["value"] = Request.Cookies["Password"].Value;
                     cbluuMK.Checked = true;
-                   
+
+                }
+                else
+                {
+                    txttaikhoan.Text = txtmatkhau.Text = "";
+                    cbluuMK.Checked = false;
                 }
             }
         }
@@ -36,9 +41,10 @@ namespace BEC_Vuongquocvuive
                 trangthai = bool.Parse(user.Rows[0]["User_Status"].ToString());
                 if (trangthai==true)
                 {
+                    Response.Write("<script language='javascript'> alert('Đăng nhập thành công!');location.href='Blog.aspx';</script>");
+                    //Response.Write("<script language='javascript'>$.ajax({ type: "GET",url: "Logout.aspx",dataType: 'html',success: function (data) {$('body').append(data);}});</script>");
                     Session["User_ID"] = user.Rows[0]["User_ID"];
                     Session["User_FullName"] = user.Rows[0]["User_FullName"];
-                    Response.Write("<script language='javascript'> alert('Đăng nhập thành công!');location.href='Blog.aspx';</script>");
                     UpdateGold(user);
                     userbll.UpdateLast_Login(int.Parse(Session["User_ID"].ToString()));
                     
@@ -94,7 +100,8 @@ namespace BEC_Vuongquocvuive
             {
                 
                 userbll.UpdateGold(int.Parse(Session["User_ID"].ToString()));
-                 Response.Write("<script language='javascript'> alert('Bạn Được Cộng Thêm 1000 Vàng trong vòng 7 ngày từ ngày đăng kí!!!');</script>");
+                //Response.Redirect("Popup.aspx");
+                Response.Write("<script language='javascript'> alert('Bạn Được Cộng Thêm 1000 Vàng trong vòng 7 ngày từ ngày đăng kí!!!');</script>");
 
             }
             else { }
