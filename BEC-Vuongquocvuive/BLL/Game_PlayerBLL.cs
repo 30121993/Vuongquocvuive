@@ -19,5 +19,15 @@ namespace BLL
         {
             return _Game_Player.Kiemtratrung(obj);
         }
+
+        public Boolean CapnhatDiem(Game_PlayerDTO obj)
+        {
+            return _Game_Player.CapnhatDiem(obj);
+        }
+
+        public DataTable HighScore(int id_game)
+        {
+            return _Game_Player.HighScore(id_game);
+        }
     }
 }

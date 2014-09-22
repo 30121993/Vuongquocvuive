@@ -15,18 +15,34 @@ namespace BEC_Vuongquocvuive.Presentation.UCModules
         GameBLL _game = new GameBLL();
         Game_PlayerBLL _game_player = new Game_PlayerBLL();
         UserBLL _user = new UserBLL();
+        
         protected void Page_Load(object sender, EventArgs e)
         {
-            int id,user_id=0;
+            if (!IsPostBack)
+            {
+                loadData();
+            }
+            
+        }
+
+        private void loadData()
+        {
+            
+            int id, user_id = 0,id_game;
+            id = int.Parse(Request.QueryString["id"].ToString());
+            Session["ID_GAME"] = id;
+            id_game = int.Parse(Session["ID_GAME"].ToString());
             try
             {
 
                 if (Session["User_ID"] != null)
                 {
+                    //id = int.Parse(Request.QueryString["id"].ToString());
+                    
                     user_id = int.Parse(Session["User_ID"].ToString());
-                    id = int.Parse(Request.QueryString["id"].ToString());
-                    if (id != null)
+                    if (id_game != null)
                     {
+                        //Session["ID_GAME"] = id;
                         DataTable dt1 = _game.GetGameByID(id);
                         DataTable dt2 = _user.getUserbyID(user_id);
                         int gold = int.Parse(dt2.Rows[0][18].ToString());
@@ -39,7 +55,7 @@ namespace BEC_Vuongquocvuive.Presentation.UCModules
                             rptGameInfo.DataBind();
                             rptPath.DataBind();
                             rptGameInfo2.DataBind();
-
+                            
                             Game_PlayerDTO obj = new Game_PlayerDTO();
                             obj.Game_ID = id;
                             obj.User_ID = user_id;
@@ -51,21 +67,22 @@ namespace BEC_Vuongquocvuive.Presentation.UCModules
                             }
                             else { }
                         }
-                        else {
+                        else
+                        {
                             Response.Write("<script language='javascript'> alert('Bạn không đủ vàng để chơi trò chơi này!');location.href='Games.aspx';</script>");
                         }
                     }
                 }
-                else {
+                else
+                {
                     Response.Write("<script language='javascript'> alert('Bạn chưa đăng nhập,vui lòng đăng nhập để chơi Games!');location.href='Games.aspx';</script>");
                 }
             }
             catch (Exception)
             {
 
-               Response.Redirect("404/Error.aspx");
+                Response.Redirect("404/Error.aspx");
             }
-            
         }
     }
 }

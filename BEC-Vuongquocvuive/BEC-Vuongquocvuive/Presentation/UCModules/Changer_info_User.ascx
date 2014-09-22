@@ -66,9 +66,9 @@
                 </li>
                 <li>
                     <label>Ngày sinh*: </label>       
-                    <asp:TextBox ID="txtNgaysinh" class="tb-register" runat="server" Width="250px"></asp:TextBox>
+                    <asp:TextBox ID="txtngaysinh" class="tb-register" runat="server" Width="250px"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
-                ControlToValidate="txtNgaysinh" ErrorMessage="Thông tin yêu cầu!" ForeColor="Red"></asp:RequiredFieldValidator>
+                ControlToValidate="txtngaysinh" ErrorMessage="Thông tin yêu cầu!" ForeColor="Red"></asp:RequiredFieldValidator>
                 </li>
 				<li>
                     <label>Giới tính: </label>
@@ -90,8 +90,8 @@
                     <asp:Button class="btn btn-register" ID="btnchange" runat="server" 
                         Text="Thay Đổi" onclick="btnchange_Click"/>
                         
-                    <asp:Button class="btn btn-reset" ID="btnreset" runat="server" Text="Reset" 
-                        OnClientClick="this.form.reset();return false;" />
+                    <asp:Button class="btn btn-reset" ID="btnreset" runat="server" Text="Hủy Bỏ" 
+                        OnClientClick="this.form.reset();return false;" onclick="btnreset_Click" />
                 </li>
                 <li>
                     <asp:label ID="txtThongBao" text="" runat="server" />

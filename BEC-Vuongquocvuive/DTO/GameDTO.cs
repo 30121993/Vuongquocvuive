@@ -10,6 +10,14 @@ namespace DTO
         private int _Game_ID;
         private int _Catalog_ID;
 
+        private int _Game_MaxMark;
+
+        public int Game_MaxMark
+        {
+            get { return _Game_MaxMark; }
+            set { _Game_MaxMark = value; }
+        }
+
         public int Catalog_ID
         {
             get { return _Catalog_ID; }

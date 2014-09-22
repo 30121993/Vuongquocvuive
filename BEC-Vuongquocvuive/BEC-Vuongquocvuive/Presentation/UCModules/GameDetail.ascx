@@ -54,7 +54,22 @@
                             </div>
                             <div id="tabs-3">
                     	        <ul class="list-high-score">
-                                <li class="head-list"><div class="col-1">Tên người chơi</div><div class="col-2">Điểm</div></li>
+                                
+                                
+
+                                <%--//------------------------------------------------------------------------------------------------- --%>
+
+                                <asp:Repeater ID="rpthighscore" runat="server">
+                                    <ItemTemplate>
+                                            <li class="head-list"><div class="col-1"><%# Eval("User_FullName")%></div><div class="col-2"><%# Eval("Mark")%></div></li>
+                                      </ItemTemplate>
+                                 </asp:Repeater>
+
+                                <%--//------------------------------------------------------------------------------------------------- --%>
+
+
+
+                                <%--<li class="head-list"><div class="col-1">Tên người chơi</div><div class="col-2">Điểm</div></li>
                                 <li class="list-item"><div class="col-1"><a href="#" title="Người chơi 1">Người chơi 1</a></div><div class="col-2">20.000</div></li>
                                 <li class="list-item"><div class="col-1"><a href="#" title="Người chơi 2">Người chơi 2</a></div><div class="col-2">19.000</div></li>
                                 <li class="list-item"><div class="col-1"><a href="#" title="Người chơi 3">Người chơi 3</a></div><div class="col-2">18.000</div></li>
@@ -64,7 +79,7 @@
                                 <li class="list-item"><div class="col-1"><a href="#" title="Người chơi 7">Người chơi 7</a></div><div class="col-2">16.900</div></li>
                                 <li class="list-item"><div class="col-1"><a href="#" title="Người chơi 8">Người chơi 8</a></div><div class="col-2">16.800</div></li>
                                 <li class="list-item"><div class="col-1"><a href="#" title="Người chơi 9">Người chơi 9</a></div><div class="col-2">16.500</div></li>
-                                <li class="list-item"><div class="col-1"><a href="#" title="Người chơi 10">Người chơi 10</a></div><div class="col-2">16.000</div></li>
+                                <li class="list-item"><div class="col-1"><a href="#" title="Người chơi 10">Người chơi 10</a></div><div class="col-2">16.000</div></li>--%>
                                 </ul>
                             </div>
                         </ItemTemplate>

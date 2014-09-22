@@ -57,6 +57,16 @@ namespace BLL
         {
             return _User.Subgold1(user_id, Game_ID); 
         }
+
+        public bool Addgold(int user_id, int Game_ID)
+        {
+            return _User.Addgold(user_id,Game_ID);
+        }
+        public bool Addgold1(int user_id, int Game_ID)
+        {
+            return _User.Addgold1(user_id, Game_ID);
+        }
+
         public DataTable kiemtraUser_name(string user_name)
         {
             return _User.kiemtraUser_name(user_name);
