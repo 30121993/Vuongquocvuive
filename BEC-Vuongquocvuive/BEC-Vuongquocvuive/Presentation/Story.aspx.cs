@@ -18,9 +18,20 @@ namespace BEC_Vuongquocvuive.Presentation
        // int id;
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            //string DuongDan = Server.HtmlEncode(Request.RawUrl);
+            Session["Header"] = "Story";
             //Repeater1.DataSource = catalog.GetAllCatalog();
             //Repeater1.DataBind();
+            if (!IsPostBack)
+            {
+                loadData();
+            }
+
+            
+        }
+
+        private void loadData()
+        {
             rptStoryNew.DataSource = story.LoadStoryNew();
             rptStoryNew.DataBind();
             rptListStoryReadMore.DataSource = story1.LoadStoryDocNhieu();
@@ -36,9 +47,8 @@ namespace BEC_Vuongquocvuive.Presentation
                 plhDadangnhap.Visible = false;
                 plhChuadangnhap.Visible = true;
             }
-
-            
         }
+
 
         protected void Repeater1_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {

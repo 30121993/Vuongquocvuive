@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlbumBLL.cs" />
     <Compile Include="CatalogBLL.cs" />
     <Compile Include="GameBLL.cs" />
     <Compile Include="Game_PlayerBLL.cs" />

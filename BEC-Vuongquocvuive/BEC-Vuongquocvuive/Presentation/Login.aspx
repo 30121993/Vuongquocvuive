@@ -37,7 +37,7 @@
                 runat="server" Width="250px" TextMode="Password"></asp:TextBox></li>
 		<li><asp:CheckBox ID="cbluuMK" class="remember-pass" runat="server" />Ghi nhớ mật khẩu</li>
         <li><asp:Button class="btn btn-login" ID="btndangnhap" runat="server" Text="Đăng Nhập" OnClick="btndangnhap_Click"/></li>
-        <li style="text-align:center"><a href="#">Quên mật khẩu |</a><a href="DangKi.aspx"> Đăng kí</a></li>
+        <li style="text-align:center"><a href="fpass.aspx">Quên mật khẩu |</a><a href="DangKi.aspx"> Đăng kí</a></li>
 	</ul>
   </div>
 </div>

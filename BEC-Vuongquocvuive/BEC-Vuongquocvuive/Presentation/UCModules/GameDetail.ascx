@@ -39,24 +39,21 @@
             <div class="game-info">
                 <div class="content-game-info">
                 <div id="tabs">
-                    <asp:Repeater ID="rptGameInfo2" runat="server">
+                    <asp:Repeater ID="rptGameInfo2" runat="server" OnItemDataBound="rptGame_Xephang">
                         <ItemTemplate>
                             <ul>
-                            <li><a href="#tabs-1">Nội dung</a></li>
-                            <li><a href="#tabs-2">Hướng dẫn chơi</a></li>
-                            <li><a href="#tabs-3">High Score</a></li>
+                                <li><a href="#tabs-1">Nội dung</a></li>
+                                <li><a href="#tabs-2">Hướng dẫn chơi</a></li>
+                                <li><a href="#tabs-3">High Score</a></li>
                             </ul>
                             <div id="tabs-1">
-                            <p> <%# Eval("Game_Status") %></p>
+                                <p> <%# Eval("Game_Status") %></p>
                             </div>
                             <div id="tabs-2">
-                            <p><%# Eval("Game_Guide") %></p>
+                                <p><%# Eval("Game_Guide") %></p>
                             </div>
                             <div id="tabs-3">
                     	        <ul class="list-high-score">
-                                
-                                
-
                                 <%--//------------------------------------------------------------------------------------------------- --%>
 
                                 <asp:Repeater ID="rpthighscore" runat="server">
@@ -66,8 +63,6 @@
                                  </asp:Repeater>
 
                                 <%--//------------------------------------------------------------------------------------------------- --%>
-
-
 
                                 <%--<li class="head-list"><div class="col-1">Tên người chơi</div><div class="col-2">Điểm</div></li>
                                 <li class="list-item"><div class="col-1"><a href="#" title="Người chơi 1">Người chơi 1</a></div><div class="col-2">20.000</div></li>

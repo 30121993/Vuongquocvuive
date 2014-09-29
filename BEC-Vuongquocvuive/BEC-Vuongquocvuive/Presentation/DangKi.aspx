@@ -25,6 +25,89 @@
     <script type="text/javascript" src="js/audio.js"></script>
     <script type="text/javascript" src="js/audioplayer/mediaelement-and-player.min.js"></script>
     <script type="text/javascript" src="js/scripts.js"></script>
+    <script language="javascript" type="text/javascript">
+        function CheckLength(obj, e) {
+            if (e.Value.length < 6 || e.Value.length > 8)
+                e.IsValid = false;
+            else
+                e.IsValid = true;
+        }
+    </script>
+       <script type="text/javascript">
+           $(document).ready(function (e) {
+
+               $('#ajax-refill').click(function () {
+                   $.ajax({ type: "GET",
+                       url: "refill.html",
+                       dataType: 'html',
+                       success: function (data) {
+                           $('body').append(data);
+                       }
+                   });
+               });
+               $('#all-friends').click(function () {
+                   $.ajax({ type: "GET",
+                       url: "AllFriends.html",
+                       dataType: 'html',
+                       success: function (data) {
+                           $('body').append(data);
+                       }
+                   });
+               });
+               $('.btn-change-ava').click(function () {
+                   $.ajax({ type: "GET",
+                       url: "change-ava.aspx",
+                       dataType: 'html',
+                       success: function (data) {
+                           $('body').append(data);
+                       }
+                   });
+               });
+               $('#btn-login').click(function () {
+                   $.ajax({ type: "GET",
+                       url: "Login.aspx",
+                       dataType: 'html',
+                       success: function (data) {
+                           $('body').append(data);
+                       }
+                   });
+               });
+
+
+               $('#A1').click(function () {
+                   $.ajax({ type: "GET",
+                       url: "Logout.aspx",
+                       dataType: 'html',
+                       success: function (data) {
+                           $('body').append(data);
+                       }
+                   });
+               });
+
+
+               $('#btn-logout').click(function () {
+                   $.ajax({ type: "GET",
+                       url: "Login.aspx",
+                       dataType: 'html',
+                       success: function (data) {
+                           $('body').append(data);
+                       }
+                   });
+               });
+
+
+
+
+
+
+               //-----------------------------------------------------------------------------------------------
+               //$.ajax({ type: "GET",url: "Logout.aspx",dataType: 'html',success: function (data) {$('body').append(data);}});
+               //------------------------------------------------------------------------------------------------- 
+
+
+
+           });
+</script>
 </head>
 <body id="register-page">
     <form id="form1" runat="server">
@@ -56,12 +139,16 @@
         </div>
         <div class="user-block-head">
         	<ul>
-        		<li><a href="register.html"><i class="fa fa-pencil-square-o"></i> Đăng Kí</a></li>
+        		<li><a href="DangKi.aspx"><i class="fa fa-pencil-square-o"></i> Đăng Kí</a></li>
             	<li><a id="btn-login" href="javascript:;"><i class="fa fa-unlock"></i> Đăng Nhập</a></li>
             </ul>
         </div>
         </div>
     </header>    
+      <asp:ScriptManager ID="ScriptManager1" runat="server">
+      </asp:ScriptManager>
+      <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+<ContentTemplate>
     <section id="center">
          <div id="block-register" >
           <div class="wrapper-block">
@@ -72,19 +159,33 @@
                     <label>Họ Tên*: </label>
                     <asp:TextBox ID="txtHoten" class="tb-register" runat="server" Width="250px"></asp:TextBox> 
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
-                ControlToValidate="txtHoten" ErrorMessage="Thông tin yêu cầu!" ForeColor="Red"></asp:RequiredFieldValidator>
+                ControlToValidate="txtHoten" ErrorMessage="Thông tin yêu cầu!" ForeColor="Red" 
+                        Display="Dynamic"></asp:RequiredFieldValidator>
+                   
+                    <asp:Label ID="Label1" runat="server"></asp:Label>
+                   
                 </li>
                 <li>
                     <label>Tên Tài Khoản*: </label>
                     <asp:TextBox ID="txtUserName" class="tb-register" runat="server" Width="250px" ></asp:TextBox> 
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
-                ControlToValidate="txtUserName" ErrorMessage="Thông tin yêu cầu!" ForeColor="Red"></asp:RequiredFieldValidator>
+                ControlToValidate="txtUserName" ErrorMessage="Thông tin yêu cầu!" ForeColor="Red" 
+                        Display="Dynamic"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" 
+                        ControlToValidate="txtUserName" Display="Dynamic" 
+                        ErrorMessage="Không Được dùng kí tự đặc biệt" ValidationExpression="\w+"></asp:RegularExpressionValidator>
                 </li>
 				<li>
                     <label>Mật Khẩu*: </label>
                     <asp:TextBox ID="txtPassword" class="tb-register" runat="server" Width="250px" TextMode="Password"></asp:TextBox> 
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" Display="Dynamic" 
                 ControlToValidate="txtPassword" ErrorMessage="Thông tin yêu cầu!" ForeColor="Red"></asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" 
+                        ControlToValidate="txtPassword" Display="Dynamic" 
+                        ErrorMessage="Không Được dùng kí tự đặc biệt" ValidationExpression="\w+"></asp:RegularExpressionValidator>
+                        <asp:CustomValidator ID="CustomValidator1" runat="server" 
+                        ClientValidationFunction="CheckLength" ControlToValidate="txtPassword" 
+                       ErrorMessage="Mật khẩu từ 6-8 ký tự"></asp:CustomValidator>
                 </li>
                 <li>
                     <label>Nhập lại mật khẩu*: </label>
@@ -93,19 +194,19 @@
                 ControlToCompare="txtPassword" ControlToValidate="txtRePassword" 
                 ErrorMessage="Mật khẩu nhập lại không đúng!" ForeColor="Red"></asp:CompareValidator>
                 </li>
-				<li>
+				<%--<li>
                     <label>Email*: </label>
                     <asp:TextBox ID="txtEmail" class="tb-register" runat="server" Width="250px" placehoder="Nhập Email vì sự an toàn tài khoản!"></asp:TextBox> 
-                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" 
                 ControlToValidate="txtEmail" ErrorMessage="Địa chỉ email không chính xác!" ForeColor="Red" 
                 ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
-                </li>
-                <li>
+                </li>--%>
+               <%-- <li>
                     <label>Số điện thoại: </label>
                      <asp:TextBox ID="txtphone" class="tb-register" runat="server" Width="250px" placehoder="Nhập số điện thoại vì sự an toàn tài khoản!"></asp:TextBox> 
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
-                ControlToValidate="txtphone" ErrorMessage="Thông tin yêu cầu!" ForeColor="Red"></asp:RequiredFieldValidator>
-                </li>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" Type="Integer" 
+                ControlToValidate="txtphone" ErrorMessage="Thông tin yêu cầu!" ForeColor="Red" ></asp:RequiredFieldValidator>
+                </li>--%>
 				<li>
                     <label>Tỉnh/Thành phố: </label>
                     <asp:TextBox ID="txtAddress" class="tb-register" runat="server" Width="250px" ></asp:TextBox> 
@@ -116,8 +217,13 @@
                 <li>
                     <label>Ngày sinh*: </label>       
                     <asp:TextBox ID="txtNgaysinh" class="tb-register" runat="server" Width="250px"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
-                ControlToValidate="txtNgaysinh" ErrorMessage="Thông tin yêu cầu!" ForeColor="Red"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtNgaysinh" ForeColor="Red"
+ErrorMessage="Ngày Sinh không hợp lệ." SetFocusOnError="True" Display="Dynamic" ValidationExpression="(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d"></asp:RegularExpressionValidator>
+
+
+                   <%-- <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                ControlToValidate="txtNgaysinh" ErrorMessage="Thông tin yêu cầu!" ForeColor="Red" ValidationExpression="(^((((0[1-9])|([1-2][0-9])|(3[0-1]))|([1-9]))\x2F(((0[1-9])|(1[0-2]))|([1-9]))\x2F(([0-9]{2})|(((19)|([2]([0]{1})))([0-9]{2}))))$)"></asp:RequiredFieldValidator>--%>
+                    <asp:Label ID="Label2" runat="server"></asp:Label>
                 </li>
 				<li>
                     <label>Giới tính: </label>
@@ -141,6 +247,8 @@
           </div>
         </div>
     </section>
+    </ContentTemplate>
+      </asp:UpdatePanel>
     <!--End Center-->
     <footer id="footer"> </footer>
   </div>

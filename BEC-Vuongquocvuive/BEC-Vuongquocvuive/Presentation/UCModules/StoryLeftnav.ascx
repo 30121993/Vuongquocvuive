@@ -1,4 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="StoryLeftnav.ascx.cs" Inherits="BEC_Vuongquocvuive.Presentation.UCModules.StoryLeftnav" %>
+<asp:UpdatePanel ID="UpdatePanel1" runat="server">
+<ContentTemplate>
+
 <div class="nav-block">
       <nav>
               <ul id="nav-col">
@@ -26,4 +29,6 @@
               </ul>
       </nav>
 </div>
+</ContentTemplate>
+</asp:UpdatePanel>
           <!--End nav-->

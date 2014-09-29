@@ -611,7 +611,7 @@ li.friend>a{
 	margin:0
 	}
 #List-story{
-	/*background:url(../images/bg-blog-story.jpg) repeat-x top left #fcd050	*/
+	background:url(../images/bg-blog-story.jpg) repeat-x top left #fcd050	
 	}
 .block-1-col .wrapper-block{
 	width:930px	
@@ -2209,6 +2209,15 @@ input.btn{
 	height:68px	
 	}
 /*Home*/
+#home .bottom-head{
+		margin:0px
+	}
+#home .user-block-head{
+	margin-top:5px	
+	}
+#home .user-block-head li a{
+	color:#fff	
+	}
 #park-game{
 	position:absolute;
 	top:180px;
@@ -2218,24 +2227,49 @@ input.btn{
 	}
 #school{
 	position:absolute;
-	width:102px;
-	height:140px;
-	top:68px;
-	right:220px
+	width:160px;
+	height:160px;
+	top:65px;
+	right:186px
 }
 #balloon{
 	width:84px;
 	height:116px;
 	position:absolute;
 	top:30px;
-	right:600px
+	right:600px;
+	animation:balloon-move 20s linear  infinite;
+	-webkit-animation:balloon-move 20s linear  infinite;
+	}
+#balloon:hover{
+	-webkit-animation-play-state: paused;
+	animation-play-state:paused
+	}
+@-webkit-keyframes balloon-move{
+	0%{top:30px; right:600px}
+	45%{top:20px; right:650px}
+	50%{top:40px; right:700px}
+	75%{top:50px; right:650px}
+	100%{top:30px; right:600px}
+	}
+@keyframes balloon-move{
+	0%{top:30px; right:600px}
+	45%{top:20px; right:650px}
+	50%{top:40px; right:700px}
+	75%{top:50px; right:650px}
+	100%{top:30px; right:600px}
 	}
 #painter{
 	position:absolute;
 	width:191px;
 	height:175px;
 	top:370px;
-	left:270px	
+	left:270px
+	}
+#home .animation-block{
+	width:100%;
+	height:100%;
+	display:block	
 	}
 #story-block-home{
 	position:absolute;
@@ -2253,10 +2287,10 @@ input.btn{
 	}
 #singer-home{
 	position:absolute;
-	width:155px;
-	height:170px;
-	top:270px;
-	right:180px	
+	width:159px;
+	height:268px;
+	top:265px;
+	right:185px	
 	}
 
 /*head*/
@@ -2322,6 +2356,22 @@ input.btn{
 #block-login .btn-login{
 	margin-left:90px;
 	font-size:14px	
+	}
+.login-form-page .remember-pass, .login-form-page .btn-login{
+	margin-left:265px
+	}
+.login-form-page .alert{
+	margin:10px 0;
+	color:#EA386A;
+	font-size:18px;
+	text-align:center;
+	font-weight:400	
+	}
+.login-form-page a{
+	color:#EA386A
+	}
+.login-form-page a:hover{
+	text-decoration:underline	
 	}
 .user-block-head{
 	width:350px;
@@ -2477,3 +2527,135 @@ input.btn{
 #story .top-nav .des-nav-item, #story-detail .top-nav .des-nav-item{
 	color:#8E187C
 	}
+/*Complete info*/
+.step-block{
+	display:inline-block;
+	height:60px;
+	width:100%	;
+	margin:20px 0 10px 0
+	}
+.step-block .step{
+	width:33%;
+	display:block;
+	height:100%;
+	background:#01B49F;
+	float:left
+	}
+.step h3, .step p{
+	text-align:center;
+	line-height:30px;
+	color:#fff	
+	}
+.step:nth-child(2n){
+	background:#01BFA2
+	}
+.step.active{
+	background:#019B84
+	}
+.btn-right{
+	float:right;
+	margin-right:0px	
+	}
+.btn-left{
+	float:left;
+	margin-left:0px	
+	}
+/*End complete info*/
+/*Fpass*/
+.fpass{
+	width:100%;
+	min-height:500px
+	}
+.fpass .wrapper-block{
+	width:95%;
+	min-height:450px;
+	text-align:center	
+	}
+.fpass .form{
+	margin:20px auto;
+	width:730px;
+	text-align:left	
+	}
+.fpass .btn-register{
+	margin-left:190px	
+	}
+/*End Fpass*/
+/*search result*/
+.wrapper-search-result{
+	width:300px;
+	padding:10px;
+	border-radius:0 0 5px 5px;
+	border:1px solid #ccc;
+	background:#f2f2f2;
+	}
+.wrapper-iner-search-result{
+	max-height:300px	
+	}
+.item-search-result{
+	width:100%;
+	display:inline-block;
+	margin-bottom:10px;
+	border-bottom:1px solid #ccc	
+	}
+.wrapper-search-result .group-item{
+	font-size:16px;
+	color:#999;
+	border-bottom:1px solid #ededed	
+	}
+.item-search-result li{
+	width:100%;
+	padding:5px 0;
+	display:inline-block
+	}
+.item-search-result li:hover>a{
+	background:#E5E5E5	
+	}
+.item-search-result a{
+	display:inline-block;
+	width:100%	
+	}
+.item-search-result .wrapper-img-search-result{
+	width:25%;
+	display:block;
+	float:left	
+	}
+.item-search-result .img-search-result{
+	max-width:100%;
+	display:block	
+	}
+.item-search-result .content-search-result-item{
+	display:block;
+	float:left;
+	width:75%	
+	}	
+.item-search-result .content-search-result-item .title-search-result{
+	color:#333;
+	font-size:16px;
+	font-weight:normal;
+	margin-top:5px;
+	padding-left:5px;
+	display:block	
+	}
+.item-search-result .content-search-result-item .description{
+	color:#555;
+	font-size:14px;
+	padding-left:5px;
+	display:block	
+	}
+.wrapper-search-result .view-more{
+	margin: 0 -10px -10px -10px;
+	border-radius:0 0 5px 5px;
+	text-align:center;
+	background:	#ccc;
+	line-height:30px;
+	height:30px
+	}
+.wrapper-search-result .view-more a{
+	font-size:16px;
+	color:#333;
+	font-weight:normal	
+	}
+.wrapper-search-result .view-more a:hover{
+	text-decoration:underline	
+	}
+/*End search result*/

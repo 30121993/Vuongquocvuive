@@ -1,5 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ListGames.ascx.cs" Inherits="BEC_Vuongquocvuive.Presentation.UCModules.ListGames" %>
-
+<asp:UpdatePanel ID="UpdatePanel1" runat="server">
+<ContentTemplate>
 
 <section id="list-game">
         	<div class="wrapper-block">
@@ -28,11 +29,7 @@
               <!--------------------------------------------- -->
             </ul>
             <ul class="pager">
-                <%--<li class="active"><a href="#">1</a> </li>
-                        <li><a href="#">2</a> </li>
-                        <li><a href="#">3</a> </li>--%>
-
-                         <asp:Repeater ID="rptPages" runat="server" onitemcommand="rptPages_ItemCommand1">
+                <asp:Repeater ID="rptPages" runat="server" onitemcommand="rptPages_ItemCommand1">
                     <ItemTemplate>
                         <li>
                             <asp:LinkButton ID="btnPage" CommandName="Page" CommandArgument="<%# Container.DataItem %>" runat="server"><%# Container.DataItem %></asp:LinkButton>
@@ -42,3 +39,5 @@
             </ul>
             </div>
     </section>
+    </ContentTemplate>
+</asp:UpdatePanel>

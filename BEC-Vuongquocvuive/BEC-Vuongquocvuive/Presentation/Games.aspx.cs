@@ -12,27 +12,49 @@ namespace BEC_Vuongquocvuive
         protected void Page_Load(object sender, EventArgs e)
         {
             Control MH;
+            Session["Header"] = "Games";
+            if (!IsPostBack)
+            {
+                loadData();
+            }
+            string mod;
+            if (Request.QueryString["mod"] != null)
+            {
+                mod = Request.QueryString["mod"].ToString();
+                MH = Page.LoadControl("UCModules/" + mod + ".ascx");
+                plhListGame.Controls.Add(MH);
+
+            }
+            else
+            {
+                MH = Page.LoadControl("UCModules/ListGames.ascx");
+                plhListGame.Controls.Add(MH);
+            }
+
+        }
+        private void loadData()
+        {
+            
             try
             {
-                string mod;
-                if (Request.QueryString["mod"] != null)
-                {
-                    mod = Request.QueryString["mod"].ToString();
-                    MH = Page.LoadControl("UCModules/" + mod + ".ascx");
-                    plhListGame.Controls.Add(MH);
 
+                if (Session["User_ID"] != null)
+                {
+                    plhDadangnhap.Visible = true;
+                    plhChuadangnhap.Visible = false;
+                    lblTennguoidung.Text = " " + Session["User_FullName"];
                 }
                 else
                 {
-                    MH = Page.LoadControl("UCModules/ListGames.ascx");
-                    plhListGame.Controls.Add(MH);
+                    plhDadangnhap.Visible = false;
+                    plhChuadangnhap.Visible = true;
                 }
+                
             }
             catch
             {
-                
-            }
 
+            }
         }
     }
 }

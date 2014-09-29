@@ -1,6 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Blog.aspx.cs" Inherits="BEC_Vuongquocvuive.Blog" %>
 
 <%@ Register Src="~/Presentation/UCModules/Menu.ascx" TagName="Menu" TagPrefix="uc" %>
+<%@ Register src="UCModules/ChangePassword.ascx" tagname="ChangePassword" tagprefix="uc1" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -26,6 +27,14 @@
     <script type="text/javascript" src="js/audio.js"></script>
     <script type="text/javascript" src="js/audioplayer/mediaelement-and-player.min.js"></script>
     <script type="text/javascript" src="js/scripts.js"></script>
+    <script language="javascript" type="text/javascript">
+        function CheckLength(obj, e) {
+            if (e.Value.length < 6 || e.Value.length > 8)
+                e.IsValid = false;
+            else
+                e.IsValid = true;
+        }
+    </script>
     <script type="text/javascript">
         $(document).ready(function (e) {
 
@@ -103,12 +112,12 @@
 </script>
 </head>
 <body id="blog-page">
-    <form id="form1" runat="server">
+
+    <form id="form1" runat="server">    
     <div>
         <div class="wrapper">
   <div class="wrapper-content">
     <header id="header"> 
-
         <uc:Menu ID="Menu" runat="server"></uc:Menu>
        <div class="bottom-head">
         <div class="search">
@@ -140,7 +149,13 @@
       <div id="left-col">
         <section id="block-user">
           <div class="user-ava image-user-block">
-            <div class="img-frame"><img src="images/ava2.jpg" alt="Ảnh đại diện" title="Ảnh đại diện"/></div>
+            <div class="img-frame">
+                 <asp:Repeater ID="rptAvt" runat=server>
+                    <ItemTemplate>
+                        <img src="images/<%# Eval("User_Image")%>" alt="Ảnh đại diện" title="Ảnh đại diện"/>
+                    </ItemTemplate>
+                 </asp:Repeater>
+            </div>
             <a class="btn btn-change-ava" href="#" title="Thay đổi ảnh đại diện"><img src="images/camera.png" title="Thay đổi ảnh đại diện" alt="Thay đổi ảnh đại diện"/> </a> <a class="btn btn-inv-friend" href="#" title="Kết bạn"><img src="images/plus.png" alt="Kết bạn" title="Kết bạn"/></a> </div>
           <!--End user img-->
           <div class="user-name"><asp:Label Text="Tên Người Dùng" runat="server" ID="txtUserName" ></asp:Label>
@@ -152,7 +167,10 @@
                 <li>Ngày tham gia:<asp:Label Text="" runat="server" ID="txtNgaythamgia"  style="color:Blue" ></asp:Label></li>
                 <li>Email:<asp:Label Text="" runat="server" ID="txtEmail"  style="color:Blue" ></asp:Label></li>
               </ul>
-              <a href="?mod=Changer_info_User" class="btn btn-post">Chỉnh sửa</a> </div>
+               
+              <a href="Update_Info.aspx" class="btn btn-post">Sửa Thông Tin</a> 
+              <a href="?mod=ChangePassword" class="btn btn-post">Đổi Mật Khẩu</a>
+              </div>
           </div>
           <div class="user-nav">
             <ul>
@@ -229,7 +247,7 @@
           <div id="sun"><img alt="sun" src="images/sun.png"></div>
         </section>
         <!--End block acc info-->
-        <section id="block-friends" class="block-left-item">
+<%--        <section id="block-friends" class="block-left-item">
           <div class="wrapper-block">
             <h3 class="title-block">Danh sách bạn bè</h3>
             <div class="content-block">
@@ -328,7 +346,7 @@
               <a href="#" id="all-friends" class="btn btn-more">Xem thêm</a> </div>
           </div>
           <div id="tiger"><img src="images/tiger.png" alt="tiger"></div>
-        </section>
+        </section>--%>
         <!--End block friends--> 
       </div>
       <script>
@@ -341,11 +359,12 @@
 	</script> 
       <!--Left Col-->
       <div id="right-col">
-            <asp:PlaceHolder ID="plhBlog" runat="server">
+
+            <asp:PlaceHolder ID="plhBlog" runat="server">           
                 
             </asp:PlaceHolder>
         <!--End list status-->
-        <section id="orther-friends">
+       <%-- <section id="orther-friends">
           <div class="wrapper-block">
             <h3 class="title-block">Gợi ý kết bạn</h3>
             <div class="content-block">
@@ -445,7 +464,7 @@
               <a href="#" class="btn btn-more">Xem thêm</a> </div>
           </div>
           <div id="dog"> <img src="images/dog.png" alt="dog"/> </div>
-        </section>
+        </section>--%>
       </div>
       <!--Right-col-->
       <section id="List-story" class="block-1-col">
@@ -475,69 +494,7 @@
               </asp:Repeater>
              <!-- ----------------------------------------------->
               <!--End story item-->
-              <li class="story-item">
-                <div class="wrapper-item">
-                  <div class="col-book"></div>
-                  <div class="story-info">
-                    <h3> Tiêu đề truyện </h3>
-                    <p class="total-view">Lượt xem:<em>1122</em></p>
-                  </div>
-                </div>
-              </li>
-              <li class="story-item">
-                <div class="wrapper-item">
-                  <div class="col-book"></div>
-                  <div class="story-info">
-                    <h3> Tiêu đề truyện </h3>
-                    <p class="total-view">Lượt xem:<em>1122</em></p>
-                  </div>
-                </div>
-              </li>
-              <li class="story-item">
-                <div class="wrapper-item">
-                  <div class="col-book"></div>
-                  <div class="story-info">
-                    <h3> Tiêu đề truyện </h3>
-                    <p class="total-view">Lượt xem:<em>1122</em></p>
-                  </div>
-                </div>
-              </li>
-              <li class="story-item">
-                <div class="wrapper-item">
-                  <div class="col-book"></div>
-                  <div class="story-info">
-                    <h3> Tiêu đề truyện </h3>
-                    <p class="total-view">Lượt xem:<em>1122</em></p>
-                  </div>
-                </div>
-              </li>
-              <li class="story-item">
-                <div class="wrapper-item">
-                  <div class="col-book"></div>
-                  <div class="story-info">
-                    <h3> Tiêu đề truyện </h3>
-                    <p class="total-view">Lượt xem:<em>1122</em></p>
-                  </div>
-                </div>
-              </li>
-              <li class="story-item">
-                <div class="wrapper-item">
-                  <div class="col-book"></div>
-                  <div class="story-info">
-                    <h3> Tiêu đề truyện </h3>
-                    <p class="total-view">Lượt xem:<em>1122</em></p>
-                  </div>
-                </div>
-              </li>
-              <li class="story-item">
-                <div class="wrapper-item">
-                  <div class="col-book"></div>
-                  <div class="story-info">
-                    <h3> Tiêu đề truyện </h3>
-                    <p class="total-view">Lượt xem:<em>1122</em></p>
-                  </div>
-                </div>
-              </li>
+             
             </ul>
           </div>
         </div>
@@ -597,72 +554,7 @@
               </asp:Repeater>
 <%--            --------------------------------------------------------------%>
               <!--End story item-->
-              <li class="story-item">
-                <div class="wrapper-item">
-                  <div class="col-book"></div>
-                  <div class="story-info">
-                    <h3> Tiêu đề Game </h3>
-                    <p class="total-view">Lượt chơi:<em>1122</em></p>
-                  </div>
-                </div>
-              </li>
-              <li class="story-item">
-                <div class="wrapper-item">
-                  <div class="col-book"></div>
-                  <div class="story-info">
-                    <h3> Tiêu đề Game </h3>
-                    <p class="total-view">Lượt chơi:<em>1122</em></p>
-                  </div>
-                </div>
-              </li>
-              <!--End story item-->
-              <li class="story-item">
-                <div class="wrapper-item">
-                  <div class="col-book"></div>
-                  <div class="story-info">
-                    <h3> Tiêu đề Game </h3>
-                    <p class="total-view">Lượt chơi:<em>1122</em></p>
-                  </div>
-                </div>
-              </li>
-              <li class="story-item">
-                <div class="wrapper-item">
-                  <div class="col-book"></div>
-                  <div class="story-info">
-                    <h3> Tiêu đề Game </h3>
-                    <p class="total-view">Lượt chơi:<em>1122</em></p>
-                  </div>
-                </div>
-              </li>
-              <!--End story item-->
-              <li class="story-item">
-                <div class="wrapper-item">
-                  <div class="col-book"></div>
-                  <div class="story-info">
-                    <h3> Tiêu đề Game </h3>
-                    <p class="total-view">Lượt chơi:<em>1122</em></p>
-                  </div>
-                </div>
-              </li>
-              <li class="story-item">
-                <div class="wrapper-item">
-                  <div class="col-book"></div>
-                  <div class="story-info">
-                    <h3> Tiêu đề Game </h3>
-                    <p class="total-view">Lượt chơi:<em>1122</em></p>
-                  </div>
-                </div>
-              </li>
-              <!--End story item-->
-              <li class="story-item">
-                <div class="wrapper-item">
-                  <div class="col-book"></div>
-                  <div class="story-info">
-                    <h3> Tiêu đề Game </h3>
-                    <p class="total-view">Lượt chơi:<em>1122</em></p>
-                  </div>
-                </div>
-              </li>
+             
             </ul>
           </div>
         </div>

@@ -37,9 +37,6 @@ namespace BEC_Vuongquocvuive.Presentation.UCModules
                 rptListStory.DataSource = pgitems;
                 rptListStory.DataBind();
 
-                //rptListStory.DataSource= BLL.GetStoryByCatalog(Catalog_ID);
-                // rptListStory.DataBind();
-
                 Catalog_Name.DataSource = _Catalog.GetCatalogDetail(Catalog_ID);
                 Catalog_Name.DataBind();
 

@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Games.aspx.cs" Inherits="BEC_Vuongquocvuive.Games" %>
 
-<%@ Register Src="~/Presentation/UCModules/Menu.ascx" TagName="Menu" TagPrefix="uc" %>
+<%@ Register Src="~/Presentation/UCModules/Menu3.ascx" TagName="Menu" TagPrefix="uc" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -59,11 +59,23 @@
                 }
             });
         });
+
+        $('#A1').click(function () {
+            $.ajax({ type: "GET",
+                url: "Logout.aspx",
+                dataType: 'html',
+                success: function (data) {
+                    $('body').append(data);
+                }
+            });
+        });
     });
 </script>
 </head>
 <body id="page-game">
     <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
     <div>
         <div class="wrapper">
   <div class="wrapper-content">
@@ -72,12 +84,35 @@
     
     </div>
         <uc:Menu ID="Menu" runat="server" />
+         <div class="bottom-head">
         <div class="search">
         	<div class="wrapper-search">
         	<input type="text" class="txt-search" placeholder="Tìm kiếm..."/>
-            <input type="button" class="btn-search"/>
+            <input type="button" class="btn-search" value=" "/>
             </div>
-        </div></header>
+        </div>
+
+         <asp:PlaceHolder ID="plhChuadangnhap" runat="server">
+            <div class="user-block-head">
+        	<ul>
+        		<li><a href="Dangki.aspx"><i class="fa fa-pencil-square-o"></i> Đăng Kí</a></li>
+            	<li><a id="btn-login" href="javascript:;"><i class="fa fa-unlock"></i> Đăng Nhập</a></li>
+            </ul>
+        </div>
+        </asp:PlaceHolder>
+
+        <asp:PlaceHolder ID="plhDadangnhap" runat="server">
+            <div class="user-block-head">
+        	<ul>
+        		<li><a href="Blog.aspx"><i class="fa fa-smile-o"></i><asp:Label ID="lblTennguoidung" runat="server" Text=""></asp:Label></a></li>
+            	<li><a id="A1" href="javascript:;"><i class="fa fa-unlock"></i> Đăng Xuất</a></li>
+            </ul>
+        </div>
+        </asp:PlaceHolder>
+
+        </div>
+        
+        </header>
     <section id="center">
 		<div class="cat-game">
         	<ul><li class="cat-game-item active"><a href="?mod=ListGames">Game Hot</a></li><li class="cat-game-item"><a href="?mod=ListGames&str=New">Game Mới</a></li></ul>

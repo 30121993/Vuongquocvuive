@@ -16,9 +16,31 @@ namespace BEC_Vuongquocvuive.Presentation
 
         protected void btnOk_Click(object sender, EventArgs e)
         {
+            string header = Session["Header"].ToString();
             Session.RemoveAll();
             Session.Clear();
-            Response.Redirect("Blog.aspx");
+            if (Request.Cookies["user"] != null)
+            {
+                Request.Cookies["user"].Expires = DateTime.Now;
+                
+            }
+            
+            
+            if (header == "Story")
+            {
+                //Response.Write("<script language='javascript'> alert('Đăng nhập thành công!');location.href='Story.aspx';</script>");
+                Response.Redirect("Story.aspx");
+            }
+            if (header == "Games")
+            {
+                //Response.Write("<script language='javascript'> alert('Đăng nhập thành công!');location.href='Games.aspx';</script>");
+                Response.Redirect("Games.aspx");
+            }
+            if (header == "Blog")
+            {
+                //Response.Write("<script language='javascript'> alert('Đăng nhập thành công!');location.href='Blog.aspx?mod=Changer_info_User';</script>");
+                Response.Redirect("Blog.aspx");
+            }
             
         }
     }

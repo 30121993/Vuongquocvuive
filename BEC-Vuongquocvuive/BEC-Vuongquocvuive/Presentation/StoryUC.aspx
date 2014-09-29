@@ -55,6 +55,8 @@
 
 <body id="story-detail">
     <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+</asp:ScriptManager>
 <div class="wrapper">
   <div class="wrapper-1">
     <uc2:Menu2 ID="Menu2" runat="server"></uc2:Menu2>
@@ -78,7 +80,7 @@
         </div>--%>
         <div class="user-block-head">
         	<ul>
-        		<li><a href="#"><i class="fa fa-smile-o"></i><asp:Label ID="lblTennguoidung" runat="server" Text="Label"></asp:Label></a></li>
+        		<li><a href="Blog.aspx"><i class="fa fa-smile-o"></i><asp:Label ID="lblTennguoidung" runat="server" Text=""></asp:Label></a></li>
             	<li><a id="A1" href="javascript:;"><i class="fa fa-unlock"></i> Đăng Xuất</a></li>
             </ul>
         </div>

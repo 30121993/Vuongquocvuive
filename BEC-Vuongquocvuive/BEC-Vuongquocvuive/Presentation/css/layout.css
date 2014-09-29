@@ -20,6 +20,9 @@ body{
 #blog-page {
 	background:#A5DCED
 	}
+#blog-page #center{
+	float:left	
+	}
 #blog-page{
 	background:url(../images/bg-blog-df.png) no-repeat top left #A5DCED
 	}
@@ -80,9 +83,10 @@ body{
 	}
 /*Home*/
 #home{
-	background:url(../images/home/bg-home.png) no-repeat top center	
+	background:#92F1F5
 	}
 #home .wrapper{
 	min-height:720px;
-	position:relative	
+	position:relative;
+	background:url(../images/home/bg-home.png) no-repeat top center		
 	}

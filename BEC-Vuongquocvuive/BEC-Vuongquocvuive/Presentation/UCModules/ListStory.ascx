@@ -2,8 +2,10 @@
 <%@ Register src="~/Presentation/UCModules/Breadcrumb.ascx" tagname="Breadcrumb" tagprefix="uc1" %>
 <%@ Register assembly="CollectionPager" namespace="SiteUtils" tagprefix="cc1" %> 
 
-<uc1:Breadcrumb ID="Breadcrumb1" runat="server" />
+<asp:UpdatePanel ID="UpdatePanel1" runat="server">
+<ContentTemplate>
 
+<uc1:Breadcrumb ID="Breadcrumb1" runat="server" />
             <asp:Repeater ID="Catalog_Name" runat="server">
                 <ItemTemplate>
                         <h3 class="title-page"><%# Eval("Catalog_Name")%></h3>
@@ -39,23 +41,6 @@
                         </li>
                     </ItemTemplate>
                  </asp:Repeater>
-
-
-                <%-- <li class="active"><a href="#">1</a> </li>
-                        <li><a href="#">2</a> </li>
-                        <li><a href="#">3</a> </li>--%>
-
-
-
-                        <%--<cc1:CollectionPager ID="CollectionPage1" FirstText="Đầu" BackText="<< Trước &amp;nbsp;"
-                        LabelText=""
-                        LastText="Cuối"
-                        NextText="&amp;nbsp;Sau >>"
-                        ShowFirstLast="true"
-                        SliderSize="5" PagingMode="PostBack"
-                        runat="server" BackNextLinkSeparator="" BackNextLocation="Split"
-                        PageNumbersDisplay="Numbers" ResultsLocation="None"
-                        BackNextDisplay="Buttons">
-                        </cc1:CollectionPager>--%>
             </ul>
-          
+    </ContentTemplate>
+</asp:UpdatePanel>      

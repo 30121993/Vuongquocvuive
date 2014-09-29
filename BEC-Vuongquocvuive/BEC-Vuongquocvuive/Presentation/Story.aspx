@@ -6,7 +6,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Story Page</title>
     <link type="text/css" rel="stylesheet" href="css/font-awesome.css"/>
     <link type="text/css" rel="stylesheet" href="css/fonts.css"/>
     <link type="text/css" rel="stylesheet" href="css/layout.css"/>
@@ -53,6 +53,8 @@
 </head>
 <body id="story">
     <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+</asp:ScriptManager>
     <div>
         <div class="wrapper">
 <div class="wrapper-1">
@@ -89,7 +91,7 @@
         <asp:PlaceHolder ID="plhDadangnhap" runat="server">
             <div class="user-block-head">
         	<ul>
-        		<li><a href="#"><i class="fa fa-smile-o"></i><asp:Label ID="lblTennguoidung" runat="server" Text="Label"></asp:Label></a></li>
+        		<li><a href="Blog.aspx"><i class="fa fa-smile-o"></i><asp:Label ID="lblTennguoidung" runat="server" Text=""></asp:Label></a></li>
             	<li><a id="A1" href="javascript:;"><i class="fa fa-unlock"></i> Đăng Xuất</a></li>
             </ul>
         </div>
@@ -214,7 +216,7 @@
                         <div class="wrapper-item">
                             <img alt="" src="data/images/<%# Eval("Story_Catalog")%>" title="Anh bia"/>
                             <div class="col-book"></div>
-                            <a href="StoryDetail.aspx?id=<%# Eval("Story_ID")%>" >
+                            <a href="StoryUC.aspx?mod=StoryDetail&id=<%# Eval("Story_ID")%>" >
                                 <div class="story-info">
                   	                <h3> <%# Eval("Story_Name")%></h3>
                                     <p class="total-view">Lượt xem:<em><%# Eval("Story_TotalView")%></em></p>

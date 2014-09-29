@@ -13,5 +13,10 @@ namespace BEC_Vuongquocvuive.Presentation.UCModules
         {
 
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

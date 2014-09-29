@@ -22,25 +22,23 @@ namespace BEC_Vuongquocvuive.Presentation.UCModules
         }
         void loadData()
         {
-            
             DataTable dt = new DataTable();
             if (Request.QueryString["str"] != null)
             {
                 dt = _game.LoadGameNew();
                 loadPage(dt);
-                rptListGames.DataSource = pgitems;
-                rptListGames.DataBind();
+                //rptListGames.DataSource = pgitems;
+                //rptListGames.DataBind();
             }
             else
             {
                 dt = _game.LoadGameHot();
                 loadPage(dt);
-                rptListGames.DataSource = pgitems;
-                rptListGames.DataBind();
+                //rptListGames.DataSource = pgitems;
+                //rptListGames.DataBind();
             }
         }
-
-        private int PageNumber
+        public int PageNumber
         {
             get
             {
@@ -54,8 +52,10 @@ namespace BEC_Vuongquocvuive.Presentation.UCModules
                 ViewState["PageNumber"] = value;
             }
         }
-        private void loadPage(DataTable dt)
+
+        void loadPage(DataTable dt)
         {
+
             System.Data.DataView dv = new System.Data.DataView(dt);
             pgitems.DataSource = dv;
             pgitems.AllowPaging = true;
@@ -72,6 +72,9 @@ namespace BEC_Vuongquocvuive.Presentation.UCModules
             }
             else
                 rptPages.Visible = false;
+                rptListGames.DataSource = pgitems;
+                rptListGames.DataBind();
+
         }
 
         protected void rptPages_ItemCommand1(object source, RepeaterCommandEventArgs e)

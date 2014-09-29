@@ -31,9 +31,10 @@ namespace DAL
             listparam.Add(new SqlParameter("User_UserName", obj.User_UserName));
             listparam.Add(new SqlParameter("User_PassWord", obj.User_PassWord));
             listparam.Add(new SqlParameter("User_Address", obj.User_Address));        
-            listparam.Add(new SqlParameter("User_Email", obj.User_Email));
-            listparam.Add(new SqlParameter("User_Phone", obj.User_Phone));
-            return cls.capnhatdulieu("Users_Insert1", listparam);
+            //listparam.Add(new SqlParameter("User_Email", obj.User_Email));
+            //listparam.Add(new SqlParameter("User_Phone", obj.User_Phone));
+            //return cls.capnhatdulieu("Users_Insert1", listparam);
+            return cls.capnhatdulieu("Users_Insert2", listparam);
         }
         public bool UpdateInfo(UserDTO obj)
         {
@@ -42,7 +43,6 @@ namespace DAL
             listparam.Add(new SqlParameter("User_FullName", obj.User_FullName));
             listparam.Add(new SqlParameter("User_Birthday", obj.User_Birthday));
             listparam.Add(new SqlParameter("User_Gender", obj.User_Gender));
-            listparam.Add(new SqlParameter("User_PassWord", obj.User_PassWord));
             listparam.Add(new SqlParameter("User_Address", obj.User_Address));
             listparam.Add(new SqlParameter("User_Xa", obj.User_Xa));
             listparam.Add(new SqlParameter("User_Phuong", obj.User_Phuong));
@@ -103,11 +103,58 @@ namespace DAL
             listparam.Add(new SqlParameter("User_UserName", user_name));
             return cls.truyvansqlcothamso("Users_KiemtraUser_Name", listparam);
         }
+        public DataTable kiemtraEmail(string email)
+        {
+            listparam.Clear();
+            listparam.Add(new SqlParameter("User_Email", email));
+            return cls.truyvansqlcothamso("Users_KiemtraEmail", listparam);
+        }
+
+        public DataTable kiemtraEmailbyUser(string username,string email)
+        {
+            listparam.Clear();
+            listparam.Add(new SqlParameter("User_UserName", username));
+            listparam.Add(new SqlParameter("User_Email", email));
+            return cls.truyvansqlcothamso("Users_KiemtraEmailbyUser", listparam);
+        }
+
+
         public bool UpdateLast_Login(int ID)
         {
             listparam.Clear();
             listparam.Add(new SqlParameter("User_ID", ID));
             return cls.capnhatdulieu("Users_UpdateLastLogin", listparam);
+        }
+        public bool Update_Avt(UserDTO obj)
+        {
+            listparam.Clear();
+            listparam.Add(new SqlParameter("User_ID", obj.User_ID));
+            listparam.Add(new SqlParameter("User_Image", obj.User_Image));
+            return cls.capnhatdulieu("Users_ChangeAvt", listparam);
+        }
+
+        public DataTable kiemtraMK(int ID,string pass)
+        {
+            listparam.Clear();
+            listparam.Add(new SqlParameter("User_ID", ID));
+            listparam.Add(new SqlParameter("User_PassWord", pass));
+            return cls.truyvansqlcothamso("CheckPass", listparam);
+        }
+        public bool Change_pass(int ID, string passnew)
+        {
+            listparam.Clear();
+            listparam.Add(new SqlParameter("User_ID", ID));
+            listparam.Add(new SqlParameter("User_PassWord", passnew));
+            return cls.capnhatdulieu("Change_pass", listparam);
+        }
+
+        public bool Change_passByUserNameAndEmail(string username, string email, string passnew)
+        {
+            listparam.Clear();
+            listparam.Add(new SqlParameter("User_UserName", username));
+            listparam.Add(new SqlParameter("User_Email", email));
+            listparam.Add(new SqlParameter("User_PassWord", passnew));
+            return cls.capnhatdulieu("Change_passByUserNameAndEmail", listparam);
         }
         
     }

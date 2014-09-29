@@ -17,6 +17,16 @@ namespace BEC_Vuongquocvuive
 
         protected void Session_Start(object sender, EventArgs e)
         {
+            Session["Username"] = null;
+            Session["Password"] = null;
+            Session["User_ID"] = null;
+            Session["User_FullName"] = null;
+            if (Request.Cookies["user"] != null)
+            {
+                Session["Username"] = Request.Cookies["user"]["name"];
+                Session["Password"] = Request.Cookies["user"]["pass"];
+            }
+
             int count_visit = 0;
             //Kiểm tra file count_visit.txt nếu không tồn  tại thì
             if (System.IO.File.Exists(Server.MapPath("~/count_visit.txt")) == false)
@@ -70,7 +80,9 @@ namespace BEC_Vuongquocvuive
 
         protected void Session_End(object sender, EventArgs e)
         {
+            Application.Lock();
             Session["online"] = int.Parse(Session["online"].ToString()) - 1;
+            Application.UnLock();
         }
 
         protected void Application_End(object sender, EventArgs e)

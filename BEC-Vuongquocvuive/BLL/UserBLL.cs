@@ -79,6 +79,33 @@ namespace BLL
         {
             return _User.UpdateInfo(obj);
         }
+
+        public DataTable kiemtraEmail(string email)
+        {
+            return _User.kiemtraEmail(email);
+        }
+
+        public bool Update_Avt(UserDTO obj)
+        {
+            return _User.Update_Avt(obj);
+        }
+        public DataTable kiemtraEmailbyUser(string username, string email)
+        {
+            return _User.kiemtraEmailbyUser(username, email);
+        }
+        public DataTable kiemtraMK(int ID, string pass)
+        {
+            return _User.kiemtraMK(ID, pass);
+        }
+        public bool Change_pass(int ID, string passnew)
+        {
+            return _User.Change_pass(ID, passnew);
+        }
+        public bool Change_passByUserNameAndEmail(string username, string email, string passnew)
+        {
+            return _User.Change_passByUserNameAndEmail(username, email, passnew);
+        }
+
     }
 
 

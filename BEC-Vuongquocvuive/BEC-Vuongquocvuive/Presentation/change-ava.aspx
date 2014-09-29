@@ -30,10 +30,17 @@
 	        <div class="nav-list-ava"><a href="javascript:;"><i class="fa fa-camera"></i> Chọn ảnh tải lên</a></div>
 	        <ul class="list-album"><li><a class="active" href="#">Ảnh đại diện</a></li></ul>
 	        <ul class="list-ava">
-		        <li><a href="#" id="change-avt"><img src="images/ava1.png" alt="avatar"/></a></li>
-		        <li><a href="#" id="change-avt"><img src="images/ava2.jpg" alt="avatar"/></a</li>
-		        <li><a href="#" id="change-avt"><img src="images/ava3.jpg" alt="avatar"/></a</li>
-		        <li><a href="#" id="change-avt"><img src="images/ava4.jpg" alt="avatar"/></a</li>
+		        <li><a href="blog.aspx?change-avt=ava1.png" id="change-avt"><img src="images/ava1.png" alt="avatar"/></a></li>
+		        <li><a href="blog.aspx?change-avt=ava2.jpg" id="change-avt"><img src="images/ava2.jpg" alt="avatar"/></a</li>
+		        <li><a href="blog.aspx?change-avt=ava3.jpg" id="change-avt"><img src="images/ava3.jpg" alt="avatar"/></a</li>
+		        <li><a href="blog.aspx?change-avt=ava4.jpg" id="change-avt"><img src="images/ava4.jpg" alt="avatar"/></a</li>
+                <asp:Repeater ID="rptChangerAvt" runat="server">
+                    <ItemTemplate>
+                        <li>
+                       <a href="blog.aspx?change-avt=<%# Eval("FileName")%>" id="change-avt"><img src="images/<%# Eval("FileName")%>" alt="avatar"/></a
+                        </li>
+                    </ItemTemplate>
+                </asp:Repeater>
 	        </ul>
           </div>
         </div>

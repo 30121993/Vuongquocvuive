@@ -49,7 +49,9 @@ namespace DAL
             cmd.CommandType = CommandType.StoredProcedure;
             da.SelectCommand = cmd;
             da.Fill(dt);
+            disconnect();
             return dt;
+
         }
         //---------------------------------------------------------------
         public DataTable truyvansqlcothamso(string cmdText, List<SqlParameter> listparam)

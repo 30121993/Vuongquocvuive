@@ -17,11 +17,11 @@ namespace BEC_Vuongquocvuive
         {
             if (!IsPostBack)
             {
-                if (Request.Cookies["User_Name"] != null && Request.Cookies["Password"] != null)
+                if (Request.Cookies["user"] != null)
                 {
-                    txttaikhoan.Text = Request.Cookies["User_Name"].Value;
-                    txtmatkhau.Attributes["value"] = Request.Cookies["Password"].Value;
-                    cbluuMK.Checked = true;
+                    txttaikhoan.Text = Request.Cookies["user"]["name"];
+                    txtmatkhau.Attributes["value"] = Request.Cookies["user"]["pass"];
+                    cbluuMK.Checked=true;
 
                 }
                 else
@@ -35,30 +35,54 @@ namespace BEC_Vuongquocvuive
         protected void btndangnhap_Click(object sender, EventArgs e)
         {
             bool trangthai;
-            user = userbll.Dangnhap(txttaikhoan.Text.Trim(), txtmatkhau.Text.Trim());
+            user = userbll.Dangnhap(txttaikhoan.Text.Trim(), mahoa(txtmatkhau.Text.Trim()));
+            string header = Session["Header"].ToString();
+
             if (user.Rows.Count==1)
             {
                 trangthai = bool.Parse(user.Rows[0]["User_Status"].ToString());
                 if (trangthai==true)
                 {
-                    Response.Write("<script language='javascript'> alert('Đăng nhập thành công!');location.href='Blog.aspx';</script>");
-                    //Response.Write("<script language='javascript'>$.ajax({ type: "GET",url: "Logout.aspx",dataType: 'html',success: function (data) {$('body').append(data);}});</script>");
                     Session["User_ID"] = user.Rows[0]["User_ID"];
                     Session["User_FullName"] = user.Rows[0]["User_FullName"];
                     UpdateGold(user);
                     userbll.UpdateLast_Login(int.Parse(Session["User_ID"].ToString()));
-                    
-                    if (cbluuMK.Checked == true)
+
+
+                    if (header == "Story")
                     {
-                        Response.Cookies["User_Name"].Value = txttaikhoan.Text.Trim();
-                        Response.Cookies["Password"].Value = txtmatkhau.Text.Trim();
-                        Response.Cookies["User_Name"].Expires = DateTime.Now.AddDays(2);
-                        Response.Cookies["Password"].Expires = DateTime.Now.AddDays(2);
+                        //Response.Write("<script language='javascript'> alert('Đăng nhập thành công!');location.href='Story.aspx';</script>");
+                        Response.Redirect("Story.aspx");
+                    }
+                    if (header == "Games")
+                    {
+                        //Response.Write("<script language='javascript'> alert('Đăng nhập thành công!');location.href='Games.aspx';</script>");
+                        Response.Redirect("Games.aspx");
+                    }
+                    if (header == "Blog")
+                    {
+                        //Response.Write("<script language='javascript'> alert('Đăng nhập thành công!');location.href='Blog.aspx?mod=Changer_info_User';</script>");
+                        Response.Redirect("Update_Info.aspx");
+                    }
+                    //Response.Write("<script language='javascript'>$.ajax({ type: "GET",url: "Logout.aspx",dataType: 'html',success: function (data) {$('body').append(data);}});</script>");
+                    
+                    
+                    if (cbluuMK.Checked)
+                    {
+                        HttpCookie cook = new HttpCookie("user");
+                        cook.Values.Add("name", txttaikhoan.Text.Trim());
+                        cook.Values.Add("pass", mahoa(txtmatkhau.Text.Trim()));
+                        cook.Expires = DateTime.MaxValue;
+                        Response.Cookies.Add(cook);
+                        //Response.Cookies["User_Name"].Value = txttaikhoan.Text.Trim();
+                        //Response.Cookies["Password"].Value = mahoa(txtmatkhau.Text.Trim());
+                        //Response.Cookies["User_Name"].Expires = DateTime.Now.AddDays(7);
+                        //Response.Cookies["Password"].Expires = DateTime.Now.AddDays(7);
                     }
                     else
                     {
-                        Response.Cookies["User_Name"].Expires = DateTime.Now.AddDays(-1);
-                        Response.Cookies["Password"].Expires = DateTime.Now.AddDays(-1);
+                        //Response.Cookies["User_Name"].Expires = DateTime.Now.AddDays(-1);
+                        //Response.Cookies["Password"].Expires = DateTime.Now.AddDays(-1);
                        
                     }
                     
@@ -67,13 +91,13 @@ namespace BEC_Vuongquocvuive
                 else
                     if (trangthai == false)
                     {
-                        Response.Write("<script language='javascript'> alert('Tài Khoản này đã bị khóa vui lòng đăng nhập bằng tài khoản khác!');location.href='Blog.aspx';</script>");
+                        Response.Write("<script language='javascript'> alert('Tài Khoản này đã bị khóa vui lòng đăng nhập bằng tài khoản khác!'); window.history.back();</script>");
                         
                     }
             }
             else
             {
-                Response.Write("<script language='javascript'> alert('Đăng nhập thất bại!');location.href='Blog.aspx';</script>");
+                Response.Write("<script language='javascript'> alert('Đăng nhập thất bại!'); window.history.back();</script>");
                
             }
 
@@ -89,6 +113,8 @@ namespace BEC_Vuongquocvuive
 
         //    Response.Redirect("Blog.aspx");
         //}
+
+
         private void UpdateGold(DataTable user1)
         {
             DateTime curdate = DateTime.Now;
@@ -102,9 +128,12 @@ namespace BEC_Vuongquocvuive
                 userbll.UpdateGold(int.Parse(Session["User_ID"].ToString()));
                 //Response.Redirect("Popup.aspx");
                 Response.Write("<script language='javascript'> alert('Bạn Được Cộng Thêm 1000 Vàng trong vòng 7 ngày từ ngày đăng kí!!!');</script>");
-
             }
             else { }
+        }
+        private string mahoa(string mk)
+        {
+            return System.Web.Security.FormsAuthentication.HashPasswordForStoringInConfigFile(mk.Trim(), "SHA1");
         }
     }
 }

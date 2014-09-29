@@ -50,17 +50,15 @@ $(document).ready(function(e) {
 			dayNamesShort: ['CN', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7'],
 			dayNamesMin: ['CN', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7'],
 			weekHeader: 'Tu',
-			dateFormat: 'yy/mm/dd',
+			dateFormat: 'yyyy/mm/dd',
 			firstDay: 0,
 			isRTL: false,
 			showMonthAfterYear: false,
 			yearSuffix: ''
 		};
 		$.datepicker.setDefaults($.datepicker.regional['vi']);
-		$("#txtNgaysinh").datepicker({ changeMonth: true, changeYear: true, yearRange: '1900:2100'});
+		$("#txtNgaysinh").datepicker({ changeMonth: true, changeYear: true, yearRange: '1900:2100' });
 });
-
-
 
 
 $(function () {
@@ -77,13 +75,19 @@ $(function () {
         dayNamesShort: ['CN', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7'],
         dayNamesMin: ['CN', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7'],
         weekHeader: 'Tu',
-        dateFormat: 'yy/mm/dd',
+        dateFormat: 'yyyy/mm/dd',
         firstDay: 0,
         isRTL: false,
         showMonthAfterYear: false,
         yearSuffix: ''
     };
     $.datepicker.setDefaults($.datepicker.regional['vi']);
-    $("#txtngaysinh").datepicker({ changeMonth: true, changeYear: true, yearRange: '1900:2100' });
+    $("#txtngaysinh1").datepicker({ changeMonth: true, changeYear: true, yearRange: '1900:2100' });
 });
+
+
+
+	$(document).ready(function() {
+    $(".wrapper-iner-search-result").niceScroll({touchbehavior:true,cursorcolor:"#5a5a5a",cursoropacitymax:0.7,cursorwidth:6,autohidemode:true});
+  });
 });
