@@ -12,33 +12,40 @@ namespace BEC_Vuongquocvuive.Presentation
         protected void Page_Load(object sender, EventArgs e)
         {
             Control MH;
+            
+            string mod;
+            if (Request.QueryString["mod"] != null)
+            {
+                if (!IsPostBack)
+                {
+                    LoadData();
+                }
+
+                mod = Request.QueryString["mod"].ToString();
+                MH = Page.LoadControl("UCModules/" + mod + ".ascx");
+                plhStoryUC.Controls.Add(MH);
+            }
+            else
+            {
+                Response.Redirect("Story.aspx");
+            }
+        }
+        private void LoadData()
+        {
             try
             {
                 if (Session["User_ID"] != null)
                 {
                     lblTennguoidung.Text = " " + Session["User_FullName"];
-
-                    string mod;
-                    if (Request.QueryString["mod"] != null)
-                    {
-
-
-                        mod = Request.QueryString["mod"].ToString();
-                        MH = Page.LoadControl("UCModules/" + mod + ".ascx");
-                        plhStoryUC.Controls.Add(MH);
-                    }
-                    else
-                    {
-                        Response.Redirect("Story.aspx");
-                    }
                 }
-                else
-                {
-                    Response.Write("<script language='javascript'> alert('Bạn chưa đăng nhập,vui lòng đăng nhập để xem thông tin truyện!');location.href='Story.aspx';</script>");
-                }
+                //else
+                //{
+                //    Response.Write("<script language='javascript'> alert('Bạn chưa đăng nhập,vui lòng đăng nhập để xem thông tin truyện!');location.href='Story.aspx';</script>");
+                //}
             }
             catch
             {
+
             }
         }
     }

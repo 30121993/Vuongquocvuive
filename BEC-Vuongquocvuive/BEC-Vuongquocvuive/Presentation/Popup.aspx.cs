@@ -16,7 +16,7 @@ namespace BEC_Vuongquocvuive.Presentation
 
         protected void btnOk_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Blog.aspx");
+            
         }
     }
 }

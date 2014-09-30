@@ -42,7 +42,7 @@ namespace BEC_Vuongquocvuive.Presentation
                 plhChuadangnhap.Visible = false;
                 lblTennguoidung.Text = " " + Session["User_FullName"];
             }
-            else
+            if (Session["User_ID"] == null)
             {
                 plhDadangnhap.Visible = false;
                 plhChuadangnhap.Visible = true;

@@ -41,15 +41,24 @@ namespace BEC_Vuongquocvuive.Presentation
                     Label1.Text = "Tài khoản này không tồn tại!";
                 if (dt.Rows.Count > 0)
                 {
-                    Label1.Text = "";
-                    if (dt1.Rows.Count == 0)
+                    bool TrangthaiDK = bool.Parse(dt.Rows[0]["User_HoanThanhDK"].ToString());
+                    if (TrangthaiDK == true)
                     {
-                        Label2.Text = "Email không phải của tài khoản trên";
+                        if (dt1.Rows.Count == 0)
+                        {
+                            Label2.Text = "Email không phải của tài khoản trên";
+                        }
+                        else
+                        {
+                            Label2.Text = "";
+                            kt = 1;
+                        }
                     }
-                    else {
-                        Label2.Text = "";
-                        kt = 1;
+                    else
+                    {
+                        Label2.Text = "Bạn chưa cập nhật email !";
                     }
+                   
                 }
 
             }
@@ -67,9 +76,9 @@ namespace BEC_Vuongquocvuive.Presentation
             if (Session["User_ID"] == null)
             {
                 bool kt;
-                string passnew = GenerateRandomPassword(7);
                 username = txtUserName.Text;
                 email = txtEmail.Text;
+                string passnew = GenerateRandomPassword(7);
                 string mk = mahoa(passnew);
                 int a = CheckData();
                 if (a == 1)
@@ -86,8 +95,6 @@ namespace BEC_Vuongquocvuive.Presentation
                     }
                 }
             }
-            
-
         }
 
         private void send_email(string pass)
@@ -95,7 +102,7 @@ namespace BEC_Vuongquocvuive.Presentation
             
 
             SmtpClient SmtpServer = new SmtpClient();
-            SmtpServer.Credentials = new System.Net.NetworkCredential("longtd3012@gmail.com", "il0vemylife");
+            SmtpServer.Credentials = new System.Net.NetworkCredential("contact@becmedia.com.vn", "@becgroup+");
             SmtpServer.Port = 587;
             SmtpServer.Host = "smtp.gmail.com";
             SmtpServer.EnableSsl = true;
@@ -103,7 +110,7 @@ namespace BEC_Vuongquocvuive.Presentation
             String[] addr = txtEmail.Text.Split(',');
             try
             {
-                mail.From = new MailAddress("longtd3012@gmail.com",
+                mail.From = new MailAddress("contact@becmedia.com.vn",
                 "Thông Báo từ Vuongquocvuive.com ", System.Text.Encoding.UTF8);
                 Byte i;
                 for (i = 0; i < addr.Length; i++)

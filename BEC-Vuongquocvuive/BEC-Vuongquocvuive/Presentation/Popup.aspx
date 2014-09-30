@@ -28,7 +28,7 @@
 
 <section id="block-login">
 <div class="wrapper-block">
-<h3 class="title-block">Khuyến Mãi</h3>
+<h3 class="title-block">Thông Báo</h3>
 <div class="content-block">
 	<ul class="form">
 		<label style="color: blue;font-size: 17px;">Chúc Mừng Bạn!!!<br />Bạn Được Cộng Thêm 1000 Vàng trong vòng 7 ngày từ ngày đăng kí!!!</label>

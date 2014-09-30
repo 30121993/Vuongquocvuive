@@ -16,6 +16,7 @@ namespace BEC_Vuongquocvuive.Presentation.UCModules
         Story_PageBLL _story_page = new Story_PageBLL();
         Story_ViewBLL _story_view = new Story_ViewBLL();
         UserBLL _user = new UserBLL();
+        int Story_ID, user_id;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -30,7 +31,6 @@ namespace BEC_Vuongquocvuive.Presentation.UCModules
             {
                 if (Session["User_ID"] != null)
                 {
-                    int Story_ID, user_id;
                     user_id = int.Parse(Session["User_ID"].ToString());
                     Story_ID = int.Parse(Request.QueryString["id"].ToString());
                     if (Story_ID != null)
@@ -49,7 +49,7 @@ namespace BEC_Vuongquocvuive.Presentation.UCModules
                             rptBia.DataBind();
                             rptSoundTrack.DataBind();
 
-
+                            //------------------------------------------------------------------------------------------------- 
                             Story_ViewDTO obj = new Story_ViewDTO();
                             obj.Story_ID = Story_ID;
                             obj.User_ID = user_id;
@@ -67,9 +67,32 @@ namespace BEC_Vuongquocvuive.Presentation.UCModules
                     }
                     else
                     {
-                        Response.Write("<script language='javascript'> alert('Bạn chưa đăng nhập,vui lòng đăng nhập để xem thông tin truyện!');location.href='Story.aspx';</script>");
+                        Response.Write("<script language='javascript'> alert('Truyện này cần vàng để đọc, Vui lòng đăng nhập để đọc truyện!!');location.href='Story.aspx';</script>");
                     }
                 }
+                if (Session["User_ID"] == null)
+                {
+                    Story_ID = int.Parse(Request.QueryString["id"].ToString());
+                    if (Story_ID != null)
+                    {
+                        DataTable dt3 = _story.GetStoryByID(Story_ID);
+                        int price = int.Parse(dt3.Rows[0][8].ToString());
+                        if (price == 0)
+                        {
+                            _story.viewup(Story_ID);
+                            rpReadStory.DataSource = _story_page.ReadStory(Story_ID);
+                            rpReadStory.DataBind();
+                            rptSoundTrack.DataSource = rptBia.DataSource = _story.GetStoryByID(Story_ID);
+                            rptBia.DataBind();
+                            rptSoundTrack.DataBind();
+                        }
+                        else {
+                            Response.Write("<script language='javascript'> alert('Truyện này cần vàng để đọc, Vui lòng đăng nhập để đọc truyện!');location.href='Story.aspx';</script>");
+                        }
+                    }
+                }
+
+
             }
             catch (Exception)
             {

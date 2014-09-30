@@ -147,7 +147,7 @@
                     <label>Tài Khoản: </label>
                     <asp:TextBox ID="txtUserName" class="tb-register" runat="server" Width="250px" 
                         AutoPostBack="false"></asp:TextBox> 
-                    <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
+                    <asp:Label ID="Label1" runat="server" Text="" Display="Dynamic"></asp:Label>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
                 ControlToValidate="txtUserName" ErrorMessage="Thông tin yêu cầu!" ForeColor="Red" 
                         Display="Dynamic"></asp:RequiredFieldValidator>
@@ -170,6 +170,7 @@
                         Text="Gửi" onclick="btnGui_Click"/>
                         <asp:UpdateProgress ID="UpdateProgress1" runat="server">
                             <ProgressTemplate>
+                            <%--loading.gif--%>
                                   <asp:Image ID="Processing" ImageUrl="~/Presentation/images/loading.gif" runat="server" style="height: 64px;width: 120px;padding-left: 220px;margin-top: -45px;"/>
                              </ProgressTemplate>
                         </asp:UpdateProgress>
