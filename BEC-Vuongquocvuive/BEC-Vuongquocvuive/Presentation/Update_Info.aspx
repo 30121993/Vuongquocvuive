@@ -5,7 +5,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+<link type="image/x-icon" href="images/logo.png" rel="shortcut icon" />
+    <title>Trang Thay đổi thông tin cá nhân</title>
     <link type="text/css" rel="stylesheet" href="css/font-awesome.css"/>
     <link type="text/css" rel="stylesheet" href="css/fonts.css"/>
     <link type="text/css" rel="stylesheet" href="css/layout.css"/>
@@ -114,7 +115,7 @@
                     dayNamesShort: ['CN', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7'],
                     dayNamesMin: ['CN', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7'],
                     weekHeader: 'Tu',
-                    dateFormat: 'dd/mm/yy',
+                    dateFormat: 'mm/dd/yy',
                     firstDay: 0,
                     isRTL: false,
                     showMonthAfterYear: false,
@@ -405,7 +406,7 @@
                         ControlToValidate="txtphone" ErrorMessage="Thông tin yêu cầu!" ForeColor="Red"></asp:RequiredFieldValidator>
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" 
                                 ControlToValidate="txtPhone"   Display="Dynamic"
-                                ErrorMessage="Điện thoại không đúng định dạng" ValidationExpression="^\d{8,10}" ForeColor="Red"></asp:RegularExpressionValidator>
+                                ErrorMessage="Điện thoại không đúng định dạng" ValidationExpression="^\d{8,11}" ForeColor="Red"></asp:RegularExpressionValidator>
                         </li>
                         <li>
                              <asp:Button class="btn btn-register btn-left" ID="Button21" runat="server" 

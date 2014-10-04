@@ -8,7 +8,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta charset="utf-8">
-<title>Story detail page</title>
+<link type="image/x-icon" href="images/logo.png" rel="shortcut icon" />
+<title>Trang Truyện</title>
 <link type="text/css" rel="stylesheet" href="css/font-awesome.css"/>
 <link type="text/css" rel="stylesheet" href="css/fonts.css"/>
 <link type="text/css" rel="stylesheet" href="css/layout.css"/>
@@ -62,7 +63,27 @@
     <uc2:Menu2 ID="Menu2" runat="server"></uc2:Menu2>
     <div class="wrapper-2">
       <div class="container">
-        <header id="header">        
+        <header id="header">    
+        
+        <asp:Repeater ID="rptSoundTrack" runat="server">
+            <ItemTemplate>
+                <div id="block_audio_top">
+                    <audio id="bg_audio" type="audio/mpeg" autoplay loop control src="data/soundtrack/UThiYeuYesItSLove-TangNhatTue.mp3">
+                    </audio>
+                    <div id="mute" class="mute"></div>
+			        <div id="volumeMeter" onclick="setNewVolume(this,event)"><div id="volumeStatus"></div></div>
+                    <script>
+                        var activeSong = document.getElementById('bg_audio');
+                        document.getElementById('mute').addEventListener('click', function (e) {
+                            e = e || window.event;
+                            activeSong.muted = !activeSong.muted;
+                            e.preventDefault();
+                        }, false);
+                    </script>
+                </div> 
+            </ItemTemplate>
+      </asp:Repeater>   
+        
         <div class="bottom-head">
         <div class="search">
         	<div class="wrapper-search">
@@ -71,20 +92,23 @@
             </div>
         </div>
 
-
-        <%--<div class="user-block-head">
+        <asp:PlaceHolder ID="plhChuadangnhap" runat="server">
+            <div class="user-block-head">
         	<ul>
-        		<li><a href="Blog.aspx"><i class="fa fa-smile-o"></i><asp:Label ID="txtUserName">Tên ngươi đăng nhập</asp:Label></a></li>
-            	<li><a href="javascript:;" id="btn-login"><i class="fa fa-lock"></i> Đăng Nhập</a></li>
+        		<li><a href="Dangki.aspx"><i class="fa fa-pencil-square-o"></i> Đăng Kí</a></li>
+            	<li><a id="btn-login" href="javascript:;"><i class="fa fa-unlock"></i> Đăng Nhập</a></li>
             </ul>
-        </div>--%>
-        <div class="user-block-head">
+        </div>
+        </asp:PlaceHolder>
+
+         <asp:PlaceHolder ID="plhDadangnhap" runat="server">
+            <div class="user-block-head">
         	<ul>
-        		<li><a href="Blog.aspx"><i class="fa fa-smile-o"></i><asp:Label ID="lblTennguoidung" runat="server" Text=""></asp:Label></a></li>
+        		<li><a href="Update_Info.aspx"><i class="fa fa-smile-o"></i><asp:Label ID="lblTennguoidung" runat="server" Text=""></asp:Label></a></li>
             	<li><a id="A1" href="javascript:;"><i class="fa fa-unlock"></i> Đăng Xuất</a></li>
             </ul>
         </div>
-
+        </asp:PlaceHolder>
 
         </div></header>
         <!--End header-->

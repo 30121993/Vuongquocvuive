@@ -17,12 +17,12 @@ namespace BEC_Vuongquocvuive.Presentation
         string email = "";
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session["Header"] = "Blog";
+            Session["Header"] = "Update_Info.aspx";
             if (!IsPostBack)
             {
                 if (Session["User_ID"] != null)
                 {
-                    Response.Redirect("Blog.aspx");
+                    Response.Redirect("Update_Info.aspx");
                 }
             }
             
@@ -79,7 +79,7 @@ namespace BEC_Vuongquocvuive.Presentation
                 username = txtUserName.Text;
                 email = txtEmail.Text;
                 string passnew = GenerateRandomPassword(7);
-                string mk = mahoa(passnew);
+                string mk = MD5(mahoa(passnew));
                 int a = CheckData();
                 if (a == 1)
                 {
@@ -102,7 +102,7 @@ namespace BEC_Vuongquocvuive.Presentation
             
 
             SmtpClient SmtpServer = new SmtpClient();
-            SmtpServer.Credentials = new System.Net.NetworkCredential("contact@becmedia.com.vn", "@becgroup+");
+            SmtpServer.Credentials = new System.Net.NetworkCredential("support1@becmedia.com.vn", "123456Bec");
             SmtpServer.Port = 587;
             SmtpServer.Host = "smtp.gmail.com";
             SmtpServer.EnableSsl = true;
@@ -110,7 +110,7 @@ namespace BEC_Vuongquocvuive.Presentation
             String[] addr = txtEmail.Text.Split(',');
             try
             {
-                mail.From = new MailAddress("contact@becmedia.com.vn",
+                mail.From = new MailAddress("support1@becmedia.com.vn",
                 "Thông Báo từ Vuongquocvuive.com ", System.Text.Encoding.UTF8);
                 Byte i;
                 for (i = 0; i < addr.Length; i++)
@@ -150,6 +150,15 @@ namespace BEC_Vuongquocvuive.Presentation
         private string mahoa(string mk)
         {
             return System.Web.Security.FormsAuthentication.HashPasswordForStoringInConfigFile(mk.Trim(), "SHA1");
+        }
+        private string MD5(string mk)
+        {
+            return System.Web.Security.FormsAuthentication.HashPasswordForStoringInConfigFile(mk.Trim(), "MD5");
+        }
+
+        protected void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+            Label2.Text = "";
         }
 
     }

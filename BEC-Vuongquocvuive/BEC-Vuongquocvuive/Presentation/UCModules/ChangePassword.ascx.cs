@@ -43,10 +43,10 @@ namespace BEC_Vuongquocvuive.Presentation.UCModules
                 ID = int.Parse(Session["User_ID"].ToString());
                 if (txtPassword.Text != null)
                 {
-                    DataTable dtcheckMK = _user.kiemtraMK(ID, mahoa(txtPassword.Text));
+                    DataTable dtcheckMK = _user.kiemtraMK(ID, MD5(mahoa(txtPassword.Text)));
                     if (dtcheckMK.Rows.Count > 0)
                     {
-                        _user.Change_pass(ID, mahoa(txtPasswordnew.Text.Trim()));
+                        _user.Change_pass(ID, MD5(mahoa(txtPasswordnew.Text.Trim())));
                         lblLoiPass.Text = "";
                         lblMsg.Text = "Thay Đổi Mật Khẩu Thành Công!";
                     }
@@ -70,7 +70,10 @@ namespace BEC_Vuongquocvuive.Presentation.UCModules
             return System.Web.Security.FormsAuthentication.HashPasswordForStoringInConfigFile(mk.Trim(), "SHA1");
         }
 
-
+        private string MD5(string mk)
+        {
+            return System.Web.Security.FormsAuthentication.HashPasswordForStoringInConfigFile(mk.Trim(), "MD5");
+        }
 
     }
 }

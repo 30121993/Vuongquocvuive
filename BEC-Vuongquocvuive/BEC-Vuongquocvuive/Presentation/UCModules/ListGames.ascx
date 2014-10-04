@@ -11,9 +11,9 @@
                 <ItemTemplate>
                         <li class="story-item">
                         <div class="wrapper-item">
-                             <img alt="" src="" title="Anh bia"/>
+                        <a href="Games.aspx?mod=GameDetail&id=<%# Eval("Game_ID")%>" title="<%# Eval("Game_Name")%>">
+                             <div class="wrapper-img"><img alt="<%# Eval("Game_Name")%>" src="<%# Eval("Game_Catalog")%>" title="<%# Eval("Game_Name")%>"/></div>
                           <div class="col-book"></div>
-                          <a href="Games.aspx?mod=GameDetail&id=<%# Eval("Game_ID")%>">
                               <div class="story-info">
                   	            <h3>
                                 <%# Eval("Game_Name")%>

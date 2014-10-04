@@ -40,6 +40,33 @@ namespace BEC_Vuongquocvuive.Presentation {
         protected global::BEC_Vuongquocvuive.Presentation.UCModules.Menu2 Menu2;
         
         /// <summary>
+        /// rptSoundTrack control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptSoundTrack;
+        
+        /// <summary>
+        /// plhChuadangnhap control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder plhChuadangnhap;
+        
+        /// <summary>
+        /// plhDadangnhap control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder plhDadangnhap;
+        
+        /// <summary>
         /// lblTennguoidung control.
         /// </summary>
         /// <remarks>

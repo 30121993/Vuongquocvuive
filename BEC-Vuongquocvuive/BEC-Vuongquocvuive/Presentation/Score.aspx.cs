@@ -23,33 +23,49 @@ namespace BEC_Vuongquocvuive
         }
         private void loadData()
         {
-           
             int id_game = int.Parse(Session["ID_GAME"].ToString());
-            int id_user = int.Parse(Session["User_ID"].ToString());
-            string score = Request.Params.Get("gscore").ToString();
-            if (score != null)
+            try
             {
-                Game_PlayerDTO obj = new Game_PlayerDTO();
-                GameDAL _game = new GameDAL();
-                DataTable dt = new DataTable();
-                dt = _game.GetGameByID(id_game);
-                int mark = int.Parse(dt.Rows[0][6].ToString());
-                int score1 = int.Parse(score.ToString());
-                if (score1 >= mark)
+                int id_user = int.Parse(Session["User_ID"].ToString());
+                string score = Request.Params.Get("gscore").ToString();
+
+                if (score != null)
                 {
-                    UserBLL _user = new UserBLL();
-                    _user.Addgold(id_user,id_game);
+                    Game_PlayerDTO obj = new Game_PlayerDTO();
+                    GameDAL _game = new GameDAL();
+                    DataTable dt = new DataTable();
+                    dt = _game.GetGameByID(id_game);
+                    int mark = int.Parse(dt.Rows[0][6].ToString());
+                    int score1 = int.Parse(score.ToString());
+                    if (score1 >= mark)
+                    {
+                        UserBLL _user = new UserBLL();
+                        _user.Addgold(id_user, id_game);
+                    }
+                    else
+                    {
+                        UserBLL _user = new UserBLL();
+                        _user.Addgold1(id_user, id_game);
+                    }
+                    obj.Mark = int.Parse(score.ToString());
+                    obj.Game_ID = id_game;
+                    obj.User_ID = id_user;
+                    _game_player.CapnhatDiem(obj);
+                    Response.Redirect("~/Presentation/Games.aspx?mod=GameDetail&id=" + id_game);
                 }
-                else {
-                    UserBLL _user = new UserBLL();
-                    _user.Addgold1(id_user, id_game);
-                }
-                obj.Mark = int.Parse(score.ToString());
-                obj.Game_ID = id_game;
-                obj.User_ID = id_user;
-                _game_player.CapnhatDiem(obj);
+            }
+            catch (Exception)
+            {
+
+                Response.Write("<script language='javascript'> alert('Bạn chưa đăng nhập,vui lòng đăng nhập để lưu điểm game');</script>");
                 Response.Redirect("~/Presentation/Games.aspx?mod=GameDetail&id=" + id_game);
             }
+            
+            //}
+            //else {
+            //    
+            //}
+
         }
     }
 }

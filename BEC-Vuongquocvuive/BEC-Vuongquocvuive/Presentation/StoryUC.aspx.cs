@@ -12,15 +12,14 @@ namespace BEC_Vuongquocvuive.Presentation
         protected void Page_Load(object sender, EventArgs e)
         {
             Control MH;
+           
+                LoadData();
             
+
+
             string mod;
             if (Request.QueryString["mod"] != null)
             {
-                if (!IsPostBack)
-                {
-                    LoadData();
-                }
-
                 mod = Request.QueryString["mod"].ToString();
                 MH = Page.LoadControl("UCModules/" + mod + ".ascx");
                 plhStoryUC.Controls.Add(MH);
@@ -34,14 +33,18 @@ namespace BEC_Vuongquocvuive.Presentation
         {
             try
             {
+                //int Story_ID = int.Parse(Request.QueryString["id"].ToString());
                 if (Session["User_ID"] != null)
                 {
+                    plhDadangnhap.Visible = true;
+                    plhChuadangnhap.Visible = false;
                     lblTennguoidung.Text = " " + Session["User_FullName"];
                 }
-                //else
-                //{
-                //    Response.Write("<script language='javascript'> alert('Bạn chưa đăng nhập,vui lòng đăng nhập để xem thông tin truyện!');location.href='Story.aspx';</script>");
-                //}
+                if (Session["User_ID"] == null)
+                {
+                    plhDadangnhap.Visible = false;
+                    plhChuadangnhap.Visible = true;
+                }
             }
             catch
             {

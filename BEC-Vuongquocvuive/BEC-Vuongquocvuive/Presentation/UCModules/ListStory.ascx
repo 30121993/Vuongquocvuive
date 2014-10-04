@@ -16,9 +16,9 @@
                     <ItemTemplate>
                          <li class="story-item">
                             <div class="wrapper-item">
-                                <img alt="" src="data/images/<%# Eval("Story_Catalog")%>" title="Anh bia" />
+                            <a href="StoryUC.aspx?mod=StoryDetail&id=<%# Eval("Story_ID")%>" title="<%# Eval("Story_Name")%>">
+                            <div class="wrapper-img"><img alt="<%# Eval("Story_Name")%>" src="data/images/<%# Eval("Story_Catalog")%>" title="<%# Eval("Story_Name")%>" /></div>
                                 <div class="col-book"></div>
-                                <a href="StoryUC.aspx?mod=StoryDetail&id=<%# Eval("Story_ID")%>">
                                     <div class="story-info">
                   	                    <h3> <%# Eval("Story_Name")%></h3>
                                         <p class="total-view">Lượt xem:<em><%# Eval("Story_TotalView")%></em></p>

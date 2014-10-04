@@ -18,8 +18,13 @@ namespace BEC_Vuongquocvuive.Presentation
        // int id;
         protected void Page_Load(object sender, EventArgs e)
         {
+            string url = Request.Url.AbsoluteUri;
+            //Session["Header"] = "Games";
+            Session["Header"] = "" + url;
+           
+            //Session["Header"] = "Story";
+
             //string DuongDan = Server.HtmlEncode(Request.RawUrl);
-            Session["Header"] = "Story";
             //Repeater1.DataSource = catalog.GetAllCatalog();
             //Repeater1.DataBind();
             if (!IsPostBack)

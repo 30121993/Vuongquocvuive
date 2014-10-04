@@ -12,7 +12,9 @@ namespace BEC_Vuongquocvuive
         protected void Page_Load(object sender, EventArgs e)
         {
             Control MH;
-            Session["Header"] = "Games";
+            string url = Request.Url.AbsoluteUri;
+            //Session["Header"] = "Games";
+            Session["Header"] = "" +url;
             if (!IsPostBack)
             {
                 loadData();

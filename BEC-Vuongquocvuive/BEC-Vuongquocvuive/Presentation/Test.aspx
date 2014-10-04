@@ -8,8 +8,8 @@
 </head>
 <body>
      <form id="form1" runat="server">
-        <asp:ScriptManager ID="ScriptManager1" runat="server" />
-
+        <asp:ScriptManager ID= "SM1" runat="server"></asp:ScriptManager>
+<%--
         <asp:UpdatePanel runat="server" id="UpdatePanel" updatemode="Conditional">
         <Triggers>
             <asp:AsyncPostBackTrigger controlid="UpdateButton2" eventname="Click" />
@@ -31,7 +31,30 @@
         <a href="#" id="abc" onclick="Button1_Click" runat="server">âsdasd</a>
      <asp:Button ID="Button1" runat="server" Text="PassRandom" onclick="Button1_Click" />
      <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+     <asp:FileUpload ID="FileUpload2" runat="server" />
 
+     <asp:Button ID="Button2" runat="server" Text="UPload" />
+--%>
+        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+
+
+
+     <div>
+        <div>
+           
+            <asp:Timer ID="timer1" runat="server" Interval="1000" OnTick="timer1_tick"></asp:Timer>
+        </div>
+        <div>
+            <asp:UpdatePanel id="updPnl" runat="server" UpdateMode="Conditional">
+                <ContentTemplate>
+                    <asp:Label ID="lblTimer" runat="server"></asp:Label>
+                </ContentTemplate>
+                <Triggers>
+                    <asp:AsyncPostBackTrigger ControlID="timer1" EventName ="tick" />
+                </Triggers>
+            </asp:UpdatePanel>
+</div>
+     </div>
     </form>
 </body>
 </html>

@@ -28,12 +28,12 @@ namespace BEC_Vuongquocvuive.Presentation.UCModules
 
         private void loadData()
         {
-            id = int.Parse(Request.QueryString["id"].ToString());
-            Session["ID_GAME"] = id;
-            id_game = int.Parse(Session["ID_GAME"].ToString());
+            
             try
             {
-
+                id = int.Parse(Request.QueryString["id"].ToString());
+                Session["ID_GAME"] = id;
+                id_game = int.Parse(Session["ID_GAME"].ToString());
                 if (Session["User_ID"] != null)
                 {
                     //id = int.Parse(Request.QueryString["id"].ToString());

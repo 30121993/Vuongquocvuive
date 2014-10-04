@@ -12,7 +12,7 @@ namespace BEC_Vuongquocvuive
 
         protected void Application_Start(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void Session_Start(object sender, EventArgs e)
@@ -26,7 +26,6 @@ namespace BEC_Vuongquocvuive
                 Session["Username"] = Request.Cookies["user"]["name"];
                 Session["Password"] = Request.Cookies["user"]["pass"];
             }
-
             int count_visit = 0;
             //Kiểm tra file count_visit.txt nếu không tồn  tại thì
             if (System.IO.File.Exists(Server.MapPath("~/count_visit.txt")) == false)

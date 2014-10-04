@@ -30,7 +30,7 @@ namespace DAL
             listparam.Add(new SqlParameter("User_Gender", obj.User_Gender));
             listparam.Add(new SqlParameter("User_UserName", obj.User_UserName));
             listparam.Add(new SqlParameter("User_PassWord", obj.User_PassWord));
-            listparam.Add(new SqlParameter("User_Address", obj.User_Address));        
+            //listparam.Add(new SqlParameter("User_Address", obj.User_Address));        
             //listparam.Add(new SqlParameter("User_Email", obj.User_Email));
             //listparam.Add(new SqlParameter("User_Phone", obj.User_Phone));
             //return cls.capnhatdulieu("Users_Insert1", listparam);

@@ -4,12 +4,12 @@
 
 <asp:Repeater ID="rptParent" runat="server">
     <ItemTemplate>
-        » <a href="StoryUC.aspx?mod=ListStory&id=<%# Eval("Catalog_ID") %>"><%# Eval("Catalog_Name")%></a>
+        » <a href="StoryUC.aspx?mod=ListStory&id_cat=<%# Eval("Catalog_ID") %>"><%# Eval("Catalog_Name")%></a>
     </ItemTemplate>
 </asp:Repeater>
 <asp:Repeater ID="rptChild" runat="server">
     <ItemTemplate>
-        » <a href="StoryUC.aspx?mod=ListStory&id=<%# Eval("Catalog_ID") %>"><%# Eval("Catalog_Name")%></a>
+        » <a href="StoryUC.aspx?mod=ListStory&id_cat=<%# Eval("Catalog_ID") %>"><%# Eval("Catalog_Name")%></a>
     </ItemTemplate>
 </asp:Repeater>
 </div>

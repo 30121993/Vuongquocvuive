@@ -13,6 +13,15 @@ namespace BEC_Vuongquocvuive.Presentation.UCModules {
     public partial class StoryDetail {
         
         /// <summary>
+        /// rptsound control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptsound;
+        
+        /// <summary>
         /// rptBia control.
         /// </summary>
         /// <remarks>

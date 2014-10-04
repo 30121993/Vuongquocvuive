@@ -8,14 +8,14 @@
                   <asp:Repeater ID="rptListCatalog" runat="server" OnItemDataBound="rptListCatalog_ItemDataBound">
                       <ItemTemplate>
                         <li class="nav-item">
-                            <a href="StoryUC.aspx?mod=ListStory&id=<%# Eval("Catalog_ID") %>" title="<%# Eval("Catalog_Name") %>">
+                            <a href="StoryUC.aspx?mod=ListStory&id_cat=<%# Eval("Catalog_ID") %>" title="<%# Eval("Catalog_Name") %>">
                                  <%# Eval("Catalog_Name")%>
                              </a>
                              <asp:Repeater ID="rptChild" runat="server">
                                 <HeaderTemplate><ul></HeaderTemplate>
                                     <ItemTemplate>
                                         <li>
-                                            <a href="StoryUC.aspx?mod=ListStory&id=<%# Eval("Catalog_ID") %>" >
+                                            <a href="StoryUC.aspx?mod=ListStory&id_cat=<%# Eval("Catalog_ID") %>" >
                                                 <%# Eval("Catalog_Name")%>
                                             </a>
                                         </li>

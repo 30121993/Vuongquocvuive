@@ -4,6 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+<link type="image/x-icon" href="images/logo.png" rel="shortcut icon" />
     <title>Register</title>
     <link type="text/css" rel="stylesheet" href="css/font-awesome.css"/>
     <link type="text/css" rel="stylesheet" href="css/fonts.css"/>
@@ -104,7 +105,29 @@
                //$.ajax({ type: "GET",url: "Logout.aspx",dataType: 'html',success: function (data) {$('body').append(data);}});
                //------------------------------------------------------------------------------------------------- 
 
-
+               $(function () {
+                   $.datepicker.regional['vi'] = {
+                       closeText: 'Đóng',
+                       prevText: '&#x3c;Trước',
+                       nextText: 'Tiếp&#x3e;',
+                       currentText: 'Hôm nay',
+                       monthNames: ['Tháng Một', 'Tháng Hai', 'Tháng Ba', 'Tháng Tư', 'Tháng Năm', 'Tháng Sáu',
+				'Tháng Bảy', 'Tháng Tám', 'Tháng Chín', 'Tháng Mười', 'Th.Mười Một', 'Th.Mười Hai'],
+                       monthNamesShort: ['Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5', 'Tháng 6',
+				'Tháng 7', 'Tháng 8', 'Tháng 9', 'Tháng 10', 'Tháng 11', 'Tháng 12'],
+                       dayNames: ['Chủ Nhật', 'Thứ Hai', 'Thứ Ba', 'Thứ Tư', 'Thứ Năm', 'Thứ Sáu', 'Thứ Bảy'],
+                       dayNamesShort: ['CN', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7'],
+                       dayNamesMin: ['CN', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7'],
+                       weekHeader: 'Tu',
+                       dateFormat: 'mm/dd/yy',
+                       firstDay: 0,
+                       isRTL: false,
+                       showMonthAfterYear: false,
+                       yearSuffix: ''
+                   };
+                   $.datepicker.setDefaults($.datepicker.regional['vi']);
+                   $("#txtNgaysinh").datepicker({ changeMonth: true, changeYear: true, yearRange: '1900:2100' });
+               });
 
            });
 </script>
@@ -161,13 +184,11 @@
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
                 ControlToValidate="txtHoten" ErrorMessage="Thông tin yêu cầu!" ForeColor="Red" 
                         Display="Dynamic"></asp:RequiredFieldValidator>
-                   
-                    <asp:Label ID="Label1" runat="server"></asp:Label>
-                   
                 </li>
                 <li>
                     <label>Tên Tài Khoản*: </label>
                     <asp:TextBox ID="txtUserName" class="tb-register" runat="server" Width="250px" ></asp:TextBox> 
+                    <asp:Label ID="Label1" runat="server"></asp:Label>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
                 ControlToValidate="txtUserName" ErrorMessage="Thông tin yêu cầu!" ForeColor="Red" 
                         Display="Dynamic"></asp:RequiredFieldValidator>
@@ -207,18 +228,18 @@
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" Type="Integer" 
                 ControlToValidate="txtphone" ErrorMessage="Thông tin yêu cầu!" ForeColor="Red" ></asp:RequiredFieldValidator>
                 </li>--%>
-				<li>
+				<%--<li>
                     <label>Tỉnh/Thành phố: </label>
                     <asp:TextBox ID="txtAddress" class="tb-register" runat="server" Width="250px" ></asp:TextBox> 
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
                 ControlToValidate="txtAddress" ErrorMessage="Thông tin yêu cầu!" ForeColor="Red"></asp:RequiredFieldValidator>
-                </li>
+                </li>--%>
                 
                 <li>
                     <label>Ngày sinh*: </label>       
                     <asp:TextBox ID="txtNgaysinh" class="tb-register" runat="server" Width="250px"></asp:TextBox>
                     <asp:RegularExpressionValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtNgaysinh" ForeColor="Red"
-ErrorMessage="Ngày Sinh không hợp lệ." SetFocusOnError="True" Display="Dynamic" ValidationExpression="(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d"></asp:RegularExpressionValidator>
+ErrorMessage="Ngày Sinh có dạng Tháng/Ngày/Năm." SetFocusOnError="True" Display="Dynamic" ValidationExpression="(0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])[- /.](19|20)\d\d"></asp:RegularExpressionValidator>
 
 
                    <%-- <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
@@ -240,7 +261,17 @@ ErrorMessage="Ngày Sinh không hợp lệ." SetFocusOnError="True" Display="Dyn
                         OnClientClick="this.form.reset();return false;" />
                 </li>
                 <li>
+                <asp:Timer ID="Timer1" runat="server" ontick="Timer1_Tick" Interval="2000" Enabled="false"></asp:Timer>
+                <%--<asp:UpdatePanel id="updPnl" runat="server" UpdateMode="Conditional">
+                    <ContentTemplate>
+                        <asp:Label ID="ThongBao" runat="server"></asp:Label>
+                    </ContentTemplate>
+                    <Triggers>
+                        <asp:AsyncPostBackTrigger ControlID="Timer1" EventName ="tick" />
+                    </Triggers>
+                </asp:UpdatePanel>--%>
                     <asp:Label ID="ThongBao" runat="server"></asp:Label>
+                    
                 </li>
               </ul>
              </div>

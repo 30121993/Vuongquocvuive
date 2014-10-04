@@ -1,4 +1,24 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="StoryDetail.ascx.cs" Inherits="BEC_Vuongquocvuive.Presentation.UCModules.StoryDetail" %>
+
+<asp:Repeater ID="rptsound" runat="server">
+            <ItemTemplate>
+                <div id="block_audio_top">
+                    <audio id="bg_audio" type="audio/mpeg" autoplay loop control src="data/soundtrack/<%# Eval("Story_SoundTrack")%>">
+                    </audio>
+                    <div id="mute" class="mute"></div>
+			        <div id="volumeMeter" onclick="setNewVolume(this,event)"><div id="volumeStatus"></div></div>
+                    <script>
+                        var activeSong = document.getElementById('bg_audio');
+                        document.getElementById('mute').addEventListener('click', function (e) {
+                            e = e || window.event;
+                            activeSong.muted = !activeSong.muted;
+                            e.preventDefault();
+                        }, false);
+                    </script>
+                </div> 
+            </ItemTemplate>
+      </asp:Repeater>   
+
 <div id="book">
               <asp:Repeater ID="rptBia" runat="server">
                 <ItemTemplate>

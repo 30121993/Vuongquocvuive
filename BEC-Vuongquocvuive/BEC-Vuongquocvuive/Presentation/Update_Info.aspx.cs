@@ -19,9 +19,12 @@ namespace BEC_Vuongquocvuive.Presentation
         GameBLL _gamer = new GameBLL();
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            string url = Request.Url.AbsoluteUri;
+            //Session["Header"] = "Games";
+            Session["Header"] = "" + url;
             if (!IsPostBack)
             {
+                CheckLogin();
                 UpdateInfo.SetActiveView(Step1);
                 loadData();
             }
@@ -34,6 +37,7 @@ namespace BEC_Vuongquocvuive.Presentation
         {
             try
             {
+                
                 if (Session["User_ID"] != null)
                 {
 
@@ -47,7 +51,10 @@ namespace BEC_Vuongquocvuive.Presentation
                     rptAvt.DataSource = user_info;
                     rptAvt.DataBind();
                     txtEmail1.Text=txtEmail.Text = user_info.Rows[0]["User_Email"].ToString();
-                    txtngaysinh1.Text = txtNgaySinh.Text = user_info.Rows[0]["User_Birthday"].ToString();
+                    string ns = user_info.Rows[0]["User_Birthday"].ToString();
+                    DateTime dtnv = DateTime.Parse(ns.ToString());
+                    string fmNS = dtnv.ToShortDateString();
+                    txtngaysinh1.Text = txtNgaySinh.Text = fmNS;
                     txtNgaythamgia.Text = user_info.Rows[0]["User_RegisterTime"].ToString();
                     txtUserName.Text =""+Session["User_FullName"];
                     txtUserName1.Text =""+ Session["User_FullName"];
@@ -118,6 +125,7 @@ namespace BEC_Vuongquocvuive.Presentation
                     txtRank.Text = "";
                     plhDadangnhap.Visible = false;
                     plhChuadangnhap.Visible = true;
+
                 }
             }
             catch (Exception)
@@ -203,7 +211,7 @@ namespace BEC_Vuongquocvuive.Presentation
                 User_ID = int.Parse(Session["User_ID"].ToString());
                 obj.User_ID = User_ID;
                 lblTennguoidung.Text= txtUserName.Text= txtUserName1.Text=obj.User_FullName = txtHoten.Text.Trim();
-               txtNgaySinh.Text= obj.User_Birthday = txtngaysinh1.Text.Trim();
+               txtNgaySinh.Text= obj.User_Birthday = txtngaysinh1.Text;
                 obj.User_Gender = gtinh;
                 obj.User_Address = txtAddress.Text.Trim();
                 obj.User_Xa = txtHuyen.Text.Trim();
@@ -228,6 +236,14 @@ namespace BEC_Vuongquocvuive.Presentation
 
             }
 
+        }
+        private void CheckLogin()
+        {
+            if ((Session["User_ID"] == null))
+            {
+                
+                Response.Redirect("Login2.aspx");
+            }
         }
 
 

@@ -45,9 +45,10 @@ namespace BEC_Vuongquocvuive.Presentation.UCModules
                             _user.Subgold(user_id, Story_ID);
                             rpReadStory.DataSource = _story_page.ReadStory(Story_ID);
                             rpReadStory.DataBind();
-                            rptSoundTrack.DataSource = rptBia.DataSource = _story.GetStoryByID(Story_ID);
+                            rptsound.DataSource=rptSoundTrack.DataSource = rptBia.DataSource = _story.GetStoryByID(Story_ID);
                             rptBia.DataBind();
                             rptSoundTrack.DataBind();
+                            rptsound.DataBind();
 
                             //------------------------------------------------------------------------------------------------- 
                             Story_ViewDTO obj = new Story_ViewDTO();
@@ -67,7 +68,8 @@ namespace BEC_Vuongquocvuive.Presentation.UCModules
                     }
                     else
                     {
-                        Response.Write("<script language='javascript'> alert('Truyện này cần vàng để đọc, Vui lòng đăng nhập để đọc truyện!!');location.href='Story.aspx';</script>");
+                        //Response.Write("<script language='javascript'> alert('Truyện này cần vàng để đọc, Vui lòng đăng nhập để đọc truyện!!');location.href='Story.aspx';</script>");
+                         Response.Write("<script language='javascript'>$(this).click(function () {$.ajax({ type: 'GET',url: 'Logout.aspx', dataType: 'html',success: function (data) {$('body').append(data);}});}); </script>");
                     }
                 }
                 if (Session["User_ID"] == null)
@@ -82,9 +84,10 @@ namespace BEC_Vuongquocvuive.Presentation.UCModules
                             _story.viewup(Story_ID);
                             rpReadStory.DataSource = _story_page.ReadStory(Story_ID);
                             rpReadStory.DataBind();
-                            rptSoundTrack.DataSource = rptBia.DataSource = _story.GetStoryByID(Story_ID);
+                            rptsound.DataSource = rptSoundTrack.DataSource = rptBia.DataSource = _story.GetStoryByID(Story_ID);
                             rptBia.DataBind();
                             rptSoundTrack.DataBind();
+                            rptsound.DataBind();
                         }
                         else {
                             Response.Write("<script language='javascript'> alert('Truyện này cần vàng để đọc, Vui lòng đăng nhập để đọc truyện!');location.href='Story.aspx';</script>");

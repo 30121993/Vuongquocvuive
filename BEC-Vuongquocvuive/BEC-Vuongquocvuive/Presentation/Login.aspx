@@ -4,7 +4,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Login</title>
+<link type="image/x-icon" href="images/logo.png" rel="shortcut icon" />
+    <title>Đăng Nhập</title>
  <script type="text/javascript">
         $(document).ready(function (e) {
             $w = ($(window).width()) / 2 - 200;

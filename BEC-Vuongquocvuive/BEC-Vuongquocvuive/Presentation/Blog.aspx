@@ -6,7 +6,9 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Blog Page</title>
+
+<link type="image/x-icon" href="images/logo.png" rel="shortcut icon" />
+    <title>Trang Cá Nhân</title>
     <link type="text/css" rel="stylesheet" href="css/font-awesome.css"/>
     <link type="text/css" rel="stylesheet" href="css/fonts.css"/>
     <link type="text/css" rel="stylesheet" href="css/layout.css"/>
@@ -172,7 +174,7 @@
               <a href="?mod=ChangePassword" class="btn btn-post">Đổi Mật Khẩu</a>
               </div>
           </div>
-          <div class="user-nav">
+          <%--<div class="user-nav">
             <ul>
               <li class="messenger" title="Tin nhắn" rel="list-mess">
                 <div class="wrapper-user-nav-item">
@@ -229,7 +231,7 @@
                 </div>
               </li>
             </ul>
-          </div>
+          </div>--%>
         </section>
         <!--End block user-->
         <section id="block-acc-info" class="block-left-item">

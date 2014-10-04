@@ -26,20 +26,29 @@ namespace BEC_Vuongquocvuive.Presentation
             }
             
             
-            if (header == "Story")
+            //if (header == "Story")
+            //{
+            //    //Response.Write("<script language='javascript'> alert('Đăng nhập thành công!');location.href='Story.aspx';</script>");
+            //    Response.Redirect("Story.aspx");
+            //}
+            //if (header == "Games")
+            //{
+            //    //Response.Write("<script language='javascript'> alert('Đăng nhập thành công!');location.href='Games.aspx';</script>");
+            //    Response.Redirect("Games.aspx");
+            //}
+            //if (header == "Blog")
+            //{
+            //    //Response.Write("<script language='javascript'> alert('Đăng nhập thành công!');location.href='Blog.aspx?mod=Changer_info_User';</script>");
+            //    Response.Redirect("Blog.aspx");
+            //}
+
+            if (header != null)
             {
-                //Response.Write("<script language='javascript'> alert('Đăng nhập thành công!');location.href='Story.aspx';</script>");
-                Response.Redirect("Story.aspx");
+                Response.Redirect("" + header);
             }
-            if (header == "Games")
+            else
             {
-                //Response.Write("<script language='javascript'> alert('Đăng nhập thành công!');location.href='Games.aspx';</script>");
-                Response.Redirect("Games.aspx");
-            }
-            if (header == "Blog")
-            {
-                //Response.Write("<script language='javascript'> alert('Đăng nhập thành công!');location.href='Blog.aspx?mod=Changer_info_User';</script>");
-                Response.Redirect("Blog.aspx");
+
             }
             
         }

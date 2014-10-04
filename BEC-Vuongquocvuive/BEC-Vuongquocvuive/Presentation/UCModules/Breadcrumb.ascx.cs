@@ -15,10 +15,10 @@ namespace BEC_Vuongquocvuive.Presentation.UCModules
         protected void Page_Load(object sender, EventArgs e)
         {
             int Catalog_ID;
-            if (Request.QueryString["id"] != null)
+            if (Request.QueryString["id_cat"] != null)
             {
 
-                Catalog_ID = Int32.Parse(Request.QueryString["id"].ToString());
+                Catalog_ID = Int32.Parse(Request.QueryString["id_cat"].ToString());
                 rptChild.DataSource = _Catalog.GetCatalogDetail(Catalog_ID);
                 rptChild.DataBind();
                 CatalogDetail = _Catalog.GetCatalogDetail(Catalog_ID);

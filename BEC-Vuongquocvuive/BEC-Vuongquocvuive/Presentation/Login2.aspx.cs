@@ -34,7 +34,8 @@ namespace BEC_Vuongquocvuive.Presentation.UCModules
         protected void btndangnhap_Click(object sender, EventArgs e)
         {
             bool trangthai;
-            user = userbll.Dangnhap(txttaikhoan.Text.Trim(), mahoa(txtmatkhau.Text.Trim()));
+            string ab = MD5(mahoa(txtmatkhau.Text.Trim()));
+            user = userbll.Dangnhap(txttaikhoan.Text.Trim(), MD5(mahoa(txtmatkhau.Text.Trim())));
             string header = Session["Header"].ToString();
 
             if (user.Rows.Count == 1)
@@ -48,34 +49,38 @@ namespace BEC_Vuongquocvuive.Presentation.UCModules
                     userbll.UpdateLast_Login(int.Parse(Session["User_ID"].ToString()));
 
 
-                    if (header == "Story")
-                    {
+                    //if (header == "Story")
+                    //{
                         
-                        Response.Redirect("Story.aspx");
-                    }
-                    if (header == "Games")
-                    {
+                    //    Response.Redirect("Story.aspx");
+                    //}
+                    //if (header == "Games")
+                    //{
                         
-                        Response.Redirect("Games.aspx");
-                    }
-                    if (header == "Blog")
-                    {
-                        //Response.Write("<script language='javascript'> alert('Đăng nhập thành công!');location.href='Blog.aspx?mod=Changer_info_User';</script>");
-                        Response.Redirect("Update_Info.aspx");
-                    }
+                    //    Response.Redirect("Games.aspx");
+                    //}
+                    //if (header == "Blog")
+                    //{
+                    //    //Response.Write("<script language='javascript'> alert('Đăng nhập thành công!');location.href='Blog.aspx?mod=Changer_info_User';</script>");
+                       
+                    //}
                     //Response.Write("<script language='javascript'>$.ajax({ type: "GET",url: "Logout.aspx",dataType: 'html',success: function (data) {$('body').append(data);}});</script>");
 
-
+                    HttpCookie cook = new HttpCookie("user");
                     if (cbluuMK.Checked)
                     {
-                        HttpCookie cook = new HttpCookie("user");
+                        
                         cook.Values.Add("name", txttaikhoan.Text.Trim());
-                        cook.Values.Add("pass", mahoa(txtmatkhau.Text.Trim()));
+                        //cook.Values.Add("pass", MD5(mahoa(txtmatkhau.Text.Trim())));
+                        cook.Values.Add("pass", txtmatkhau.Text.Trim());
                         cook.Expires = DateTime.MaxValue;
                         Response.Cookies.Add(cook);
+                        Response.Redirect("Update_Info.aspx");
                     }
                     else
                     {
+                        cook.Expires = DateTime.Now;
+                        Response.Redirect("Update_Info.aspx");
                     }
 
 
@@ -113,6 +118,10 @@ namespace BEC_Vuongquocvuive.Presentation.UCModules
         private string mahoa(string mk)
         {
             return System.Web.Security.FormsAuthentication.HashPasswordForStoringInConfigFile(mk.Trim(), "SHA1");
+        }
+        private string MD5(string mk)
+        {
+            return System.Web.Security.FormsAuthentication.HashPasswordForStoringInConfigFile(mk.Trim(), "MD5");
         }
     }
 }

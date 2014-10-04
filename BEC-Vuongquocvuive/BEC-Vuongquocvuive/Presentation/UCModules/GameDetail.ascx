@@ -14,7 +14,7 @@
                     <ItemTemplate>
                         <h3 class="title"><%# Eval("Game_Name") %></h3>
                         <ul>
-                            <li title="Người Đăng"><i class="fa fa-user"></i> <a href="#"><%# Eval("User_FullName") %></a></li>
+                            <li title="Người Đăng"><i class="fa fa-user"></i> <a href="#"><%# Eval("User_UserName")%></a></li>
                             <li title="Thời gian đăng"><i class="fa fa-clock-o"></i><%# Eval("Game_TimeUp") %> </li>
                             <li title="Lượt xem"><i class="fa fa-eye"></i> <%# Eval("Game_TotalView") %></li>
                             <li title="Bình luận"><i class="fa fa-comments-o"></i> 300</li>
@@ -30,11 +30,11 @@
 			            <embed class="game-position" width="700px" height="600px" type="application/x-shockwave-flash" fullscreen=no src="data/games/path/<%# Eval("Game_Path") %>">
                     </ItemTemplate>
                 </asp:Repeater>
-            <ul class="game-opt">
+           <%-- <ul class="game-opt">
             	<li><i class="fa fa-thumbs-o-up"></i>Thích</li>
                 <li><i class="fa fa-share-alt-square"></i> Chia sẻ</li>
                 <li><i class="fa fa-cloud-download"></i>Tải về</li>
-            </ul>
+            </ul>--%>
             <!-------------------------------------------------------------------------------------------------->
             <div class="game-info">
                 <div class="content-game-info">

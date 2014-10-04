@@ -6,7 +6,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Story Page</title>
+<link type="image/x-icon" href="images/logo.png" rel="shortcut icon" />
+    <title>Trang Truyện</title>
     <link type="text/css" rel="stylesheet" href="css/font-awesome.css"/>
     <link type="text/css" rel="stylesheet" href="css/fonts.css"/>
     <link type="text/css" rel="stylesheet" href="css/layout.css"/>
@@ -91,7 +92,7 @@
         <asp:PlaceHolder ID="plhDadangnhap" runat="server">
             <div class="user-block-head">
         	<ul>
-        		<li><a href="Blog.aspx"><i class="fa fa-smile-o"></i><asp:Label ID="lblTennguoidung" runat="server" Text=""></asp:Label></a></li>
+        		<li><a href="Update_Info.aspx"><i class="fa fa-smile-o"></i><asp:Label ID="lblTennguoidung" runat="server" Text=""></asp:Label></a></li>
             	<li><a id="A1" href="javascript:;"><i class="fa fa-unlock"></i> Đăng Xuất</a></li>
             </ul>
         </div>

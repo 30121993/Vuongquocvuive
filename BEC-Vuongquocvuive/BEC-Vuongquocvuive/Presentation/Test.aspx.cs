@@ -11,13 +11,17 @@ namespace BEC_Vuongquocvuive.Presentation
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Label1.Text= mahoa("admin");
+            //string a = mahoa("admin");
+            Label1.Text= MD5(mahoa("admin"));
+
+            if (!SM1.IsInAsyncPostBack)
+                Session["timeout"] = DateTime.Now.AddSeconds(5).ToString();
         }
 
         protected void UpdateButton_Click(object sender, EventArgs e)
         {
-            DateTimeLabel1.Text = DateTime.Now.ToString();
-            DateTimeLabel2.Text = DateTime.Now.ToString();
+           // DateTimeLabel1.Text = DateTime.Now.ToString();
+           // DateTimeLabel2.Text = DateTime.Now.ToString();
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -51,5 +55,20 @@ namespace BEC_Vuongquocvuive.Presentation
         {
             return System.Web.Security.FormsAuthentication.HashPasswordForStoringInConfigFile(mk.Trim(), "SHA1");
         }
+
+        private string MD5(string mk)
+        {
+            return System.Web.Security.FormsAuthentication.HashPasswordForStoringInConfigFile(mk.Trim(), "MD5");
+        }
+
+        protected void timer1_tick(object sender, EventArgs e)
+        {
+            if (0 > DateTime.Compare(DateTime.Now, DateTime.Parse(Session["timeout"].ToString())))
+            {
+                lblTimer.Text = "Number of Minutes Left: " + ((Int32)DateTime.Parse(Session["timeout"].ToString()).Subtract(DateTime.Now).TotalSeconds).ToString();
+            }
+        }
+
+
     }
 }

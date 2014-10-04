@@ -4,6 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+<link type="image/x-icon" href="images/logo.png" rel="shortcut icon" />
     <title>Quên mật khẩu</title>
     <link type="text/css" rel="stylesheet" href="css/font-awesome.css"/>
 <link type="text/css" rel="stylesheet" href="css/fonts.css"/>
@@ -157,7 +158,8 @@
                 </li>
                <li>
                     <label>Email*: </label>
-                    <asp:TextBox ID="txtEmail" class="tb-register" runat="server" Width="250px" placehoder="Yêu cầu nhập Email!"></asp:TextBox> 
+                    <asp:TextBox ID="txtEmail" class="tb-register" runat="server" Width="250px" 
+                        placehoder="Yêu cầu nhập Email!" ontextchanged="txtEmail_TextChanged"></asp:TextBox> 
                     <asp:Label ID="Label2" runat="server" Text=""></asp:Label>
                      <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
                 ControlToValidate="txtEmail" ErrorMessage="Thông tin yêu cầu!" ForeColor="Red" 

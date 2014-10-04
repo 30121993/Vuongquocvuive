@@ -4,7 +4,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Home</title>
+<link type="image/x-icon" href="images/logo.png" rel="shortcut icon" />
+    <title>Vương Quốc Vui Vẻ</title>
     <link type="text/css" rel="stylesheet" href="css/font-awesome.css"/>
     <link type="text/css" rel="stylesheet" href="css/fonts.css"/>
     <link type="text/css" rel="stylesheet" href="css/layout.css"/>
