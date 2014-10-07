@@ -217,7 +217,7 @@
         </asp:UpdatePanel>
               </ul>
               <a href="Update_Info.aspx" class="btn btn-post">Sửa thông tin</a> 
-               <a href="Blog.aspx?mod=ChangePassword" class="btn btn-post">Đổi Mật Khẩu</a>
+               <a href="blog.aspx?mod=ChangePassword" class="btn btn-post">Đổi Mật Khẩu</a>
               </div>
           </div>
           <div class="user-nav">

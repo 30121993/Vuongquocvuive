@@ -115,7 +115,9 @@
 </head>
 <body id="blog-page">
 
-    <form id="form1" runat="server">    
+    <form id="form1" runat="server">   
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
     <div>
         <div class="wrapper">
   <div class="wrapper-content">
@@ -152,11 +154,15 @@
         <section id="block-user">
           <div class="user-ava image-user-block">
             <div class="img-frame">
-                 <asp:Repeater ID="rptAvt" runat=server>
-                    <ItemTemplate>
-                        <img src="images/<%# Eval("User_Image")%>" alt="Ảnh đại diện" title="Ảnh đại diện"/>
-                    </ItemTemplate>
-                 </asp:Repeater>
+                <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                    <ContentTemplate>
+                        <asp:Repeater ID="rptAvt" runat=server>
+                                <ItemTemplate>
+                                    <img src="images/<%# Eval("User_Image")%>" alt="Ảnh đại diện" title="Ảnh đại diện"/>
+                                </ItemTemplate>
+                             </asp:Repeater>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
             </div>
             <a class="btn btn-change-ava" href="#" title="Thay đổi ảnh đại diện"><img src="images/camera.png" title="Thay đổi ảnh đại diện" alt="Thay đổi ảnh đại diện"/> </a> <a class="btn btn-inv-friend" href="#" title="Kết bạn"><img src="images/plus.png" alt="Kết bạn" title="Kết bạn"/></a> </div>
           <!--End user img-->

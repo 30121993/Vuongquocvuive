@@ -5,9 +5,38 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <style>
+    .nav-list-ava input[type="file"]{
+    -webkit-appearance:none; 
+    position:absolute;
+    top:0; left:0;
+    opacity:0; 
+}
+   .nav-list-ava #FileUpload1{
+    -webkit-appearance:none; 
+    position:absolute;
+    top:0; left:0;
+    opacity:0; 
+}
+.nav-list-ava
+{
+         position:relative;
+    }
+</style>
+    <style >
+        .choose_file{
+    position:relative;
+}
+.choose_file input[type="file"]{
+    -webkit-appearance:none; 
+    position:absolute;
+    top:0; left:0;
+    opacity:0; 
+}
+    </style>
 </head>
 <body>
-     <form id="form1" runat="server">
+     <form id="form1" runat="server" enctype="multipart/form-data">
         <asp:ScriptManager ID= "SM1" runat="server"></asp:ScriptManager>
 <%--
         <asp:UpdatePanel runat="server" id="UpdatePanel" updatemode="Conditional">
@@ -55,6 +84,12 @@
             </asp:UpdatePanel>
 </div>
      </div>
+     <div class="nav-list-ava">
+                <a href="javascript:;"><asp:FileUpload  runat="server" onchange="this.form.submit();" ID="fuFile"></asp:FileUpload><i class="fa fa-camera"></i> Chọn ảnh tải lên</a>
+                <asp:Label ID="lblMsg" runat="server" Text=""></asp:Label>
+         
+     </div>
+     <asp:Image ID="Image1" runat="server" ImageUrl="~/Presentation/abc/quynh.jpg"/>
     </form>
 </body>
 </html>

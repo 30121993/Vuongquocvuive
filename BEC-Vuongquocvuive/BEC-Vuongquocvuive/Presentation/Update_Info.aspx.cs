@@ -221,6 +221,7 @@ namespace BEC_Vuongquocvuive.Presentation
                 obj.User_Lop = txtLop.Text.Trim();
                txtEmail.Text= obj.User_Email = txtEmail1.Text.Trim();
                 obj.User_Phone = txtphone.Text.Trim();
+                //lblChangeInfo.Text = "Thay đổi thông tin cá nhân";
 
                 DataTable user_info = user.getUserbyID(User_ID);
                 TrangThaiDK = bool.Parse(user_info.Rows[0]["User_HoanThanhDK"].ToString());
@@ -233,6 +234,7 @@ namespace BEC_Vuongquocvuive.Presentation
                 
                 UpdateInfo.SetActiveView(Step3);
                 lblMsg.Text = "Thay Đổi Thông Tin Thành Công!!!";
+                
 
             }
 

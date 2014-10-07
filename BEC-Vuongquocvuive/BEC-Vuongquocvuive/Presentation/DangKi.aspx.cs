@@ -14,14 +14,18 @@ namespace BEC_Vuongquocvuive.Presentation
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session["Header"] = "Update_Info.aspx";
+            //Session["Header"] = "Update_Info.aspx";
             //Session["Header"] = "Blog";
             //if (!ScriptManager1.IsInAsyncPostBack)
             //    Session["timeout"] = DateTime.Now.AddSeconds(5).ToString();
+            string url_old = Session["header"].ToString();
+            //Response.Write("" + url_old);
+            Session["url"] = url_old;
         }
 
         protected void btndangki_Click(object sender, EventArgs e)
         {
+            
             UserBLL User = new UserBLL();
             string ngaysinh = txtNgaysinh.Text.Trim();
             string curdate = DateTime.Now.ToString("yyyy-mm-dd");

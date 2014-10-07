@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.IO;
 
 namespace BEC_Vuongquocvuive.Presentation
 {
@@ -12,10 +13,36 @@ namespace BEC_Vuongquocvuive.Presentation
         protected void Page_Load(object sender, EventArgs e)
         {
             //string a = mahoa("admin");
-            Label1.Text= MD5(mahoa("admin"));
+            Label1.Text = MD5(mahoa("admin"));
 
             if (!SM1.IsInAsyncPostBack)
                 Session["timeout"] = DateTime.Now.AddSeconds(5).ToString();
+
+            if (IsPostBack)
+            {
+                string savePath = Server.MapPath(@"~/Presentation/abc");
+                string filename = fuFile.PostedFile.FileName;
+                int fileSize = fuFile.PostedFile.ContentLength;
+                string exten = Path.GetExtension(filename);
+                if ((!exten.ToLower().Equals(".jpg")) && (!exten.ToLower().Equals(".png")))
+                {
+                    lblMsg.Text = "Loại file không hợp lệ";
+                    return;
+                }
+                if (fileSize < 5100000)
+                {
+                    fuFile.SaveAs(savePath + @"/" + fuFile.FileName);
+                    lblMsg.Text = filename + "Đã Upload Thành công!";
+                }
+                else
+                {
+                    lblMsg.Text = "File Quá lớn!";
+                    return;
+                }
+            }
+
+
+
         }
 
         protected void UpdateButton_Click(object sender, EventArgs e)

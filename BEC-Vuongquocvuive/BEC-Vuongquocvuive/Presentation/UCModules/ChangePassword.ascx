@@ -1,6 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ChangePassword.ascx.cs" Inherits="BEC_Vuongquocvuive.Presentation.UCModules.Changer_info_User" %>
-<asp:ScriptManager ID="ScriptManager1" runat="server">
-</asp:ScriptManager>
+
 <asp:UpdatePanel ID="UpdatePanel1" runat="server">
 <ContentTemplate>
 <section id="change-info"  style="width: 700px;">

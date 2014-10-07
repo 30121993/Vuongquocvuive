@@ -981,6 +981,7 @@
     <Content Include="Presentation\js\wow_book\sound\page-flip.ogg" />
     <Content Include="Presentation\js\wow_book\wow_book.css" />
     <Content Include="Presentation\js\wow_book\wow_book.min.js" />
+    <Content Include="Presentation\Loadavt.aspx" />
     <Content Include="Presentation\Login.aspx" />
     <Content Include="Presentation\Logout.aspx" />
     <Content Include="Presentation\Popup.aspx" />
@@ -1187,6 +1188,13 @@
     <Compile Include="Presentation\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Loadavt.aspx.cs">
+      <DependentUpon>Loadavt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Presentation\Loadavt.aspx.designer.cs">
+      <DependentUpon>Loadavt.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1346,6 +1354,7 @@
   <ItemGroup>
     <Folder Include="ADMIN\assets\bootstrap-toggle-buttons\examples\" />
     <Folder Include="ADMIN\assets\fullcalendar\demos\" />
+    <Folder Include="Presentation\abc\" />
     <Folder Include="Presentation\construction-page\js\" />
     <Folder Include="Presentation\data\games\Catalog\" />
   </ItemGroup>

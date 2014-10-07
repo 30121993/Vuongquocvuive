@@ -81,27 +81,28 @@ namespace BEC_Vuongquocvuive
                     plhChuadangnhap.Visible = false;
                     lblTennguoidung.Text = " " + Session["User_FullName"];
 
-                    string filename = "";
-                    if (Request.QueryString["change-avt"] != null)
-                    {
-                        filename = Request.QueryString["change-avt"].ToString();
-                        AlbumDTO obj = new AlbumDTO();
-                        UserDTO obj1 = new UserDTO();
-                        AlbumBLL _album = new AlbumBLL ();
-                        obj1.User_ID= obj.User_ID = User_ID;
-                        obj1.User_Image= obj.FileName = filename;
-                        DataTable dt = _album.KiemTraAvt(obj);
-                        if (dt.Rows.Count > 0)
-                        {
-                            user.Update_Avt(obj1);
-                                                   
-                        }
-                        else {
-                            _album.ChangeAvt(obj);
-                              
-                        }
+                    //string filename = "";
+                    //if (Request.QueryString["change-avt"] != null)
+                    //{
+                    //    filename = Request.QueryString["change-avt"].ToString();
+                    //    AlbumDTO obj = new AlbumDTO();
+                    //    UserDTO obj1 = new UserDTO();
+                    //    AlbumBLL _album = new AlbumBLL ();
+                    //    obj1.User_ID= obj.User_ID = User_ID;
+                    //    obj1.User_Image= obj.FileName = filename;
+                    //    DataTable dt = _album.KiemTraAvt(obj);
+                    //    if (dt.Rows.Count > 0)
+                    //    {
+                           
+                    //        user.Update_Avt(obj1);
+                    //        //Response.Redirect("~/Presentation/Update_Info.aspx");                    
+                    //    }
+                    //    else {
+                    //        _album.ChangeAvt(obj);
+                    //        //Response.Redirect("Update_Info.aspx");  
+                    //    }
 
-                    }
+                    //}
                 }
                 else
                 {

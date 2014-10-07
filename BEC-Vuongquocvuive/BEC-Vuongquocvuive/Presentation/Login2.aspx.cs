@@ -15,6 +15,8 @@ namespace BEC_Vuongquocvuive.Presentation.UCModules
         DataTable user = new DataTable();
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+            //Response.Write("" + url);
             if (!IsPostBack)
             {
                 if (Request.Cookies["user"] != null)
@@ -47,8 +49,7 @@ namespace BEC_Vuongquocvuive.Presentation.UCModules
                     Session["User_FullName"] = user.Rows[0]["User_FullName"];
                     UpdateGold(user);
                     userbll.UpdateLast_Login(int.Parse(Session["User_ID"].ToString()));
-
-
+                   
                     //if (header == "Story")
                     //{
                         
@@ -66,6 +67,17 @@ namespace BEC_Vuongquocvuive.Presentation.UCModules
                     //}
                     //Response.Write("<script language='javascript'>$.ajax({ type: "GET",url: "Logout.aspx",dataType: 'html',success: function (data) {$('body').append(data);}});</script>");
 
+                    string url;
+                    try
+                    {
+                        url = Session["url"].ToString();
+                    }
+                    catch (Exception)
+                    {
+
+                        url = Session["Header"].ToString();
+                    }
+                    
                     HttpCookie cook = new HttpCookie("user");
                     if (cbluuMK.Checked)
                     {
@@ -75,12 +87,28 @@ namespace BEC_Vuongquocvuive.Presentation.UCModules
                         cook.Values.Add("pass", txtmatkhau.Text.Trim());
                         cook.Expires = DateTime.MaxValue;
                         Response.Cookies.Add(cook);
-                        Response.Redirect("Update_Info.aspx");
+
+                        if (url != null)
+                        {
+                            Response.Redirect("" + url);
+                        }
+                        else {
+                            Response.Redirect("" + url);
+                        }
+                        //Response.Redirect("Update_Info.aspx");
                     }
                     else
                     {
                         cook.Expires = DateTime.Now;
-                        Response.Redirect("Update_Info.aspx");
+                        if (url != null)
+                        {
+                            Response.Redirect("" + url);
+                        }
+                        else
+                        {
+                            Response.Redirect("" + url);
+                        }
+                        //Response.Redirect("Update_Info.aspx");
                     }
 
 
